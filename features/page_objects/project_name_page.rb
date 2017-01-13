@@ -6,9 +6,8 @@ class ProjectNamePage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
-
   def submit(args = {})
-	project_name.set(args[:project_name]) if args.key?(:project_name)
+    project_name.set(args[:project_name]) if args.key?(:project_name)
 
     submit_button.click
   end

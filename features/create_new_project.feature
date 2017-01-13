@@ -1,4 +1,4 @@
-@frontoffice
+@frontoffice @wip
 Feature: Create a new project application
   As a 
   I want to 
@@ -16,4 +16,4 @@ Feature: Create a new project application
       And I name my project
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending "Year_2016_2017"
-     Then I should see the proposal overview
+     Then I should see my entered details in the the proposal overview

@@ -38,5 +38,9 @@ class App
   def project_year_page
     @last_page = ProjectYearPage.new
   end
-  
+
+  def proposal_overview_page
+    @last_page = ProposalOverviewPage.new
+  end
+
 end

@@ -34,21 +34,24 @@ end
 
 Given(/^I name my project$/) do
   @app.project_name_page.submit(
-    project_name: "Flood defence test")
+    project_name: "Flood defence test"
+  )
 end
 
 Given(/^I select project type "([^"]*)"$/) do |action|
-  
-    @app.project_type_page.submit(
+  @app.project_type_page.submit(
     option: action.to_sym
   )
 end
 
 Given(/^I select financial year to stop spending "([^"]*)"$/) do |year|
   @app.project_year_page.submit(
-    option: year.to_sym)
+    option: year.to_sym
+  )
 end
 
-Then(/^I should see the proposal overview$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see my entered details in the the proposal overview$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  expect(@app.proposal_overview_page).to have_project_number
+  expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
 end
