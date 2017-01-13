@@ -30,4 +30,9 @@ class App
   def project_name_page
     @last_page = ProjectNamePage.new
   end
+
+  def project_type_page
+    @last_page = ProjectTypePage.new
+  end
+  
 end

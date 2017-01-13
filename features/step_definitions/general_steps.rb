@@ -37,8 +37,11 @@ Given(/^I name my project$/) do
     project_name: "Flood defence test")
 end
 
-Given(/^I select project type 'Changing asset'$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I select project type "([^"]*)"$/) do |action|
+  
+    @app.project_type_page.submit(
+    tab: action.to_sym
+  )
 end
 
 Given(/^I select financial year to stop spending 'April (\d+) to March (\d+)'$/) do |_arg1, _arg2|

@@ -14,6 +14,6 @@ Feature: Create a new project application
       And I request Grant in Aid funding
       And I request Local Levy funding
       And I name my project
-      And I select project type 'Changing asset'
+      And I select project type "change_or_new_asset"
       And I select financial year to stop spending 'April 2016 to March 2017'
      Then I should see the proposal overview
