@@ -11,6 +11,4 @@ class ProjectsPage < SitePrism::Page
     search_button.click
   end
 
-
-
 end

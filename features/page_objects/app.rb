@@ -7,15 +7,27 @@ class App
 
   # FRONT OFFICE SPECIFIC PAGES
   # /
-	  def front_office_home_page
-	  @last_page = FrontOfficeHomePage.new
-	  end
+  def front_office_home_page
+    @last_page = FrontOfficeHomePage.new
+  end
 
-  	def login_page
+  def login_page
     @last_page = LoginPage.new
-  	end
+  end
 
-  	def projects_page
-  	@last_page = ProjectsPage.new
-  	end
+  def projects_page
+    @last_page = ProjectsPage.new
+  end
+
+  def grant_in_aid_funding_page
+    @last_page = GrantInAidFundingPage.new
+  end
+
+  def local_levy_funding_page
+    @last_page = LocalLevyFundingPage.new
+  end
+
+  def project_name_page
+    @last_page = ProjectNamePage.new
+  end
 end

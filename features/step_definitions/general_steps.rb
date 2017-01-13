@@ -19,3 +19,32 @@ end
 Given(/^I create a new proposal$/) do
   @app.projects_page.create_proposal.click
 end
+
+Given(/^I request Grant in Aid funding$/) do
+  @app.grant_in_aid_funding_page.submit(
+    grant_in_aid: true
+  )
+end
+
+Given(/^I request Local Levy funding$/) do
+  @app.local_levy_funding_page.submit(
+    local_levy_funding: true
+  )
+end
+
+Given(/^I name my project$/) do
+  @app.project_name_page.submit(
+    project_name: "Flood defence test")
+end
+
+Given(/^I select project type 'Changing asset'$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I select financial year to stop spending 'April (\d+) to March (\d+)'$/) do |_arg1, _arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see the proposal overview$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end

@@ -8,7 +8,6 @@ class AdminUserBarSection < SitePrism::Section
   # https://developers.google.com/web/updates/2015/05/search-dom-tree-by-css-selector
 
   SELECTOR = ".user-bar".freeze
-  
 
   element(:projects, "a[href='/pc/projects']")
 
