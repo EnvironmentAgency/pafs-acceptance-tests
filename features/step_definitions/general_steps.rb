@@ -13,7 +13,6 @@ Given(/^I have a valid username and password$/) do
     email: "tim.stone@environment-agency.gov.uk",
     password: "Abcde12345"
   )
-
 end
 
 Given(/^I create a new proposal$/) do
@@ -32,9 +31,9 @@ Given(/^I request Local Levy funding$/) do
   )
 end
 
-Given(/^I name my project$/) do
+Given(/^I name my project "([^"]*)"$/) do |name|
   @app.project_name_page.submit(
-    project_name: "Flood defence test"
+    project_name: name.to_sym
   )
 end
 
@@ -51,6 +50,7 @@ Given(/^I select financial year to stop spending "([^"]*)"$/) do |year|
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
+  puts @type
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
