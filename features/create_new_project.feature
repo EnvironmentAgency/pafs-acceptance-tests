@@ -22,6 +22,5 @@ Feature: Create a new project application
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
+      And I enter my funding sources
      Then I should see my entered details in the the proposal overview
-
-

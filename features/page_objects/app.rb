@@ -71,4 +71,8 @@ class App
     @last_page = ReadyForServiceDatePage.new
   end
 
+  def funding_sources_page
+    @last_page = FundingSourcesPage.new
+  end
+  
 end

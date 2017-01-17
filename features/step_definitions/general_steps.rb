@@ -96,6 +96,16 @@ Given(/^I enter my ready for service date$/) do
 
 end
 
+# Looks for end part of ID funding_sources_step_ and clicks on that check box
+# If box is already checked then will uncheck box
+Given(/^I enter my funding sources$/) do
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: %w(internal_drainage_boards)
+  )
+end
+
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
