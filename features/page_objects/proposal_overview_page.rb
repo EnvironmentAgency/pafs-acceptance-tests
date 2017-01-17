@@ -8,6 +8,8 @@ class ProposalOverviewPage < SitePrism::Page
   element(:project_year, "#project-financial_year-content p")
 
   element(:add_location, "#project-location-content a")
+  element(:download_project_benefit_area, "a[href$='benefit_area']")
+
   element(:add_important_dates, "#project-key_dates-content a")
   element(:add_funding_source, "#project-funding_sources-content a")
   element(:add_earliest_start, "#project-earliest_start-content a")

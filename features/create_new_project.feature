@@ -18,6 +18,10 @@ Feature: Create a new project application
       And I select financial year to stop spending "Year_2016_2017"
       And I add a location "ST 58198 72725"
       And I upload my benefit area file
+      And I enter my business case start date
+      And I enter my award contract date
+      And I enter my construction start date
+      And I enter my ready for service date
      Then I should see my entered details in the the proposal overview
 
 

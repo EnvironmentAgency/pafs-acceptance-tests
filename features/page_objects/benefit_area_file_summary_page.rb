@@ -4,10 +4,10 @@ class BenefitAreaFileSummaryPage < SitePrism::Page
 
   element(:delete_file, "a[href$='delete_benefit_area']")
 
-  element(:submit_button, "input[name='commit']")  
+  element(:submit_button, "input[name='commit']")
 
-  def submit(args = {})
-  	submit_button.click
+  def submit(_args = {})
+    submit_button.click
   end
 
 end

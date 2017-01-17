@@ -55,4 +55,20 @@ class App
     @last_page = BenefitAreaFileSummaryPage.new
   end
 
+  def start_outline_business_case_date_page
+    @last_page = StartOutlineBusinessCaseDatePage.new
+  end
+
+  def award_contract_date_page
+    @last_page = AwardContractDatePage.new
+  end
+
+  def start_construction_date_page
+    @last_page = StartConstructionDatePage.new
+  end
+
+  def ready_for_service_date_page
+    @last_page = ReadyForServiceDatePage.new
+  end
+
 end

@@ -57,15 +57,48 @@ Given(/^I add a location "([^"]*)"$/) do |location|
 end
 
 Given(/^I upload my benefit area file$/) do
-  @app.benefit_area_file_page.submit(
+  @app.benefit_area_file_page.submit
+
+  @app.benefit_area_file_summary_page.submit
+
+end
+
+Given(/^I enter my business case start date$/) do
+  @app.proposal_overview_page.add_important_dates.click
+  @app.start_outline_business_case_date_page.submit(
+    month: "01",
+    year: "2020"
   )
-  @app.benefit_area_file_summary_page.submit(
+
+end
+
+Given(/^I enter my award contract date$/) do
+  @app.award_contract_date_page.submit(
+    month: "01",
+    year: "2021"
   )
+
+end
+
+Given(/^I enter my construction start date$/) do
+  @app.start_construction_date_page.submit(
+    month: "01",
+    year: "2022"
+  )
+
+end
+
+Given(/^I enter my ready for service date$/) do
+  @app.ready_for_service_date_page.submit(
+    month: "01",
+    year: "2023"
+  )
+
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
-  puts @type
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
+
 end
