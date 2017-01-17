@@ -96,12 +96,30 @@ Given(/^I enter my ready for service date$/) do
 
 end
 
-# Looks for end part of ID funding_sources_step_ and clicks on that check box
+# For funding_sources, it looks for end part of ID funding_sources_step_ and clicks on that check box
 # If box is already checked then will uncheck box
 Given(/^I enter my funding sources$/) do
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
-    funding_sources: %w(internal_drainage_boards)
+    funding_sources: %w(local_levy)
+  )
+end
+
+Given(/^I enter my funding values$/) do
+  @app.funding_values_page.gia_current_year.set "1000"
+  @app.funding_values_page.gia_2015_2016.set "1000"
+  @app.funding_values_page.gia_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
+  @app.proposal_overview_page.add_earliest_start.click
+  @app.earliest_start_page.submit(
+    earlier_start: true
+  )
+  @app.earliest_date_page.submit(
+    month: "01",
+    year: "2019"
   )
 end
 

@@ -23,4 +23,6 @@ Feature: Create a new project application
       And I enter my construction start date
       And I enter my ready for service date
       And I enter my funding sources
-     Then I should see my entered details in the the proposal overview
+      And I enter my funding values
+      And I answer if the project could start sooner if grant in aid funding was made available earlier questions
+	  Then I should see my entered details in the the proposal overview

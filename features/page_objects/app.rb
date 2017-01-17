@@ -74,5 +74,17 @@ class App
   def funding_sources_page
     @last_page = FundingSourcesPage.new
   end
+
+  def funding_values_page
+    @last_page = FundingValuesPage.new
+  end
+
+  def earliest_start_page
+    @last_page = EarliestStartPage.new
+  end
+
+  def earliest_date_page
+    @last_page = EarliestDatePage.new
+  end
   
 end
