@@ -16,6 +16,8 @@ Feature: Create a new project application
       And I name my project "Flood defence test"
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending "Year_2016_2017"
+      And I add a location "ST 58198 72725"
+      And I upload my benefit area file
      Then I should see my entered details in the the proposal overview
 
 

@@ -43,4 +43,16 @@ class App
     @last_page = ProposalOverviewPage.new
   end
 
+  def location_page
+    @last_page = LocationPage.new
+  end
+
+  def benefit_area_file_page
+    @last_page = BenefitAreaFilePage.new
+  end
+
+  def benefit_area_file_summary_page
+    @last_page = BenefitAreaFileSummaryPage.new
+  end
+
 end

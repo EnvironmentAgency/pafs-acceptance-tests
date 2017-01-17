@@ -49,6 +49,20 @@ Given(/^I select financial year to stop spending "([^"]*)"$/) do |year|
   )
 end
 
+Given(/^I add a location "([^"]*)"$/) do |location|
+  @app.proposal_overview_page.add_location.click
+  @app.location_page.submit(
+    location: location.to_sym
+  )
+end
+
+Given(/^I upload my benefit area file$/) do
+  @app.benefit_area_file_page.submit(
+  )
+  @app.benefit_area_file_summary_page.submit(
+  )
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   puts @type
   @project_number = @app.proposal_overview_page.project_number.text
