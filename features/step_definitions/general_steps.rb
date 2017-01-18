@@ -157,6 +157,13 @@ Given(/^I add the standard of protection before project starts as "([^"]*)" and 
   )
 end
 
+Given(/^I enter the projects goal approach$/) do
+  @app.proposal_overview_page.add_goals.click
+  @app.approach_page.submit(
+    approach: "This is the projects approach...."
+  )
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number

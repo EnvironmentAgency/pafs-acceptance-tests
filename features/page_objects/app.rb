@@ -106,4 +106,8 @@ class App
   def standard_of_protection_after_page
     @last_page = StandardOfProtectionAfterPage.new
   end
+
+  def approach_page
+    @last_page = ApproachPage.new
+  end
 end
