@@ -164,6 +164,20 @@ Given(/^I enter the projects goal approach$/) do
   )
 end
 
+Given(/^I enter a environmental outcomes improvement$/) do
+  @app.proposal_overview_page.add_environmental_outcomes.click
+  @app.environmental_outcomes_page.submit(
+    improve: true
+  )
+  @app.surface_and_groundwater_amount_page.submit(
+    length: "100"
+  )
+  @app.improve_spa_or_sac_page.submit(
+    improve: true)
+  @app.improve_habitat_amount_page.submit(
+    amount: "100")
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number

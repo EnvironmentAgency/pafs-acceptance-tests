@@ -110,4 +110,20 @@ class App
   def approach_page
     @last_page = ApproachPage.new
   end
+
+  def environmental_outcomes_page
+    @last_page = EnvironmentalOutcomesPage.new
+  end
+
+  def surface_and_groundwater_amount_page
+    @last_page = SurfaceAndGroundwaterAmountPage.new
+  end
+
+  def improve_spa_or_sac_page
+    @last_page = ImproveSpaOrSacPage.new
+  end
+
+  def improve_habitat_amount_page
+    @last_page = ImproveHabitatAmountPage.new
+  end
 end
