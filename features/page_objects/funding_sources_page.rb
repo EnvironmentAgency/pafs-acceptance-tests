@@ -15,12 +15,11 @@ class FundingSourcesPage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
-
-    def submit(args = {})
+  def submit(args = {})
     wait_for_sources
     if args.key?(:funding_sources)
       args[:funding_sources].each do |source|
- 
+
         search_val = "funding_sources_step_#{source}"
         sources.find { |chk| chk["id"] == search_val }.click
       end
@@ -29,4 +28,4 @@ class FundingSourcesPage < SitePrism::Page
     submit_button.click
   end
 
-  end
+end

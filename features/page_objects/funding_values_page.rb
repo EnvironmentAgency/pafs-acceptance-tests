@@ -10,22 +10,20 @@ class FundingValuesPage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
-
-    def submit(args = {})
+  def submit(args = {})
     wait_for_sources
     puts sources.text
     if args.key?(:funding_values)
       args[:funding_values].each do |source|
- 
-        search_val_0 = "funding_values_step_funding_values_attributes_0_#{source}"
-        puts search_val_0
-        sources.find { |chk| chk["id"] == search_val_0 }.set "1000"
 
-        search_val_1 = "funding_values_step_funding_values_attributes_1_#{source}"
-        sources.find { |chk| chk["id"] == search_val_1 }.set "1000"
+        search_val_one = "funding_values_step_funding_values_attributes_0_#{source}"
+        sources.find { |chk| chk["id"] == search_val_one }.set "1000"
 
-        search_val_2 = "funding_values_step_funding_values_attributes_2_#{source}"
-        sources.find { |chk| chk["id"] == search_val_2 }.set "1000"
+        search_val_two = "funding_values_step_funding_values_attributes_1_#{source}"
+        sources.find { |chk| chk["id"] == search_val_two }.set "1000"
+
+        search_val_three = "funding_values_step_funding_values_attributes_2_#{source}"
+        sources.find { |chk| chk["id"] == search_val_three }.set "1000"
 
       end
     end
@@ -33,4 +31,4 @@ class FundingValuesPage < SitePrism::Page
     submit_button.click
   end
 
-  end
+end

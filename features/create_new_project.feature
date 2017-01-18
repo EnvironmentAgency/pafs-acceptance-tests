@@ -25,4 +25,5 @@ Feature: Create a new project application
       And I enter my funding sources
       And I enter my funding values
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
+      And I add my project risks
 	  Then I should see my entered details in the the proposal overview

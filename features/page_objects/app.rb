@@ -86,5 +86,17 @@ class App
   def earliest_date_page
     @last_page = EarliestDatePage.new
   end
-  
+
+  def risks_page
+    @last_page = RisksPage.new
+  end
+
+  def main_risk_page
+    @last_page = MainRiskPage.new
+  end
+
+  def flood_protection_outcomes_page
+    @last_page = FloodProtectionOutcomesPage.new
+  end
+
 end

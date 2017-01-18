@@ -123,6 +123,29 @@ Given(/^I answer if the project could start sooner if grant in aid funding was m
   )
 end
 
+# checks each box with the ID endings shown in the risks: array in brackets
+Given(/^I add my project risks$/) do
+  @app.proposal_overview_page.add_risks.click
+  @app.risks_page.submit(
+    risks: %w(tidal_flooding sea_flooding)
+  )
+  # Picks the first risk as the main risk - else picks the last risk
+  @app.main_risk_page.submit(
+    choose_first: true
+  )
+
+  @app.flood_protection_outcomes_page.submit(
+    a1: "1000",
+    a2: "100",
+    a3: "10",
+    b1: "1000",
+    b2: "100",
+    b3: "10",
+    c1: "1000",
+    c2: "100",
+    c3: "10"
+  )
+end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
