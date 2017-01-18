@@ -99,4 +99,11 @@ class App
     @last_page = FloodProtectionOutcomesPage.new
   end
 
+  def standard_of_protection_page
+    @last_page = StandardOfProtectionPage.new
+  end
+
+  def standard_of_protection_after_page
+    @last_page = StandardOfProtectionAfterPage.new
+  end
 end

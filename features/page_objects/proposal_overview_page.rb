@@ -14,6 +14,8 @@ class ProposalOverviewPage < SitePrism::Page
   element(:add_funding_source, "#project-funding_sources-content a")
   element(:add_earliest_start, "#project-earliest_start-content a")
   element(:add_risks, "#project-risks-content a")
+  element(:add_standard_of_protection, "a[href$='standard_of_protection']")
+
   element(:add_goals, "#project-approach-content a")
   element(:add_environmental_outcomes, "#project-environmental_outcomes-content a")
   element(:add_project_urgency, "#project-urgency-content a")

@@ -147,6 +147,16 @@ Given(/^I add my project risks$/) do
   )
 end
 
+Given(/^I add the standard of protection before project starts as "([^"]*)" and "([^"]*)" when project completes$/) do |before, after|
+  @app.proposal_overview_page.add_standard_of_protection.click
+  @app.standard_of_protection_page.submit(
+    option: before.to_sym
+  )
+  @app.standard_of_protection_after_page.submit(
+    option: after.to_sym
+  )
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number

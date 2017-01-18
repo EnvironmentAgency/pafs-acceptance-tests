@@ -26,4 +26,5 @@ Feature: Create a new project application
       And I enter my funding values
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
-	  Then I should see my entered details in the the proposal overview
+      And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
+	   Then I should see my entered details in the the proposal overview
