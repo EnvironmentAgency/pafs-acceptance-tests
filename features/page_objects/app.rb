@@ -162,4 +162,12 @@ class App
   def urgency_details_page
     @last_page = UrgencyDetailsPage.new
   end
+
+  def funding_calculator_page
+    @last_page = FundingCalculatorPage.new
+  end
+
+  def funding_calculator_summary_page
+    @last_page = FundingCalculatorSummaryPage.new
+  end
 end

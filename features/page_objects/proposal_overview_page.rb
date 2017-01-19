@@ -19,7 +19,7 @@ class ProposalOverviewPage < SitePrism::Page
   element(:add_goals, "#project-approach-content a")
   element(:add_environmental_outcomes, "#project-environmental_outcomes-content a")
   element(:add_project_urgency, "#project-urgency-content a")
-  element(:add_funding_calculator, "#project-funding_calculator-content al")
+  element(:add_funding_calculator, "#project-funding_calculator-content a")
 
   element(:complete_proposal, "a[href$='complete']")
 

@@ -212,7 +212,15 @@ Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
 
 end
 
+Then(/^I upload my project funding calculator file$/) do
+  @app.proposal_overview_page.add_funding_calculator.click
+  @app.funding_calculator_page.submit
+  @app.funding_calculator_summary_page.submit
+
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
+  sleep(1)
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
