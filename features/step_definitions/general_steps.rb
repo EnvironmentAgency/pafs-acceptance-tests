@@ -164,7 +164,7 @@ Given(/^I enter the projects goal approach$/) do
   )
 end
 
-Given(/^I enter a environmental outcomes improvement$/) do
+Given(/^I enter environmental outcomes improvements$/) do
   @app.proposal_overview_page.add_environmental_outcomes.click
   @app.environmental_outcomes_page.submit(
     improve: true
@@ -173,9 +173,32 @@ Given(/^I enter a environmental outcomes improvement$/) do
     length: "100"
   )
   @app.improve_spa_or_sac_page.submit(
-    improve: true)
+    improve: true
+  )
   @app.improve_habitat_amount_page.submit(
-    amount: "100")
+    amount: "100"
+  )
+  @app.improve_river_page.submit(
+    improve: true
+  )
+  @app.improve_river_amount_page.submit(
+    amount: "100"
+  )
+  @app.habitat_creation_page.submit(
+    create: true
+  )
+  @app.habitat_creation_amount_page.submit(
+    amount: "100"
+  )
+  @app.remove_fish_barrier_page.submit(
+    remove: true
+  )
+  @app.remove_eel_barrier_page.submit(
+    remove: true
+  )
+  @app.fish_or_eel_amount_page.submit(
+    amount: "100"
+  )
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do

@@ -126,4 +126,32 @@ class App
   def improve_habitat_amount_page
     @last_page = ImproveHabitatAmountPage.new
   end
+
+  def improve_river_page
+    @last_page = ImproveRiverPage.new
+  end
+
+  def improve_river_amount_page
+    @last_page = ImproveRiverAmountPage.new
+  end
+
+  def habitat_creation_page
+    @last_page = HabitatCreationPage.new
+  end
+
+  def habitat_creation_amount_page
+    @last_page = HabitatCreationAmountPage.new
+  end
+
+  def remove_fish_barrier_page
+    @last_page = RemoveFishBarrierPage.new
+  end
+
+  def remove_eel_barrier_page
+    @last_page = RemoveEelBarrierPage.new
+  end
+
+  def fish_or_eel_amount_page
+    @last_page = FishOrEelAmountPage.new
+  end
 end

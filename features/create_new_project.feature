@@ -28,5 +28,5 @@ Feature: Create a new project application
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
       And I enter the projects goal approach
-      And I enter a environmental outcomes improvement
+      And I enter environmental outcomes improvements
 	   Then I should see my entered details in the the proposal overview

@@ -1,8 +1,8 @@
-class ImproveHabitatAmountPage < SitePrism::Page
+class FishOrEelAmountPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:amount, "#improve_habitat_amount_step_improve_habitat_amount")
+  element(:amount, "#fish_or_eel_amount_step_fish_or_eel_amount")
 
   element(:submit_button, "input[name='commit']")
 
