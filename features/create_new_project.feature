@@ -29,4 +29,5 @@ Feature: Create a new project application
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
+      And I enter the project urgency as "emergency"
 	   Then I should see my entered details in the the proposal overview

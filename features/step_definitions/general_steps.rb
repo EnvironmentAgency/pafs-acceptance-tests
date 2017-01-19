@@ -201,6 +201,17 @@ Given(/^I enter environmental outcomes improvements$/) do
   )
 end
 
+Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
+  @app.proposal_overview_page.add_project_urgency.click
+  @app.urgency_page.submit(
+    option: urgency.to_sym
+  )
+  @app.urgency_details_page.submit(
+    details: "These are the urgency details"
+  )
+
+end
+
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number

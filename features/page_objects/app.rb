@@ -154,4 +154,12 @@ class App
   def fish_or_eel_amount_page
     @last_page = FishOrEelAmountPage.new
   end
+
+  def urgency_page
+    @last_page = UrgencyPage.new
+  end
+
+  def urgency_details_page
+    @last_page = UrgencyDetailsPage.new
+  end
 end
