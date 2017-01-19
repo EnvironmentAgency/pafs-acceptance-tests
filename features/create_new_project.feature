@@ -1,4 +1,4 @@
-@frontoffice @wip
+@frontoffice
 Feature: Create a new project application
   As a council
   I want to submit a proposal for flood and coastal erosion risk management project funding
@@ -9,7 +9,7 @@ Feature: Create a new project application
       And I have a valid username and password
 
   @happy_path
-  Scenario: Create a new proposal overview with Grant in Aid and Levy funding
+  Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
     Given I create a new proposal
       And I request Grant in Aid funding
       And I request Local Levy funding
@@ -31,4 +31,5 @@ Feature: Create a new project application
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
       And I upload my project funding calculator file
-	   Then I should see my entered details in the the proposal overview
+	   When I complete my proposal
+     Then I should see that my proposal has been sent for review

@@ -170,4 +170,8 @@ class App
   def funding_calculator_summary_page
     @last_page = FundingCalculatorSummaryPage.new
   end
+
+  def confirm_page
+    @last_page = ConfirmPage.new
+  end
 end
