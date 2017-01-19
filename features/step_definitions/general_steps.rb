@@ -237,3 +237,12 @@ Then(/^I should see that my proposal has been sent for review$/) do
   expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 
 end
+
+When(/^I return to the proposal overview page$/) do
+  @app.grant_in_aid_funding_page.user_bar.projects.click
+end
+
+Then(/^its status is draft$/) do
+  @status = @app.proposal_overview_page.first_project.text
+  expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
+end

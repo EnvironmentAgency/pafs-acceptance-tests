@@ -33,3 +33,14 @@ Feature: Create a new project application
       And I upload my project funding calculator file
 	   When I complete my proposal
      Then I should see that my proposal has been sent for review
+
+     @wip
+     Scenario: Created proposal is in draft status
+    Given I create a new proposal
+      And I request Grant in Aid funding
+      And I request Local Levy funding
+      And I name my project "Flood defence test"
+      And I select project type "change_or_new_asset"
+      And I select financial year to stop spending "Year_2016_2017"
+     When I return to the proposal overview page
+     Then its status is draft
