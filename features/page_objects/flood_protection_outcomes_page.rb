@@ -1,3 +1,6 @@
+# There is little we can to about the line length. We always prefer to slect
+# by ID, and they are what they are!
+# rubocop:disable Metrics/LineLength
 class FloodProtectionOutcomesPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
@@ -14,6 +17,10 @@ class FloodProtectionOutcomesPage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
+  # There is now value in attempting to break up this method, it would only make
+  # things more complex rather than simplify them. Hence we disable the
+  # following cops
+  # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def submit(args = {})
     a1.set(args[:a1]) if args.key?(:a1)
     a2.set(args[:a2]) if args.key?(:a2)
@@ -27,5 +34,7 @@ class FloodProtectionOutcomesPage < SitePrism::Page
 
     submit_button.click
   end
+  # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
 end
+# rubocop:enable Metrics/LineLength

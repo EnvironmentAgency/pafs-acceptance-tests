@@ -147,6 +147,7 @@ Given(/^I add my project risks$/) do
   )
 end
 
+# rubocop:disable Metrics/LineLength
 Given(/^I add the standard of protection before project starts as "([^"]*)" and "([^"]*)" when project completes$/) do |before, after|
   @app.proposal_overview_page.add_standard_of_protection.click
   @app.standard_of_protection_page.submit(
@@ -156,6 +157,7 @@ Given(/^I add the standard of protection before project starts as "([^"]*)" and 
     option: after.to_sym
   )
 end
+# rubocop:enable Metrics/LineLength
 
 Given(/^I enter the projects goal approach$/) do
   @app.proposal_overview_page.add_goals.click
@@ -164,6 +166,7 @@ Given(/^I enter the projects goal approach$/) do
   )
 end
 
+# rubocop:disable Metrics/BlockLength
 Given(/^I enter environmental outcomes improvements$/) do
   @app.proposal_overview_page.add_environmental_outcomes.click
   @app.environmental_outcomes_page.submit(
@@ -200,6 +203,7 @@ Given(/^I enter environmental outcomes improvements$/) do
     amount: "100"
   )
 end
+# rubocop:enable Metrics/BlockLength
 
 Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.proposal_overview_page.add_project_urgency.click

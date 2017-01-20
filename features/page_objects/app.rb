@@ -1,6 +1,7 @@
 # Represents all pages in the application. Was created to avoid needing to
 # create individual instances of each page throughout the steps.
 # https://github.com/natritmeyer/site_prism#epilogue
+# rubocop:disable Metrics/ClassLength
 class App
   # Using an attr_reader automatically gives us a my_app.last_page method
   attr_reader :last_page
@@ -175,3 +176,4 @@ class App
     @last_page = ConfirmPage.new
   end
 end
+# rubocop:enable Metrics/ClassLength
