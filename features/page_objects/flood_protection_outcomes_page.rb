@@ -17,7 +17,7 @@ class FloodProtectionOutcomesPage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
-  # There is now value in attempting to break up this method, it would only make
+  # There is no value in attempting to break up this method, it would only make
   # things more complex rather than simplify them. Hence we disable the
   # following cops
   # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity

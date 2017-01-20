@@ -12,7 +12,7 @@ class FundingValuesPage < SitePrism::Page
 
   def submit(args = {})
     wait_for_sources
-    puts sources.text
+
     if args.key?(:funding_values)
       args[:funding_values].each do |source|
 
