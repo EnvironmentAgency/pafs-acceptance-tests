@@ -8,7 +8,7 @@ class BenefitAreaFilePage < SitePrism::Page
 
   def submit(_args = {})
     # Capybara attach file method
-    attach_file(choose_file[:name], File.absolute_path("./features/support/Map upload.PNG"))
+    attach_file(choose_file[:name], File.absolute_path("./features/support/map_upload.png"))
     submit_button.click
   end
 
