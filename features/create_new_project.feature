@@ -8,7 +8,7 @@ Feature: Create a new project application
     Given I am an external user
       And I have a valid username and password
 
-  @happy_path
+  @happypath
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
     Given I create a new proposal
       And I request Grant in Aid funding
@@ -34,7 +34,7 @@ Feature: Create a new project application
 	   When I complete my proposal
      Then I should see that my proposal has been sent for review
 
-  @happy_path
+  @happypath
   Scenario: Created proposal is in draft status
     Given I create a new proposal
       And I request Grant in Aid funding
