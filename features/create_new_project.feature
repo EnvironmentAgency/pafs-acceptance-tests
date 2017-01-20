@@ -34,8 +34,8 @@ Feature: Create a new project application
 	   When I complete my proposal
      Then I should see that my proposal has been sent for review
 
-     @wip
-     Scenario: Created proposal is in draft status
+  @happy_path
+  Scenario: Created proposal is in draft status
     Given I create a new proposal
       And I request Grant in Aid funding
       And I request Local Levy funding
