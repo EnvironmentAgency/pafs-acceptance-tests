@@ -12,9 +12,12 @@ class ProjectTypePage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
+  # Essentially in this page we are selecting a checkbox. For us this was best
+  # represented by a case statement however this breaks our rubocop rules hence
+  # the exception added here.
+  # rubocop:disable Metrics/CyclomaticComplexity
   def submit(args = {})
     case args[:option]
-
     # Changing the current standard of service....
     when :change_or_new_asset
       defence.click
@@ -40,5 +43,6 @@ class ProjectTypePage < SitePrism::Page
 
     submit_button.click
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
 end

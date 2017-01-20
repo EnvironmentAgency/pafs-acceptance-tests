@@ -54,6 +54,6 @@ Metrics/AbcSize:
 
 # We felt as a team that the default size of 6 was too low, and blocked what to
 # us are sound methods which would not add any value if broken up. In this
-# project we've agreed to up this to 8.
+# project we've agreed to up this to 7.
 Metrics/CyclomaticComplexity:
-  Max: 8
+  Max: 7
