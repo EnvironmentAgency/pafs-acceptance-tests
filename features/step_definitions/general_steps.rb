@@ -101,7 +101,7 @@ end
 Given(/^I enter my funding sources$/) do
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
-    funding_sources: %w(local_levy)
+    funding_sources: %w[local_levy]
   )
 end
 
@@ -127,7 +127,7 @@ end
 Given(/^I add my project risks$/) do
   @app.proposal_overview_page.add_risks.click
   @app.risks_page.submit(
-    risks: %w(tidal_flooding sea_flooding)
+    risks: %w[tidal_flooding sea_flooding]
   )
   # Picks the first risk as the main risk - else picks the last risk
   @app.main_risk_page.submit(
