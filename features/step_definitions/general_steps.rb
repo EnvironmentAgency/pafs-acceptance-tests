@@ -11,7 +11,7 @@ Given(/^I have a valid username and password$/) do
   # Back office login page
   @app.login_page.submit(
     email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"],
+    password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
   )
 end
 
@@ -101,7 +101,7 @@ end
 Given(/^I enter my funding sources$/) do
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
-    funding_sources: %w[local_levy]
+    funding_sources: %w[fcerm_gia]
   )
 end
 

@@ -2,8 +2,8 @@ class LocalLevyFundingPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:local_levy_yes, "#bootstrap_local_levy_true")
-  element(:local_levy_no, "#bootstrap_local_levy_false")
+  element(:local_levy_yes, "#funding_sources_step_local_levy")
+  element(:local_levy_no, "#funding_sources_step_local_levy")
 
   element(:submit_button, "input[name='commit']")
 

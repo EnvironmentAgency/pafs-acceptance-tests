@@ -2,7 +2,7 @@ class ProposalOverviewPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:first_project, "tr:nth-child(1) td:nth-child(4)")
+  element(:first_project, "tr:nth-child(1) td:nth-child(5)")
 
   element(:project_number, ".project-overview-head dd:nth-child(2)")
   element(:project_name, "#project-project_name-content p")

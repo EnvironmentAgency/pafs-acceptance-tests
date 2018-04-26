@@ -2,8 +2,8 @@ class GrantInAidFundingPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:gia_yes, "#bootstrap_fcerm_gia_true")
-  element(:gia_no, "#bootstrap_fcerm_gia_false")
+  element(:gia_yes, "#funding_sources_step_fcerm_gia")
+  element(:gia_no, "#funding_sources_step_fcerm_gia")
 
   element(:submit_button, "input[name='commit']")
 
