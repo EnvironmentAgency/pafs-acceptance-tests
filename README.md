@@ -40,6 +40,19 @@ Into that file you'll need to add the `app_host:` entry, with the url of the FRA
 
 If left as that by default when **Quke** is executed it will run against your selected environment using the headless browser **PhantomJS**.
 
+### Custom PAFS config
+
+Recently we have needed to add special logic for running the tests in Linux environments. When run on Linux tests are failing if the an element is 'off the page' i.e. you would need to scroll to interact with it. Because of this when running tests in a Linux environment e.g. Ubuntu you'll need to add the following to the `.config.yml` (the sizes can vary, but ensure its large enough for all elements on all pages to be visible).
+
+```yaml
+custom:
+  window_size:
+    width: 1000
+    height: 2000
+```
+
+The project now includes logic to look for this and if present will resize the window accordingly. Ideally this situation should be periodically tested to see if this workaround is still required.
+
 ### Back office
 
 The project contains logic to automatically determine the URL to the back office, by assuming `app_host:` is the front office URL for one of our standard environments (development, QA, pre-prod or production).
