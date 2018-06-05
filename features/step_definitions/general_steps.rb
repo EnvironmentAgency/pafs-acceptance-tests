@@ -236,9 +236,9 @@ When(/^I complete my proposal$/) do
 
 end
 
-Then(/^I should see that my proposal has been sent for review$/) do
+Then(/^I should see that my proposal is under review$/) do
   expect(@app.confirm_page).to have_project_number
-  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
+  expect(@app.proposal_overview_page).to have_text("Proposal under review")
 
 end
 

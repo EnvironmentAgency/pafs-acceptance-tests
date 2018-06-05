@@ -30,7 +30,7 @@ Feature: Create a new project application
       And I enter the project urgency as "emergency"
       And I upload my project funding calculator file
 	   When I complete my proposal
-     Then I should see that my proposal has been sent for review
+     Then I should see that my proposal is under review
 
   @happypath
   Scenario: Created proposal is in draft status
