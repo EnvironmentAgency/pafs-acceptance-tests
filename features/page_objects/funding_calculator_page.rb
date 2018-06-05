@@ -8,7 +8,7 @@ class FundingCalculatorPage < SitePrism::Page
 
   def submit(_args = {})
     # Capybara attach file method
-    attach_file(choose_file[:name], File.absolute_path("./features/support/wrington_pf_calc_14jan14.xlsx"))
+    attach_file(choose_file[:name], File.absolute_path("./features/support/LIT_9160_97331cOM4TEST.xlsx"))
     submit_button.click
   end
 
