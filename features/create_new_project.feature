@@ -11,9 +11,9 @@ Feature: Create a new project application
   @happypath
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
     Given I create a new proposal
-      And I name my project "Flood defence test"
+      And I enter a project name
       And I select project type "change_or_new_asset"
-      And I select financial year to stop spending "Year_2018_2019"
+      And I select financial year to stop spending "Year_2019_2020"
       And I add a location "ST 58198 72725"
       And I upload my benefit area file
       And I enter my business case start date
@@ -37,6 +37,6 @@ Feature: Create a new project application
     Given I create a new proposal
       And I name my project "Flood defence test"
       And I select project type "change_or_new_asset"
-      And I select financial year to stop spending "Year_2018_2019"
+      And I select financial year to stop spending "Year_2019_2020"
      When I return to the proposal overview page
      Then its status is draft

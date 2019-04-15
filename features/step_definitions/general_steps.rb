@@ -31,9 +31,10 @@ Given(/^I request Local Levy funding$/) do
   )
 end
 
-Given(/^I name my project "([^"]*)"$/) do |name|
+Given(/^I enter a project name$/) do
+  newname = "projectname"+"2019-04-15"  # (Time.now.to_i)
   @app.project_name_page.submit(
-    project_name: name.to_sym
+    project_name: newname.to_sym
   )
 end
 
