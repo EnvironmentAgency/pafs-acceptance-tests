@@ -35,7 +35,7 @@ Feature: Create a new project application
   @happypath
   Scenario: Created proposal is in draft status
     Given I create a new proposal
-      And I name my project "Flood defence test"
+      And I enter a project name
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending "Year_2019_2020"
      When I return to the proposal overview page
