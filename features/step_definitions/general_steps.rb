@@ -102,18 +102,119 @@ end
 
 # For funding_sources, it looks for end part of ID funding_sources_step_ and clicks on that check box
 # If box is already checked then will uncheck box
-Given(/^I enter my funding sources$/) do
+Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
+
+  @fundsource = funding_source
+
+  funding_source_slug = case funding_source
+  when "Grant_in_aid"
+    "fcerm_gia"
+  when "Local_Levy"
+    "local_levy"
+  when "Public_Sector"
+    "public_contributions"
+  when "Private_Sector"
+    "private_contributions"
+  when "Contributions_from_others"
+    "other_ea_contributions"
+  when "Growth_Funding"
+    "growth_funding"
+  when "Internal_Drainage"
+    "internal_drainage_boards"
+  when "Other_Not_Identifed"
+    "not_yet_identified"
+  else
+    fail "Unknown funding source"
+  end
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
-    funding_sources: %w[fcerm_gia]
+      funding_sources: [funding_source_slug]
   )
 end
 
+Given(/^I enter sector contibutors$/) do
+
+  if @fundsource == "Public_Sector"
+    @app.funding_public_sector_contributors_page.public_contributors_names.set(
+        "Public Test Council"
+    )
+    @app.funding_public_sector_contributors_page.submit_button.click
+  end
+
+  if @fundsource == "Private_Sector"
+    @app.funding_private_sector_contributors_page.private_contributors_names.set(
+        "Private Investment Compnay"
+    )
+    @app.funding_private_sector_contributors_page.submit_button.click
+  end
+
+  if @fundsource == "Contributions_from_others"
+  @app.funding_other_sector_contributors_page.other_contributors_names.set(
+      "Other Contribution Investment Compnay"
+  )
+  @app.funding_other_sector_contributors_page.submit_button.click
+  end
+
+end
+
 Given(/^I enter my funding values$/) do
-  @app.funding_values_page.gia_current_year.set "1000"
-  @app.funding_values_page.gia_2015_2016.set "1000"
-  @app.funding_values_page.gia_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
+
+  if @fundsource == "Grant_in_aid"
+    @app.funding_values_page.gia_current_year.set "1000"
+    @app.funding_values_page.gia_2015_2016.set "1000"
+    @app.funding_values_page.gia_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Local_Levy"
+    @app.funding_values_page.levy_current_year.set "1000"
+    @app.funding_values_page.levy_2015_2016.set "1000"
+    @app.funding_values_page.levy_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Public_Sector"
+    @app.funding_values_page.public_current_year.set "1000"
+    @app.funding_values_page.public_2015_2016.set "1000"
+    @app.funding_values_page.public_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Private_Sector"
+    @app.funding_values_page.private_current_year.set "1000"
+    @app.funding_values_page.private_2015_2016.set "1000"
+    @app.funding_values_page.private_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Contributions_from_others"
+    @app.funding_values_page.ea_current_year.set "1000"
+    @app.funding_values_page.ea_2015_2016.set "1000"
+    @app.funding_values_page.ea_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Growth_Funding"
+    @app.funding_values_page.growth_current_year.set "1000"
+    @app.funding_values_page.growth_2015_2016.set "1000"
+    @app.funding_values_page.growth_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Internal_Drainage"
+    @app.funding_values_page.drain_current_year.set "1000"
+    @app.funding_values_page.drain_2015_2016.set "1000"
+    @app.funding_values_page.drain_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
+  if @fundsource == "Other_Not_Identifed"
+    @app.funding_values_page.notyet_current_year.set "1000"
+    @app.funding_values_page.notyet_2015_2016.set "1000"
+    @app.funding_values_page.notyet_2016_2017.set "1000"
+    @app.funding_values_page.submit_button.click
+  end
+
 end
 
 Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
