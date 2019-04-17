@@ -8,7 +8,7 @@ Feature: Create a new project application
     Given I am an external user
       And I have a valid username and password
 
-  @happypath @smoketest
+  @happypath @smoketest @smoke1
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
     Given I create a new proposal
       And I enter a project name
