@@ -104,11 +104,7 @@ end
 # If box is already checked then will uncheck box
 Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
 
-
-  puts funding_source
   @fundsource = funding_source
-
-  puts @fundsource
 
   funding_source_slug = case funding_source
   when "Grant_in_aid"
@@ -130,9 +126,6 @@ Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
   else
     fail "Unknown funding source"
   end
-
-  puts [funding_source_slug]
-
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
       funding_sources: [funding_source_slug]
