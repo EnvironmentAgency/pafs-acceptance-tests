@@ -124,13 +124,13 @@ Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
                         when "Other_Not_Identifed"
                           "not_yet_identified"
                         else
-                          fail "Unknown funding source"
+                          "Unknown funding source"
                         end
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-      funding_sources: [funding_source_slug]
-  )
-  
+                        @app.proposal_overview_page.add_funding_source.click
+                        @app.funding_sources_page.submit(
+                            funding_sources: [funding_source_slug]
+                        )
+
 end
 
 Given(/^I enter sector contibutors$/) do
@@ -144,14 +144,14 @@ Given(/^I enter sector contibutors$/) do
 
   if @fundsource == "Private_Sector"
       @app.funding_private_sector_contributors_page.private_contributors_names.set(
-        "Private Investment Compnay"
+        "Private Investment Company"
       )
       @app.funding_private_sector_contributors_page.submit_button.click
   end
 
   if @fundsource == "Contributions_from_others"
       @app.funding_other_sector_contributors_page.other_contributors_names.set(
-        "Other Contribution Investment Compnay"
+        "Other Contribution Investment Company"
       )
       @app.funding_other_sector_contributors_page.submit_button.click
   end
@@ -227,6 +227,7 @@ Given(/^I answer if the project could start sooner if grant in aid funding was m
     month: "01",
     year: "2019"
   )
+
 end
 
 # checks each box with the ID endings shown in the risks: array in brackets
@@ -251,6 +252,7 @@ Given(/^I add my project risks$/) do
     c2: "100",
     c3: "10"
   )
+
 end
 
 # rubocop:disable Metrics/LineLength
@@ -262,6 +264,7 @@ Given(/^I add the standard of protection before project starts as "([^"]*)" and 
   @app.standard_of_protection_after_page.submit(
     option: after.to_sym
   )
+
 end
 # rubocop:enable Metrics/LineLength
 
@@ -270,6 +273,7 @@ Given(/^I enter the projects goal approach$/) do
   @app.approach_page.submit(
     approach: "This is the projects approach...."
   )
+
 end
 
 # rubocop:disable Metrics/BlockLength
@@ -308,6 +312,7 @@ Given(/^I enter environmental outcomes improvements$/) do
   @app.fish_or_eel_amount_page.submit(
     amount: "100"
   )
+
 end
 # rubocop:enable Metrics/BlockLength
 
@@ -350,9 +355,11 @@ end
 
 When(/^I return to the proposal overview page$/) do
   @app.grant_in_aid_funding_page.user_bar.projects.click
+
 end
 
 Then(/^its status is draft$/) do
   @status = @app.proposal_overview_page.first_project.text
   expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
+
 end
