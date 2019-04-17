@@ -7,7 +7,7 @@ class RisksPage < SitePrism::Page
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})
-    #wait_for_sources
+    # wait_for_sources
     if args.key?(:risks)
       args[:risks].each do |source|
 

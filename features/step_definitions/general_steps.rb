@@ -107,29 +107,29 @@ Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
   @fundsource = funding_source
 
   funding_source_slug = case funding_source
-  when "Grant_in_aid"
-    "fcerm_gia"
-  when "Local_Levy"
-    "local_levy"
-  when "Public_Sector"
-    "public_contributions"
-  when "Private_Sector"
-    "private_contributions"
-  when "Contributions_from_others"
-    "other_ea_contributions"
-  when "Growth_Funding"
-    "growth_funding"
-  when "Internal_Drainage"
-    "internal_drainage_boards"
-  when "Other_Not_Identifed"
-    "not_yet_identified"
-  else
-    fail "Unknown funding source"
+    when "Grant_in_aid"
+      "fcerm_gia"
+    when "Local_Levy"
+      "local_levy"
+    when "Public_Sector"
+      "public_contributions"
+    when "Private_Sector"
+      "private_contributions"
+    when "Contributions_from_others"
+      "other_ea_contributions"
+    when "Growth_Funding"
+      "growth_funding"
+    when "Internal_Drainage"
+      "internal_drainage_boards"
+    when "Other_Not_Identifed"
+      "not_yet_identified"
+    else
+      fail "Unknown funding source"
   end
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
+    @app.proposal_overview_page.add_funding_source.click
+    @app.funding_sources_page.submit(
       funding_sources: [funding_source_slug]
-  )
+    )
 end
 
 Given(/^I enter sector contibutors$/) do
@@ -149,10 +149,10 @@ Given(/^I enter sector contibutors$/) do
   end
 
   if @fundsource == "Contributions_from_others"
-  @app.funding_other_sector_contributors_page.other_contributors_names.set(
+    @app.funding_other_sector_contributors_page.other_contributors_names.set(
       "Other Contribution Investment Compnay"
-  )
-  @app.funding_other_sector_contributors_page.submit_button.click
+    )
+    @app.funding_other_sector_contributors_page.submit_button.click
   end
 
 end
