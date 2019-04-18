@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "quke", "~> 0.10.0"
+gem "quke", "~> 0.6.0"
 
 # We use rubocop in all our Ruby based projects to try and ensure consistency
 # in the code we write across all our projects.
