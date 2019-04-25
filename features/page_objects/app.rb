@@ -188,7 +188,7 @@ class App
     @last_page = FundingCalculatorSummaryPage.new
   end
 
-  def Proposal_under_review_page
+  def proposal_under_review_page
     @last_page = ProposalUnderReviewPage.new
   end
 

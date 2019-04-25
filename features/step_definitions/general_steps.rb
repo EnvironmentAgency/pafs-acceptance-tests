@@ -5,36 +5,33 @@ Given(/^I am an external user$/) do
   # @app.front_office_home_page.start_button.click
 end
 
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
 Given(/^I have a valid rma username and password$/) do
-
-  # Back office login page
   @app.login_page.submit(
-  	email: "delaware.autouser+1@gmail.com",
+    email: "delaware.autouser+1@gmail.com",
     password: "5noWman1"
-    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
   )
 end
 
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
 Given(/^I have a valid pso username and password$/) do
-
-  # Back office login page
   @app.login_page.submit(
-  	email: "delaware.autouser+2@gmail.com",
+    email: "delaware.autouser+2@gmail.com",
     password: "5noWman1"
-    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
   )
 end
 
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
 Given(/^I have a valid pso_rma username and password$/) do
-
-  # Back office login page
   @app.login_page.submit(
-  	email: "delaware.autouser+3@gmail.com",
+    email: "delaware.autouser+3@gmail.com",
     password: "5noWman1"
-    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
   )
 end
 
@@ -44,7 +41,7 @@ end
 
 Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   @app.project_area_selection_page.submit(
-  areasource: area_source
+    areasource: area_source
   )
 end
 
@@ -362,7 +359,6 @@ Then(/^I should see my entered details in the the proposal overview$/) do
 end
 
 When(/^I complete my proposal$/) do
-	binding.pry
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
 end
@@ -385,4 +381,3 @@ Then(/^its status is draft$/) do
   @status = @app.proposal_overview_page.first_project.text
   expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
 end
-
