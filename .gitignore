@@ -7,7 +7,7 @@
 vendor/overcommit_bundle
 
 # Ignore ruby_mine folder
-/.idea
+.idea
 
 # Ignore VSCode's folder
 /.vscode
