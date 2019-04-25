@@ -23,6 +23,8 @@ class ProposalOverviewPage < SitePrism::Page
   element(:add_project_urgency, "#project-urgency-content a")
   element(:add_funding_calculator, "#project-funding_calculator-content a")
 
+  element(:revert_to_draft, "#[href$='Revert to draft']")
+
   element(:complete_proposal, "a[href$='complete']")
 
   def submit(_args = {})

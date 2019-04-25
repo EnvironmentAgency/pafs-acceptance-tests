@@ -3,20 +3,49 @@ Given(/^I am an external user$/) do
   @app = App.new
   @app.front_office_home_page.load
   # @app.front_office_home_page.start_button.click
-
 end
 
-Given(/^I have a valid username and password$/) do
+Given(/^I have a valid rma username and password$/) do
 
   # Back office login page
   @app.login_page.submit(
-    email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+  	email: "delaware.autouser+1@gmail.com",
+    password: "5noWman1"
+    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+  )
+end
+
+Given(/^I have a valid pso username and password$/) do
+
+  # Back office login page
+  @app.login_page.submit(
+  	email: "delaware.autouser+2@gmail.com",
+    password: "5noWman1"
+    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+  )
+end
+
+Given(/^I have a valid pso_rma username and password$/) do
+
+  # Back office login page
+  @app.login_page.submit(
+  	email: "delaware.autouser+3@gmail.com",
+    password: "5noWman1"
+    #email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+    #password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
   )
 end
 
 Given(/^I create a new proposal$/) do
   @app.projects_page.create_proposal.click
+end
+
+Given(/^I selected a project area "([^"]*)"$/) do |area_source|
+  @app.project_area_selection_page.submit(
+  areasource: area_source
+  )
 end
 
 Given(/^I request Grant in Aid funding$/) do
@@ -62,9 +91,7 @@ end
 
 Given(/^I upload my benefit area file$/) do
   @app.benefit_area_file_page.submit
-
   @app.benefit_area_file_summary_page.submit
-
 end
 
 Given(/^I enter my business case start date$/) do
@@ -73,7 +100,6 @@ Given(/^I enter my business case start date$/) do
     month: "01",
     year: "2020"
   )
-
 end
 
 Given(/^I enter my award contract date$/) do
@@ -81,7 +107,6 @@ Given(/^I enter my award contract date$/) do
     month: "01",
     year: "2021"
   )
-
 end
 
 Given(/^I enter my construction start date$/) do
@@ -89,7 +114,6 @@ Given(/^I enter my construction start date$/) do
     month: "01",
     year: "2022"
   )
-
 end
 
 Given(/^I enter my ready for service date$/) do
@@ -97,7 +121,6 @@ Given(/^I enter my ready for service date$/) do
     month: "01",
     year: "2023"
   )
-
 end
 
 # For funding_sources, it looks for end part of ID funding_sources_step_ and clicks on that check box
@@ -130,7 +153,6 @@ Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
                         @app.funding_sources_page.submit(
                             funding_sources: [funding_source_slug]
                         )
-
 end
 
 Given(/^I enter sector contibutors$/) do
@@ -155,7 +177,6 @@ Given(/^I enter sector contibutors$/) do
       )
       @app.funding_other_sector_contributors_page.submit_button.click
   end
-
 end
 
 Given(/^I enter my funding values$/) do
@@ -215,7 +236,6 @@ Given(/^I enter my funding values$/) do
     @app.funding_values_page.notyet_2016_2017.set "1000"
     @app.funding_values_page.submit_button.click
   end
-
 end
 
 Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
@@ -227,7 +247,6 @@ Given(/^I answer if the project could start sooner if grant in aid funding was m
     month: "01",
     year: "2019"
   )
-
 end
 
 # checks each box with the ID endings shown in the risks: array in brackets
@@ -252,7 +271,6 @@ Given(/^I add my project risks$/) do
     c2: "100",
     c3: "10"
   )
-
 end
 
 # rubocop:disable Metrics/LineLength
@@ -264,7 +282,6 @@ Given(/^I add the standard of protection before project starts as "([^"]*)" and 
   @app.standard_of_protection_after_page.submit(
     option: after.to_sym
   )
-
 end
 # rubocop:enable Metrics/LineLength
 
@@ -273,7 +290,6 @@ Given(/^I enter the projects goal approach$/) do
   @app.approach_page.submit(
     approach: "This is the projects approach...."
   )
-
 end
 
 # rubocop:disable Metrics/BlockLength
@@ -312,7 +328,6 @@ Given(/^I enter environmental outcomes improvements$/) do
   @app.fish_or_eel_amount_page.submit(
     amount: "100"
   )
-
 end
 # rubocop:enable Metrics/BlockLength
 
@@ -324,42 +339,49 @@ Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.urgency_details_page.submit(
     details: "These are the urgency details"
   )
+end
 
+Given(/^I return to the overview page$/) do
+  @app.proposal_under_review_page.return_to_the_proposal_overview_page.click
+end
+
+Given(/^I revert to draft$/) do
+  @app.proposal_overview_page.revert_to_draft.click
 end
 
 Then(/^I upload my project funding calculator file$/) do
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit
   @app.funding_calculator_summary_page.submit
-
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
-
 end
 
 When(/^I complete my proposal$/) do
+	binding.pry
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
+end
 
+Then(/^I should see that my proposal is sent for review$/) do
+  expect(@app.confirm_page).to have_project_number
+  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
 Then(/^I should see that my proposal is under review$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal under review")
-
 end
 
 When(/^I return to the proposal overview page$/) do
   @app.grant_in_aid_funding_page.user_bar.projects.click
-
 end
 
 Then(/^its status is draft$/) do
   @status = @app.proposal_overview_page.first_project.text
   expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
-
 end
