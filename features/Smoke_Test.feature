@@ -4,13 +4,11 @@ Feature: Create a new project application
   I want to submit a proposal for flood and coastal erosion risk management project funding
   So that my local area can have improved protection from flooding
 
-  Background:
-    Given I am an external user
-      And I have a valid username and password
-
   @smoketest @regression
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
-    Given I create a new proposal
+    Given I am an external user
+      And I have a valid rma username and password
+      And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -34,7 +32,9 @@ Feature: Create a new project application
 
   @smoketest @regression
   Scenario: Created proposal is in draft status
-    Given I create a new proposal
+      Given I am an external user
+      And I have a valid rma username and password
+      And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
