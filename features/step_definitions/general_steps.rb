@@ -31,9 +31,10 @@ Given(/^I request Local Levy funding$/) do
   )
 end
 
-Given(/^I name my project "([^"]*)"$/) do |name|
+Given(/^I enter a project name$/) do
+  newname = "Project_Name_#{Time.now.to_i}"
   @app.project_name_page.submit(
-    project_name: name.to_sym
+    project_name: newname.to_sym
   )
 end
 
@@ -43,9 +44,12 @@ Given(/^I select project type "([^"]*)"$/) do |action|
   )
 end
 
-Given(/^I select financial year to stop spending "([^"]*)"$/) do |year|
+Given(/^I select financial year to stop spending$/) do
+  current_year = Time.now.year
+  next_year = current_year + 1
+  financial_year = "Year_#{current_year}_#{next_year}"
   @app.project_year_page.submit(
-    option: year.to_sym
+    option: financial_year.to_sym
   )
 end
 
