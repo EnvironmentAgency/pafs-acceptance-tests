@@ -3,20 +3,53 @@ Given(/^I am an external user$/) do
   @app = App.new
   @app.front_office_home_page.load
   # @app.front_office_home_page.start_button.click
-
 end
 
-Given(/^I have a valid username and password$/) do
+# Given(/^I have a valid "([^"]*)" username and password$/) do |area|
+#   @app.login_page.submit(
+#     email: Quke::Quke.config.custom[area]["accounts"]["pafs_user"]["username"],
+#     ppassword: Quke::Quke.config.custom[area]["accounts"]["pafs_user"]["password"]
+#   )
+# end
 
-  # Back office login page
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+Given(/^I have a valid rma username and password$/) do
   @app.login_page.submit(
-    email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-    password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+    email: "delaware.autouser+1@gmail.com",
+    password: "5noWman1"
+  )
+end
+
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+Given(/^I have a valid pso username and password$/) do
+  @app.login_page.submit(
+    email: "delaware.autouser+2@gmail.com",
+    password: "5noWman1"
+  )
+end
+
+# Back office login page
+# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
+# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
+Given(/^I have a valid dual_area_user username and password$/) do
+  @app.login_page.submit(
+    email: "delaware.autouser+3@gmail.com",
+    password: "5noWman1"
   )
 end
 
 Given(/^I create a new proposal$/) do
   @app.projects_page.create_proposal.click
+end
+
+Given(/^I selected a project area "([^"]*)"$/) do |areasource|
+  @app.project_area_selection_page.submit(
+    area_source: areasource
+  )
 end
 
 Given(/^I request Grant in Aid funding$/) do
@@ -62,9 +95,7 @@ end
 
 Given(/^I upload my benefit area file$/) do
   @app.benefit_area_file_page.submit
-
   @app.benefit_area_file_summary_page.submit
-
 end
 
 Given(/^I enter my business case start date$/) do
@@ -73,7 +104,6 @@ Given(/^I enter my business case start date$/) do
     month: "01",
     year: "2020"
   )
-
 end
 
 Given(/^I enter my award contract date$/) do
@@ -81,7 +111,6 @@ Given(/^I enter my award contract date$/) do
     month: "01",
     year: "2021"
   )
-
 end
 
 Given(/^I enter my construction start date$/) do
@@ -89,7 +118,6 @@ Given(/^I enter my construction start date$/) do
     month: "01",
     year: "2022"
   )
-
 end
 
 Given(/^I enter my ready for service date$/) do
@@ -97,121 +125,147 @@ Given(/^I enter my ready for service date$/) do
     month: "01",
     year: "2023"
   )
-
 end
 
-# For funding_sources, it looks for end part of ID funding_sources_step_ and clicks on that check box
-# If box is already checked then will uncheck box
-Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
-
-  @fundsource = funding_source
-
-  funding_source_slug = case funding_source
-                        when "Grant_in_aid"
-                          "fcerm_gia"
-                        when "Local_Levy"
-                          "local_levy"
-                        when "Public_Sector"
-                          "public_contributions"
-                        when "Private_Sector"
-                          "private_contributions"
-                        when "Contributions_from_others"
-                          "other_ea_contributions"
-                        when "Growth_Funding"
-                          "growth_funding"
-                        when "Internal_Drainage"
-                          "internal_drainage_boards"
-                        when "Other_Not_Identifed"
-                          "not_yet_identified"
-                        else
-                          "Unknown funding source"
-                        end
+Given(/^I enter my funding sources for grant in aid$/) do
+  funding_source_slug = "fcerm_gia"
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
     funding_sources: [funding_source_slug]
   )
 end
 
-Given(/^I enter sector contibutors$/) do
-
-  if @fundsource == "Public_Sector"
-    @app.funding_public_sector_contributors_page.public_contributors_names.set(
-      "Public Test Council"
-    )
-    @app.funding_public_sector_contributors_page.submit_button.click
-  end
-
-  if @fundsource == "Private_Sector"
-    @app.funding_private_sector_contributors_page.private_contributors_names.set(
-      "Private Investment Compnay"
-    )
-    @app.funding_private_sector_contributors_page.submit_button.click
-  end
-
-  if @fundsource == "Contributions_from_others"
-    @app.funding_other_sector_contributors_page.other_contributors_names.set(
-      "Other Contribution Investment Compnay"
-    )
-    @app.funding_other_sector_contributors_page.submit_button.click
-  end
+Given(/^I enter my funding sources for local levy$/) do
+  funding_source_slug = "local_levy"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
 end
 
-Given(/^I enter my funding values$/) do # rubocop:disable Metrics/BlockLength
-  if @fundsource == "Grant_in_aid"
-    @app.funding_values_page.gia_current_year.set "1000"
-    @app.funding_values_page.gia_2015_2016.set "1000"
-    @app.funding_values_page.gia_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for public sector$/) do
+  funding_source_slug = "public_contributions"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Local_Levy"
-    @app.funding_values_page.levy_current_year.set "1000"
-    @app.funding_values_page.levy_2015_2016.set "1000"
-    @app.funding_values_page.levy_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for private sector$/) do
+  funding_source_slug = "private_contributions"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Public_Sector"
-    @app.funding_values_page.public_current_year.set "1000"
-    @app.funding_values_page.public_2015_2016.set "1000"
-    @app.funding_values_page.public_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for contributions from others$/) do
+  funding_source_slug = "other_ea_contributions"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Private_Sector"
-    @app.funding_values_page.private_current_year.set "1000"
-    @app.funding_values_page.private_2015_2016.set "1000"
-    @app.funding_values_page.private_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for growth funding$/) do
+  funding_source_slug = "growth_funding"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Contributions_from_others"
-    @app.funding_values_page.ea_current_year.set "1000"
-    @app.funding_values_page.ea_2015_2016.set "1000"
-    @app.funding_values_page.ea_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for internal drainage boards$/) do
+  funding_source_slug = "internal_drainage_boards"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Growth_Funding"
-    @app.funding_values_page.growth_current_year.set "1000"
-    @app.funding_values_page.growth_2015_2016.set "1000"
-    @app.funding_values_page.growth_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter my funding sources for others not identified$/) do
+  funding_source_slug = "not_yet_identified"
+  @app.proposal_overview_page.add_funding_source.click
+  @app.funding_sources_page.submit(
+    funding_sources: [funding_source_slug]
+  )
+end
 
-  if @fundsource == "Internal_Drainage"
-    @app.funding_values_page.drain_current_year.set "1000"
-    @app.funding_values_page.drain_2015_2016.set "1000"
-    @app.funding_values_page.drain_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter a sector contributor of public sector$/) do
+  @app.funding_public_sector_contributors_page.public_contributors_names.set(
+    "Public Test Council"
+  )
+  @app.funding_public_sector_contributors_page.submit_button.click
+end
 
-  if @fundsource == "Other_Not_Identifed"
-    @app.funding_values_page.notyet_current_year.set "1000"
-    @app.funding_values_page.notyet_2015_2016.set "1000"
-    @app.funding_values_page.notyet_2016_2017.set "1000"
-    @app.funding_values_page.submit_button.click
-  end
+Given(/^I enter a sector contributor of private sector$/) do
+  @app.funding_private_sector_contributors_page.private_contributors_names.set(
+    "Private Investment Company"
+  )
+  @app.funding_private_sector_contributors_page.submit_button.click
+end
+
+Given(/^I enter a sector contributor of contributions from others$/) do
+  @app.funding_other_sector_contributors_page.other_contributors_names.set(
+    "Other Contribution Investment Company"
+  )
+  @app.funding_other_sector_contributors_page.submit_button.click
+end
+
+Given(/^I enter my funding values for grant in aid$/) do
+  @app.funding_values_page.gia_current_year.set "1000"
+  @app.funding_values_page.gia_2015_2016.set "1000"
+  @app.funding_values_page.gia_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for local levy$/) do
+  @app.funding_values_page.levy_current_year.set "1000"
+  @app.funding_values_page.levy_2015_2016.set "1000"
+  @app.funding_values_page.levy_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for public sector$/) do
+  @app.funding_values_page.public_current_year.set "1000"
+  @app.funding_values_page.public_2015_2016.set "1000"
+  @app.funding_values_page.public_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for private sector$/) do
+  @app.funding_values_page.private_current_year.set "1000"
+  @app.funding_values_page.private_2015_2016.set "1000"
+  @app.funding_values_page.private_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for contributions from others$/) do
+  @app.funding_values_page.ea_current_year.set "1000"
+  @app.funding_values_page.ea_2015_2016.set "1000"
+  @app.funding_values_page.ea_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for growth funding$/) do
+  @app.funding_values_page.growth_current_year.set "1000"
+  @app.funding_values_page.growth_2015_2016.set "1000"
+  @app.funding_values_page.growth_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for internal drainage boards$/) do
+  @app.funding_values_page.drain_current_year.set "1000"
+  @app.funding_values_page.drain_2015_2016.set "1000"
+  @app.funding_values_page.drain_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
+end
+
+Given(/^I enter my funding values for other not identified$/) do
+  @app.funding_values_page.notyet_current_year.set "1000"
+  @app.funding_values_page.notyet_2015_2016.set "1000"
+  @app.funding_values_page.notyet_2016_2017.set "1000"
+  @app.funding_values_page.submit_button.click
 end
 
 Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
@@ -305,7 +359,6 @@ Given(/^I enter environmental outcomes improvements$/) do
     amount: "100"
   )
 end
-# rubocop:enable Metrics/BlockLength
 
 Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.proposal_overview_page.add_project_urgency.click
@@ -315,33 +368,42 @@ Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.urgency_details_page.submit(
     details: "These are the urgency details"
   )
+end
+# rubocop:enable Metrics/BlockLength
 
+Given(/^I return to the overview page$/) do
+  @app.proposal_under_review_page.return_to_the_proposal_overview_page.click
+end
+
+Given(/^I revert to draft$/) do
+  @app.proposal_overview_page.revert_to_draft.click
 end
 
 Then(/^I upload my project funding calculator file$/) do
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit
   @app.funding_calculator_summary_page.submit
-
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
-
 end
 
 When(/^I complete my proposal$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
+end
 
+Then(/^I should see that my proposal is sent for review$/) do
+  expect(@app.confirm_page).to have_project_number
+  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
 Then(/^I should see that my proposal is under review$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal under review")
-
 end
 
 When(/^I return to the proposal overview page$/) do
