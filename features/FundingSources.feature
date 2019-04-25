@@ -8,7 +8,7 @@ Feature: Create a new project application
     Given I am an external user
       And I have a valid username and password
 
-  @fundingsources @GrantInAid
+  @regression @fundingsources @GrantInAid
   Scenario: Sumbmit a new proposal with Grant in Aid funding
     Given I create a new proposal
       And I enter a project name
@@ -32,7 +32,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @local_levy
+  @regression @fundingsources @local_levy
   Scenario: Sumbmit a new proposal with Local Levey funding
     Given I create a new proposal
       And I enter a project name
@@ -56,7 +56,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @PublicSector
+  @regression @fundingsources @PublicSector
   Scenario: Sumbmit a new proposal with Public Sector funding
     Given I create a new proposal
       And I enter a project name
@@ -81,7 +81,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @PrivateSector
+  @regression @fundingsources @PrivateSector
   Scenario: Sumbmit a new proposal with Private Sector funding
     Given I create a new proposal
       And I enter a project name
@@ -106,7 +106,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @ContributionsFromOthers
+  @regression @fundingsources @ContributionsFromOthers
   Scenario: Sumbmit a new proposal with Contributions From Others funding
     Given I create a new proposal
       And I enter a project name
@@ -131,7 +131,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @InternalDrainage
+  @regression @fundingsources @InternalDrainage
   Scenario: Sumbmit a new proposal with Internal Drainage funding
     Given I create a new proposal
       And I enter a project name
@@ -155,7 +155,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is under review
 
-  @fundingsources @OtherNotIdentifed
+  @regression @fundingsources @OtherNotIdentifed
   Scenario: Sumbmit a new proposal Other Not Identifed funding
     Given I create a new proposal
       And I enter a project name

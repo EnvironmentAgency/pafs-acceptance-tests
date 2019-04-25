@@ -126,6 +126,7 @@ Given(/^I enter my funding sources "([^"]*)"$/) do |funding_source|
                         else
                           "Unknown funding source"
                         end
+
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
     funding_sources: [funding_source_slug]
@@ -151,6 +152,13 @@ Given(/^I enter sector contibutors$/) do
   if @fundsource == "Contributions_from_others"
     @app.funding_other_sector_contributors_page.other_contributors_names.set(
       "Other Contribution Investment Compnay"
+    )
+    @app.funding_other_sector_contributors_page.submit_button.click
+  end
+
+  if @fundsource == "Contributions_from_others"
+    @app.funding_other_sector_contributors_page.other_contributors_names.set(
+      "Other Contribution Investment Company"
     )
     @app.funding_other_sector_contributors_page.submit_button.click
   end
@@ -315,33 +323,28 @@ Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.urgency_details_page.submit(
     details: "These are the urgency details"
   )
-
 end
 
 Then(/^I upload my project funding calculator file$/) do
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit
   @app.funding_calculator_summary_page.submit
-
 end
 
 Then(/^I should see my entered details in the the proposal overview$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   expect(@app.proposal_overview_page).to have_project_number
   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
-
 end
 
 When(/^I complete my proposal$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
-
 end
 
 Then(/^I should see that my proposal is under review$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal under review")
-
 end
 
 When(/^I return to the proposal overview page$/) do
