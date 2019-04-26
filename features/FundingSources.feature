@@ -7,7 +7,7 @@ Feature: Create a new project application
   @regression @fundingsources @GrantInAid @RMA_User
   Scenario: Sumbmit a new proposal with Grant in Aid funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -33,7 +33,7 @@ Feature: Create a new project application
   @regression @fundingsources @local_levy @RMA_User
   Scenario: Sumbmit a new proposal with Local Levey funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -59,7 +59,7 @@ Feature: Create a new project application
   @regression @fundingsources @PublicSector @RMA_User
   Scenario: Sumbmit a new proposal with Public Sector funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -86,7 +86,7 @@ Feature: Create a new project application
   @regression @fundingsources @PrivateSector @RMA_User
   Scenario: Sumbmit a new proposal with Private Sector funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -113,7 +113,7 @@ Feature: Create a new project application
   @regression @fundingsources @ContributionsFromOthers @RMA_User
   Scenario: Sumbmit a new proposal with Contributions From Others funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -140,7 +140,7 @@ Feature: Create a new project application
   @regression @fundingsources @InternalDrainage @RMA_User
   Scenario: Sumbmit a new proposal with Internal Drainage funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -166,7 +166,7 @@ Feature: Create a new project application
   @regression @fundingsources @OtherNotIdentifed @RMA_User
   Scenario: Sumbmit a new proposal Other Not Identifed funding by an RMA User
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -192,7 +192,7 @@ Feature: Create a new project application
   @regression @fundingsources @GrantInAid @PSO_User
   Scenario: Sumbmit a new proposal with Grant in Aid funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -218,7 +218,7 @@ Feature: Create a new project application
   @regression @fundingsources @local_levy @PSO_User
   Scenario: Sumbmit a new proposal with Local Levey funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -244,7 +244,7 @@ Feature: Create a new project application
   @regression @fundingsources @PublicSector @PSO_User
   Scenario: Sumbmit a new proposal with Public Sector funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -271,7 +271,7 @@ Feature: Create a new project application
   @regression @fundingsources @PrivateSector @PSO_User
   Scenario: Sumbmit a new proposal with Private Sector funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -298,7 +298,7 @@ Feature: Create a new project application
   @regression @fundingsources @ContributionsFromOthers @PSO_User
   Scenario: Sumbmit a new proposal with Contributions From Others funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -325,7 +325,7 @@ Feature: Create a new project application
   @regression @fundingsources @InternalDrainage @PSO_User
   Scenario: Sumbmit a new proposal with Internal Drainage funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -351,7 +351,7 @@ Feature: Create a new project application
   @regression @fundingsources @OtherNotIdentifed @PSO_User
   Scenario: Sumbmit a new proposal Other Not Identifed funding by an PSO User
     Given I am an external user
-      And I have a valid pso username and password
+      And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -377,7 +377,7 @@ Feature: Create a new project application
   @regression @fundingsources @GrantInAid @PSO+RMA_User
   Scenario: Sumbmit a new proposal with Grant in Aid funding for dual area selection
     Given I am an external user
-      And I have a valid pso_rma username and password
+      And I have a valid "dual" username and password
       And I create a new proposal
       And I enter a project name
       And I selected a project area "rma_name_bristol_city_council"
@@ -404,7 +404,7 @@ Feature: Create a new project application
   @regression @fundingsources @GrantInAid @PSO+RMA_User
   Scenario: Sumbmit a new proposal with Internal Drainage funding for dual area selection
     Given I am an external user
-      And I have a valid pso_rma username and password
+      And I have a valid "dual" username and password
       And I create a new proposal
       And I enter a project name
       And I selected a project area "rma_name_pso_west_of_england"

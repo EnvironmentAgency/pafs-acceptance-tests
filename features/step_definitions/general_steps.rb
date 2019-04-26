@@ -5,33 +5,10 @@ Given(/^I am an external user$/) do
   # @app.front_office_home_page.start_button.click
 end
 
-# Back office login page
-# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
-Given(/^I have a valid rma username and password$/) do
+Given(/^I have a valid "([^"]*)" username and password$/) do |user_type|
   @app.login_page.submit(
-    email: "delaware.autouser+1@gmail.com",
-    password: "5noWman1"
-  )
-end
-
-# Back office login page
-# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
-Given(/^I have a valid pso username and password$/) do
-  @app.login_page.submit(
-    email: "delaware.autouser+2@gmail.com",
-    password: "5noWman1"
-  )
-end
-
-# Back office login page
-# email: Quke::Quke.config.custom["accounts"]["pafs_user"]["username"],
-# password: Quke::Quke.config.custom["accounts"]["pafs_user"]["password"]
-Given(/^I have a valid pso_rma username and password$/) do
-  @app.login_page.submit(
-    email: "delaware.autouser+3@gmail.com",
-    password: "5noWman1"
+    email: Quke::Quke.config.custom["user_accounts"][user_type]["username"],
+    password: Quke::Quke.config.custom["user_accounts"][user_type]["password"]
   )
 end
 

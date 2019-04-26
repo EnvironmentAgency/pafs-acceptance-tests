@@ -7,7 +7,7 @@ Feature: Create a new project application
   @smoketest @regression
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
     Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
@@ -33,7 +33,7 @@ Feature: Create a new project application
   @smoketest @regression
   Scenario: Created proposal is in draft status
       Given I am an external user
-      And I have a valid rma username and password
+      And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
       And I select project type "change_or_new_asset"
