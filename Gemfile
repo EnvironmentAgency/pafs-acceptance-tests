@@ -9,3 +9,5 @@ gem "rubocop", require: false
 # Rake gives us the ability to create our own commands or 'tasks' for working
 # with quke.
 gem "rake"
+
+gem "pry"

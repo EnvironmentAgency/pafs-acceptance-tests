@@ -20,6 +20,10 @@ class App
     @last_page = ProjectsPage.new
   end
 
+  def project_area_selection_page
+    @last_page = ProjectAreaSelectionPage.new
+  end
+
   def grant_in_aid_funding_page
     @last_page = GrantInAidFundingPage.new
   end
@@ -182,6 +186,10 @@ class App
 
   def funding_calculator_summary_page
     @last_page = FundingCalculatorSummaryPage.new
+  end
+
+  def proposal_under_review_page
+    @last_page = ProposalUnderReviewPage.new
   end
 
   def confirm_page
