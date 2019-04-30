@@ -18,7 +18,7 @@ end
 
 Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   @app.project_area_selection_page.submit(
-    areasource: area_source
+    area: area_source
   )
 end
 

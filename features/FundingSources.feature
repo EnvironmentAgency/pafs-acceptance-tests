@@ -375,7 +375,7 @@ Feature: Create a new project application
     Then I should see that my proposal is under review
 
   # User with Two Areas 
-  @regression @fundingsources @grantinaid @PSO+RMAUser
+  @regression @fundingsources @grantinaid @Dual_User
   Scenario: Sumbmit a new proposal with Grant in Aid funding for dual area selection
     Given I am an external user
       And I have a valid "dual" username and password
@@ -402,7 +402,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
-  @regression @fundingsources @internaldrainageboards @PSO+RMAUser
+  @regression @fundingsources @internaldrainageboards @Dual_User
   Scenario: Sumbmit a new proposal with Internal Drainage funding for dual area selection
     Given I am an external user
       And I have a valid "dual" username and password
