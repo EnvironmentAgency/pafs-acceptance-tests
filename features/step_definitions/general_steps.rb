@@ -18,7 +18,7 @@ end
 
 Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   @app.project_area_selection_page.submit(
-    area: area_source
+    areasource: area_source
   )
 end
 
@@ -234,7 +234,7 @@ Given(/^I enter my funding values for internal drainage boards$/) do
   @app.funding_values_page.submit_button.click
 end
 
-Given(/^I enter my funding values for other not identified$/) do
+Given(/^I enter my funding values for others not identified$/) do
   @app.funding_values_page.notyet_current_year.set "1000"
   @app.funding_values_page.notyet_2015_2016.set "1000"
   @app.funding_values_page.notyet_2016_2017.set "1000"

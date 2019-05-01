@@ -178,7 +178,7 @@ Feature: Create a new project application
       And I enter my construction start date
       And I enter my ready for service date
       And I enter my funding sources for others not identified
-      And I enter my funding values for other not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
@@ -363,7 +363,7 @@ Feature: Create a new project application
       And I enter my construction start date
       And I enter my ready for service date
       And I enter my funding sources for others not identified
-      And I enter my funding values for other not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
@@ -390,8 +390,8 @@ Feature: Create a new project application
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for other not identified
-      And I enter my funding values for other not identified
+      And I enter my funding sources for others not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
