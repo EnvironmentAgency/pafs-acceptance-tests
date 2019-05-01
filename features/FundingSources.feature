@@ -178,7 +178,7 @@ Feature: Create a new project application
       And I enter my construction start date
       And I enter my ready for service date
       And I enter my funding sources for others not identified
-      And I enter my funding values for other not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
@@ -363,7 +363,7 @@ Feature: Create a new project application
       And I enter my construction start date
       And I enter my ready for service date
       And I enter my funding sources for others not identified
-      And I enter my funding values for other not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
@@ -375,7 +375,7 @@ Feature: Create a new project application
     Then I should see that my proposal is under review
 
   # User with Two Areas 
-  @regression @fundingsources @grantinaid @PSO+RMAUser
+  @regression @fundingsources @grantinaid @Dual_User
   Scenario: Sumbmit a new proposal with Grant in Aid funding for dual area selection
     Given I am an external user
       And I have a valid "dual" username and password
@@ -390,8 +390,8 @@ Feature: Create a new project application
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for other not identified
-      And I enter my funding values for other not identified
+      And I enter my funding sources for others not identified
+      And I enter my funding values for others not identified
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
@@ -402,7 +402,7 @@ Feature: Create a new project application
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
-  @regression @fundingsources @internaldrainageboards @PSO+RMAUser
+  @regression @fundingsources @internaldrainageboards @Dual_User
   Scenario: Sumbmit a new proposal with Internal Drainage funding for dual area selection
     Given I am an external user
       And I have a valid "dual" username and password
