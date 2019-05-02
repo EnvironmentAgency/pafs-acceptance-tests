@@ -63,8 +63,10 @@ Given(/^I add a location "([^"]*)"$/) do |location|
   )
 end
 
-Given(/^I upload my benefit area file$/) do
-  @app.benefit_area_file_page.submit
+Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
+  @app.benefit_area_file_page.submit(
+    file: filename
+  )
   @app.benefit_area_file_summary_page.submit
 end
 
