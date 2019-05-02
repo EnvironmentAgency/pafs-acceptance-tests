@@ -13,7 +13,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -39,7 +39,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -65,7 +65,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -92,7 +92,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -119,7 +119,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -146,7 +146,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -172,7 +172,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -198,7 +198,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -224,7 +224,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -250,7 +250,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -277,7 +277,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -304,7 +304,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -331,7 +331,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -357,7 +357,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -385,7 +385,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
@@ -412,7 +412,7 @@ Feature: Create a new project application
       And I select project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file
+      And I upload my benefit area file "Test_ShapeFile.zip"
       And I enter my business case start date
       And I enter my award contract date
       And I enter my construction start date
