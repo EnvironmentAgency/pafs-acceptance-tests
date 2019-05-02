@@ -302,25 +302,25 @@ Given(/^I enter environmental outcomes improvements$/) do
     improve: true
   )
   @app.surface_and_groundwater_amount_page.submit(
-    length: "100"
+    length: "1000"
   )
   @app.improve_spa_or_sac_page.submit(
     improve: true
   )
   @app.improve_habitat_amount_page.submit(
-    amount: "100"
+    amount: "2000"
   )
   @app.improve_river_page.submit(
     improve: true
   )
   @app.improve_river_amount_page.submit(
-    amount: "100"
+    amount: "3000"
   )
   @app.habitat_creation_page.submit(
     create: true
   )
   @app.habitat_creation_amount_page.submit(
-    amount: "100"
+    amount: "4000"
   )
   @app.remove_fish_barrier_page.submit(
     remove: true
@@ -329,7 +329,7 @@ Given(/^I enter environmental outcomes improvements$/) do
     remove: true
   )
   @app.fish_or_eel_amount_page.submit(
-    amount: "100"
+    amount: "5000"
   )
 end
 
@@ -352,9 +352,11 @@ Given(/^I revert to draft$/) do
   @app.proposal_overview_page.revert_to_draft.click
 end
 
-Then(/^I upload my project funding calculator file$/) do
+Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click
-  @app.funding_calculator_page.submit
+  @app.funding_calculator_page.submit(
+    file:filename
+  )
   @app.funding_calculator_summary_page.submit
 end
 

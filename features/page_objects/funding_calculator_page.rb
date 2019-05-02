@@ -6,10 +6,13 @@ class FundingCalculatorPage < SitePrism::Page
 
   element(:submit_button, "input[name='commit']")
 
-  def submit(_args = {})
-    # Capybara attach file method
-    attach_file(choose_file[:name], File.absolute_path("./features/support/LIT_9160_97331cOM4TEST.xlsx"))
-    submit_button.click
+  def submit(args = {})
+    if args.key?(:file)
+      filename = args[:file]
+      # Capybara attach file method
+	    attach_file(choose_file[:name], File.absolute_path("./features/support/#{filename}"))
+      submit_button.click
+    end
   end
 
 end

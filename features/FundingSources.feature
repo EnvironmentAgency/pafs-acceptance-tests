@@ -26,7 +26,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -52,7 +52,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -79,7 +79,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -106,7 +106,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -133,7 +133,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -159,7 +159,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -185,7 +185,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -211,7 +211,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -237,7 +237,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -264,7 +264,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -291,7 +291,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -318,7 +318,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -344,7 +344,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -370,7 +370,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is under review
 
@@ -398,7 +398,7 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
@@ -425,6 +425,6 @@ Feature: Create a new project application
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency"
-      And I upload my project funding calculator file
+      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
