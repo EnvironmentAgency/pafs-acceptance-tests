@@ -355,7 +355,7 @@ end
 Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit(
-    file:filename
+    file: filename
   )
   @app.funding_calculator_summary_page.submit
 end
