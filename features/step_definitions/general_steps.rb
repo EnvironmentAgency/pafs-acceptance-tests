@@ -335,14 +335,15 @@ Given(/^I enter environmental outcomes improvements$/) do
   )
 end
 
-Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
+Given(/^I enter the project urgency as "([^"]*)" with a message of "([^"]*)"$/) do |urgency, message|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
     option: urgency.to_sym
   )
   @app.urgency_details_page.submit(
-    details: "These are the urgency details"
+    details: message
   )
+  expect(@app.proposal_overview_page).to have_text(message)
 end
 # rubocop:enable Metrics/BlockLength
 
