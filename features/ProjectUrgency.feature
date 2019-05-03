@@ -25,6 +25,7 @@ Feature: Create a new project application
       And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
+      And I select the project is not urgent
       And I enter the project urgency as "stat_need" with a message of "There is a business critical statutory need"
       And I enter the project urgency as "legal_need" with a message of "There is a business critical legal need"
       And I enter the project urgency as "health_and_safety" with a message of "There is a health and safety issue"

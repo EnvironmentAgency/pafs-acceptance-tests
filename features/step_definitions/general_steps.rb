@@ -335,6 +335,15 @@ Given(/^I enter environmental outcomes improvements$/) do
   )
 end
 
+Given(/^I select the project is not urgent$/) do
+  urgency_slug = "not_urgent"
+  @app.proposal_overview_page.add_project_urgency.click
+  @app.urgency_page.submit(
+    option: urgency_slug.to_sym
+  )
+  expect(@app.proposal_overview_page).to have_text("Your project is not urgent")
+end
+
 Given(/^I enter the project urgency as "([^"]*)" with a message of "([^"]*)"$/) do |urgency, message|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
