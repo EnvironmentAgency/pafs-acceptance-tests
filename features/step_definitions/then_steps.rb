@@ -30,5 +30,3 @@ end
 Then(/^I should see the project urgent message of "([^"]*)" on the proposal page$/) do |message|
   expect(@app.proposal_overview_page).to have_text(message)
 end
-
-

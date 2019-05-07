@@ -1,4 +1,3 @@
-
 When(/^I complete my proposal$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
@@ -12,7 +11,7 @@ When(/^I enter the project urgent message box of "([^"]*)"$/) do |message|
   @app.urgency_details_page.submit(
     details: message
   )
-end 
+end
 
 Then(/^I check the project urgent message box is empty$/) do
   expect(@app.urgency_details_page).to have_text("")
