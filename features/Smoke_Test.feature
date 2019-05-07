@@ -10,7 +10,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -36,7 +36,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
     When I return to the proposal overview page
     Then its status is draft

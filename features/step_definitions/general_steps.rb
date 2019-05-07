@@ -41,7 +41,7 @@ Given(/^I enter a project name$/) do
   )
 end
 
-Given(/^I select project type "([^"]*)"$/) do |action|
+Given(/^I select a project type "([^"]*)"$/) do |action|
   @app.project_type_page.submit(
     option: action.to_sym
   )

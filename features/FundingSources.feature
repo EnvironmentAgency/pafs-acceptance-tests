@@ -10,7 +10,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -36,7 +36,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -62,7 +62,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -89,7 +89,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -116,7 +116,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -143,7 +143,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -169,7 +169,7 @@ Feature: Create a new project application
       And I have a valid "rma" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -195,7 +195,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -221,7 +221,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -247,7 +247,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -274,7 +274,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -301,7 +301,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -328,7 +328,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -354,7 +354,7 @@ Feature: Create a new project application
       And I have a valid "pso" username and password
       And I create a new proposal
       And I enter a project name
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -382,7 +382,7 @@ Feature: Create a new project application
       And I create a new proposal
       And I enter a project name
       And I selected a project area "rma_name_bristol_city_council"
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -409,7 +409,7 @@ Feature: Create a new project application
       And I create a new proposal
       And I enter a project name
       And I selected a project area "rma_name_pso_west_of_england"
-      And I select project type "change_or_new_asset"
+      And I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
