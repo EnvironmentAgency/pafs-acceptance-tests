@@ -1,5 +1,5 @@
 @frontoffice
-Feature: Create a new project application
+Feature: Create a new project application for Funding Sources
   As a council
   I want to submit a proposal for flood and coastal erosion risk management project funding
   So that my local area can have improved protection from flooding
