@@ -22,7 +22,8 @@ Feature: Create a new project application for Smoke Tests
       And I enter my funding values for grant in aid
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
-      And I add the standard of protection before project starts as "very_significant_risk" and "low_risk" when project completes
+      And I add the standard of protection before project starts as "very_significant_risk"
+      And I add the standard of protection after project completes as "low_risk"
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I enter the project urgency as "emergency" with a message of "There is an emergency"
