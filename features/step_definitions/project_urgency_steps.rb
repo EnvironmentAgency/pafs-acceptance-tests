@@ -6,26 +6,26 @@ Given(/^I select the project urgency as "([^"]*)" with a project message of "([^
   @app.urgency_details_page.submit(
     details: message
   )
-end 
+end
 
 Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
     option: urgency.to_sym
   )
-end 
+end
 
 When(/^I enter the project urgency with a message of "([^"]*)"$/) do |message|
   @app.urgency_details_page.submit(
     details: message
   )
-end 
+end
 
 When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
-   @app.proposal_overview_page.add_project_urgency.click
-   @app.urgency_page.submit(
-     option: urgency.to_sym
-   )
+  @app.proposal_overview_page.add_project_urgency.click
+  @app.urgency_page.submit(
+    option: urgency.to_sym
+  )
 end
 
 When(/^I complete my proposal$/) do
