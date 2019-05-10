@@ -2,7 +2,6 @@ Given(/^I am an external user$/) do
 
   @app = App.new
   @app.front_office_home_page.load
-  # @app.front_office_home_page.start_button.click
 end
 
 Given(/^I have a valid "([^"]*)" username and password$/) do |user_type|
@@ -177,6 +176,7 @@ Given(/^I enter environmental outcomes improvements$/) do
 end
 # rubocop:enable Metrics/BlockLength
 
+# Then Actions
 Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit(
@@ -185,11 +185,11 @@ Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.funding_calculator_summary_page.submit
 end
 
-Then(/^I should see my entered details in the the proposal overview$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  expect(@app.proposal_overview_page).to have_project_number
-  expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
-end
+# Then(/^I should see my entered details in the the proposal overview$/) do
+#   @project_number = @app.proposal_overview_page.project_number.text
+#   expect(@app.proposal_overview_page).to have_project_number
+#   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
+# end
 
 Then(/^I should see that my proposal is sent for review$/) do
   expect(@app.confirm_page).to have_project_number

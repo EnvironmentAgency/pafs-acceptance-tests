@@ -1,13 +1,4 @@
-Given(/^I select the project is not urgent$/) do
-  urgency_slug = "not_urgent"
-  @app.proposal_overview_page.add_project_urgency.click
-  @app.urgency_page.submit(
-    option: urgency_slug.to_sym
-  )
-  expect(@app.proposal_overview_page).to have_text("Your project is not urgent")
-end
-
-Given(/^I enter the project urgency as "([^"]*)" with a message of "([^"]*)"$/) do |urgency, message|
+Given(/^I select the project urgency as "([^"]*)" with a project message of "([^"]*)"$/) do |urgency, message|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
     option: urgency.to_sym
@@ -15,15 +6,26 @@ Given(/^I enter the project urgency as "([^"]*)" with a message of "([^"]*)"$/) 
   @app.urgency_details_page.submit(
     details: message
   )
-  expect(@app.proposal_overview_page).to have_text(message)
-end
+end 
 
-When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
-  urgency_slug = urgency
+Given(/^I enter the project urgency as "([^"]*)"$/) do |urgency|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
-    option: urgency_slug.to_sym
+    option: urgency.to_sym
   )
+end 
+
+When(/^I enter the project urgency with a message of "([^"]*)"$/) do |message|
+  @app.urgency_details_page.submit(
+    details: message
+  )
+end 
+
+When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
+   @app.proposal_overview_page.add_project_urgency.click
+   @app.urgency_page.submit(
+     option: urgency.to_sym
+   )
 end
 
 When(/^I complete my proposal$/) do
