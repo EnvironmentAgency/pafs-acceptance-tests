@@ -185,12 +185,6 @@ Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.funding_calculator_summary_page.submit
 end
 
-# Then(/^I should see my entered details in the the proposal overview$/) do
-#   @project_number = @app.proposal_overview_page.project_number.text
-#   expect(@app.proposal_overview_page).to have_project_number
-#   expect(@app.proposal_overview_page.project_name.text).to eq "Flood defence test"
-# end
-
 Then(/^I should see that my proposal is sent for review$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
