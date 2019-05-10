@@ -6,9 +6,9 @@ Feature: Create a new project application for Project Urgency
 
   Background: 
     Given I am an external user
-    And I have a valid "rma" username and password
-    And I create a new proposal
-    And I enter a project name
+      And I have a valid "rma" username and password
+      And I create a new proposal
+      And I enter a project name
 
   @regression @projecturgency @RMAUser
   Scenario: Submit a new proposal with not urgent project urgency for rma user
@@ -29,7 +29,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "restore_asset"
       And I select financial year to stop spending
     When I select the project urgency as "stat_need"
-    And I enter the project urgent message box of "There is a business critical statutory need"
+      And I enter the project urgent message box of "There is a business critical statutory need"
     Then I should see the project urgent message of "There is a business critical statutory need" on the proposal page
 
   @regression @projecturgency @RMAUser
@@ -37,7 +37,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "property_level_protection"
       And I select financial year to stop spending
     When I select the project urgency as "legal_need"
-    And I enter the project urgent message box of "There is a business critical legal need"
+      And I enter the project urgent message box of "There is a business critical legal need"
     Then I should see the project urgent message of "There is a business critical legal need" on the proposal page
 
   @regression @projecturgency @RMAUser
@@ -45,7 +45,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "strategy"
       And I select financial year to stop spending
     When I select the project urgency as "time_limit"
-    And I enter the project urgent message box of "There is a specific aspect of the project that has a time limit"
+      And I enter the project urgent message box of "There is a specific aspect of the project that has a time limit"
     Then I should see the project urgent message of "There is a specific aspect of the project that has a time limit" on the proposal page
  
   @regression @projecturgency @RMAUser
@@ -53,7 +53,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
     When I select the project urgency as "emergency"
-    And I enter the project urgent message box of "There is an emergency"
+      And I enter the project urgent message box of "There is an emergency"
     Then I should see the project urgent message of "There is an emergency" on the proposal page      
  
   @regression @projecturgency @RMAUser
@@ -61,7 +61,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "benefits_households_yes"
       And I select financial year to stop spending
     When I select the project urgency as "legal_need"
-    And I enter the project urgent message box of "There is a business critical legal need"
+      And I enter the project urgent message box of "There is a business critical legal need"
     Then I should see the project urgent message of "There is a business critical legal need" on the proposal page 
 
   @regression @projecturgency @RMAUser
@@ -69,7 +69,7 @@ Feature: Create a new project application for Project Urgency
     Given I select a project type "benefits_households_no"
       And I select financial year to stop spending
     When I select the project urgency as "emergency"
-    And I enter the project urgent message box of "There is an emergency"
+      And I enter the project urgent message box of "There is an emergency"
     Then I should see the project urgent message of "There is an emergency" on the proposal page   
 
   @regression @projecturgency @RMAUser

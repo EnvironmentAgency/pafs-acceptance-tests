@@ -6,9 +6,9 @@ Feature: Create a new project application for Smoke Tests
 
   Background:
     Given I am an external user
-    And I have a valid "rma" username and password
-    And I create a new proposal
-    And I enter a project name
+      And I have a valid "rma" username and password
+      And I create a new proposal
+      And I enter a project name
 
   @smoketest @regression
   Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
@@ -29,15 +29,13 @@ Feature: Create a new project application for Smoke Tests
       And I enter the projects goal approach
       And I enter environmental outcomes improvements
       And I select the project urgency as "emergency" with a project message of "There is an emergency"
-
-
       And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
   @smoketest @regression
   Scenario: Created proposal is in draft status
-      Given I select a project type "change_or_new_asset"
+    Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
     When I return to the proposal overview page
     Then its status is draft
