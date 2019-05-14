@@ -1,9 +1,8 @@
 # Funding Sources
-Given(/^I enter my funding sources for grant in aid$/) do
-  funding_source_slug = "fcerm_gia"
+Given(/^I enter my funding sources for "([^"]*)"$/) do |funding_source|
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
+    funding_sources: [funding_source]
   )
 end
 
@@ -86,10 +85,10 @@ Given(/^I enter a sector contributor of contributions from others$/) do
 end
 
 # Funding Values
-Given(/^I enter my funding values for grant in aid$/) do
-  @app.funding_values_page.gia_current_year.set "1000"
-  @app.funding_values_page.gia_2015_2016.set "1000"
-  @app.funding_values_page.gia_2016_2017.set "1000"
+Given(/^I enter my funding values for grant in aid current year "([^"]*)", year2015-2016 "([^"]*)", year2016-2017 "([^"]*)"$/) do |yearone, yeartwo, yearthree|
+  @app.funding_values_page.gia_current_year.set yearone
+  @app.funding_values_page.gia_2015_2016.set yeartwo
+  @app.funding_values_page.gia_2016_2017.set yearthree
   @app.funding_values_page.submit_button.click
 end
 

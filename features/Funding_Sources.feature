@@ -18,8 +18,13 @@ Feature: Create a new project application for Funding Sources
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for grant in aid
-      And I enter my funding values for grant in aid 
+      And I enter my funding sources "Grant_in_aid"
+      And I enter my funding values for grant in aid current year "1000, year2015-2016 "1000", year2016-2017 "1000" 
+    When I check the proposal overview page
+    Then I should see the funding sources as Grant in Aid
+      And Ttotal Esitmated Spend as "£3000"
+
+
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk"
