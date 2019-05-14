@@ -6,139 +6,46 @@ Given(/^I enter my funding sources for "([^"]*)"$/) do |funding_source|
   )
 end
 
-Given(/^I enter my funding sources for local levy$/) do
-  funding_source_slug = "local_levy"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for public sector$/) do
-  funding_source_slug = "public_contributions"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for private sector$/) do
-  funding_source_slug = "private_contributions"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for contributions from others$/) do
-  funding_source_slug = "other_ea_contributions"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for growth funding$/) do
-  funding_source_slug = "growth_funding"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for internal drainage boards$/) do
-  funding_source_slug = "internal_drainage_boards"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
-Given(/^I enter my funding sources for others not identified$/) do
-  funding_source_slug = "not_yet_identified"
-  @app.proposal_overview_page.add_funding_source.click
-  @app.funding_sources_page.submit(
-    funding_sources: [funding_source_slug]
-  )
-end
-
 # Funding Contributors
-Given(/^I enter a sector contributor of public sector$/) do
-  @app.funding_public_sector_contributors_page.public_contributors_names.set(
-    "Public Test Council"
-  )
-  @app.funding_public_sector_contributors_page.submit_button.click
+Given(/^I enter a sector contributor of "([^"]*)"$/) do |sector_source|
+ SLUG_SOURCE =  {
+
+              "Public Test Council" => "public"
+              "Private Investment Company" => "private"
+              "Other Contribution Investment Company" => "other"
+              }.freeze
+
+              source = SLUG_MAP[funding]         
+
+  @app.funding_"{source}"_sector_contributors_page."{source}"_contributors_names.set()
+  @app.funding_"{source}"_sector_contributors_page.submit_button.click
+
 end
 
-Given(/^I enter a sector contributor of private sector$/) do
-  @app.funding_private_sector_contributors_page.private_contributors_names.set(
-    "Private Investment Company"
-  )
-  @app.funding_private_sector_contributors_page.submit_button.click
-end
-
-Given(/^I enter a sector contributor of contributions from others$/) do
-  @app.funding_other_sector_contributors_page.other_contributors_names.set(
-    "Other Contribution Investment Company"
-  )
-  @app.funding_other_sector_contributors_page.submit_button.click
-end
 
 # Funding Values
-Given(/^I enter my funding values for grant in aid current year "([^"]*)", year2015-2016 "([^"]*)", year2016-2017 "([^"]*)"$/) do |yearone, yeartwo, yearthree|
-  @app.funding_values_page.gia_current_year.set yearone
-  @app.funding_values_page.gia_2015_2016.set yeartwo
-  @app.funding_values_page.gia_2016_2017.set yearthree
-  @app.funding_values_page.submit_button.click
-end
+Given(/^I enter my funding values for "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)"$/  ) do |funding, previous, yr15_16, yr16_17, yr17_18, yr18_19, yr19_20|
+ SLUG_MAP =  {
 
-Given(/^I enter my funding values for local levy$/) do
-  @app.funding_values_page.levy_current_year.set "1000"
-  @app.funding_values_page.levy_2015_2016.set "1000"
-  @app.funding_values_page.levy_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
+              "Grant_in_Aid" => "gia"
+              "Local_Levy" => "levy"
+              "Public_Sector" => "public"
+              "Private_Sector" => "private"
+              "Contributions_from_other" => "ea"
+              "Growth_Funding" => "growth"
+              "Internal_Drainage_Boards" => "drain"
+              "Others_not_Identified" => "notyet"
+              }.freeze
 
-Given(/^I enter my funding values for public sector$/) do
-  @app.funding_values_page.public_current_year.set "1000"
-  @app.funding_values_page.public_2015_2016.set "1000"
-  @app.funding_values_page.public_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
+              slug1 = SLUG_MAP[funding] 
 
-Given(/^I enter my funding values for private sector$/) do
-  @app.funding_values_page.private_current_year.set "1000"
-  @app.funding_values_page.private_2015_2016.set "1000"
-  @app.funding_values_page.private_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
-
-Given(/^I enter my funding values for contributions from others$/) do
-  @app.funding_values_page.ea_current_year.set "1000"
-  @app.funding_values_page.ea_2015_2016.set "1000"
-  @app.funding_values_page.ea_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
-
-Given(/^I enter my funding values for growth funding$/) do
-  @app.funding_values_page.growth_current_year.set "1000"
-  @app.funding_values_page.growth_2015_2016.set "1000"
-  @app.funding_values_page.growth_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
-
-Given(/^I enter my funding values for internal drainage boards$/) do
-  @app.funding_values_page.drain_current_year.set "1000"
-  @app.funding_values_page.drain_2015_2016.set "1000"
-  @app.funding_values_page.drain_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
-end
-
-Given(/^I enter my funding values for others not identified$/) do
-  @app.funding_values_page.notyet_current_year.set "1000"
-  @app.funding_values_page.notyet_2015_2016.set "1000"
-  @app.funding_values_page.notyet_2016_2017.set "1000"
-  @app.funding_values_page.submit_button.click
+              @app.funding_values_page."#{slug}"_current_year.set previous
+              @app.funding_values_page."#{slug}"_2015_2016.set yr15_16
+              @app.funding_values_page."#{slug}"_2016_2017.set yr16_17
+              @app.funding_values_page."#{slug}"_2016_2017.set yr17_18
+              @app.funding_values_page."#{slug}"_2016_2017.set yr18_19
+              @app.funding_values_page."#{slug}"_2016_2017.set yr19_20
+              @app.funding_values_page.submit_button.click
 end
 
 Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
