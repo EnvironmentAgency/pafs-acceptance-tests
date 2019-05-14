@@ -85,12 +85,14 @@ Given(/^I enter a sector contributor of contributions from others$/) do
 end
 
 # Funding Values
+# rubocop:disable Metrics/LineLength
 Given(/^I enter my funding values for grant in aid current year "([^"]*)", year2015-2016 "([^"]*)", year2016-2017 "([^"]*)"$/) do |yearone, yeartwo, yearthree|
   @app.funding_values_page.gia_current_year.set yearone
   @app.funding_values_page.gia_2015_2016.set yeartwo
   @app.funding_values_page.gia_2016_2017.set yearthree
   @app.funding_values_page.submit_button.click
 end
+# rubocop:enable Metrics/LineLength
 
 Given(/^I enter my funding values for local levy$/) do
   @app.funding_values_page.levy_current_year.set "1000"
