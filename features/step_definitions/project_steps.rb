@@ -50,6 +50,13 @@ Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   )
 end
 
+Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
+  @app.benefit_area_file_page.submit(
+    file: filename
+  )
+  @app.benefit_area_file_summary_page.submit
+end
+
 Given(/^I enter my business case start date$/) do
   @app.proposal_overview_page.add_important_dates.click
   @app.start_outline_business_case_date_page.submit(

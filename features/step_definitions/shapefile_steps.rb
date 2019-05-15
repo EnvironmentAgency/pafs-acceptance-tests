@@ -1,4 +1,4 @@
-Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
+Given(/^I upload the benefit area file "([^"]*)"$/) do |filename|
   @app.benefit_area_file_page.submit(
     file: filename
   )
