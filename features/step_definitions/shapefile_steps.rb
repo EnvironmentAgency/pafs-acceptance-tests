@@ -2,7 +2,7 @@ Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
   @app.benefit_area_file_page.submit(
     file: filename
   )
- end 
+end
 
 When(/^I view the benefit area page$/) do
   puts "I view the benefit area page"
