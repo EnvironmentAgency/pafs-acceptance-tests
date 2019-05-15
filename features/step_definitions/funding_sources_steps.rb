@@ -1,5 +1,18 @@
 # Funding Sources
 Given(/^I enter my funding sources for "([^"]*)"$/) do |funding_source|
+  slug_fundingsource = {
+    "grant_in_aid" => "fcerm_gia",
+    "local_levy" => "local_levy",
+    "public_sector" => "public_contributions",
+    "private_sector" => "private_contributions",
+    "other_sector" => "other_ea_contributions",
+    "growth_funding" => "growth_funding",
+    "internal_drainage_boards" => "internal_drainage_boards",
+    "not_identified" => "not_yet_identified"
+  }.freeze
+
+  funding_source = slug_fundingsource[funding_source]
+
   @app.proposal_overview_page.add_funding_source.click
   @app.funding_sources_page.submit(
     funding_sources: [funding_source]
@@ -7,46 +20,46 @@ Given(/^I enter my funding sources for "([^"]*)"$/) do |funding_source|
 end
 
 # Funding Contributors
-Given(/^I enter a sector contributor of "([^"]*)"$/) do |sector_source|
- SLUG_SOURCE =  {
+Given(/^I enter a sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_source, contributor_name|
+  sector_link = sector_source
 
-              "Public Test Council" => "public"
-              "Private Investment Company" => "private"
-              "Other Contribution Investment Company" => "other"
-              }.freeze
+  slug_map = {
+    "public_sector" => "public",
+    "private_sector" => "private",
+    "other_sector" => "other"
+  }.freeze
 
-              source = SLUG_MAP[funding]         
+  source = slug_map[sector_source]
 
-  @app.funding_"{source}"_sector_contributors_page."{source}"_contributors_names.set()
-  @app.funding_"{source}"_sector_contributors_page.submit_button.click
-
+  @app.send("funding_#{sector_link}_contributors_page").send("#{source}_contributors_names").set(contributor_name)
+  @app.send("funding_#{sector_link}_contributors_page").send("submit_button").click
 end
-
 
 # Funding Values
-Given(/^I enter my funding values for "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)"$/  ) do |funding, previous, yr15_16, yr16_17, yr17_18, yr18_19, yr19_20|
- SLUG_MAP =  {
+# rubocop: disable Metrics/LineLength, Metrics/ParameterLists
+Given(/^I enter my funding values for "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)"$/) do |funding, previous, yr1516, yr1617, yr1718, yr1819, yr1920|
+  slug_map = {
+    "grant_in_aid" => "gia",
+    "local_levy" => "levy",
+    "public_sector" => "public",
+    "private_sector" => "private",
+    "other_sector" => "ea",
+    "growth_funding" => "growth",
+    "internal_drainage_boards" => "drain",
+    "not_identified" => "notyet"
+  }.freeze
 
-              "Grant_in_Aid" => "gia"
-              "Local_Levy" => "levy"
-              "Public_Sector" => "public"
-              "Private_Sector" => "private"
-              "Contributions_from_other" => "ea"
-              "Growth_Funding" => "growth"
-              "Internal_Drainage_Boards" => "drain"
-              "Others_not_Identified" => "notyet"
-              }.freeze
+  slug = slug_map[funding]
 
-              slug1 = SLUG_MAP[funding] 
-
-              @app.funding_values_page."#{slug}"_current_year.set previous
-              @app.funding_values_page."#{slug}"_2015_2016.set yr15_16
-              @app.funding_values_page."#{slug}"_2016_2017.set yr16_17
-              @app.funding_values_page."#{slug}"_2016_2017.set yr17_18
-              @app.funding_values_page."#{slug}"_2016_2017.set yr18_19
-              @app.funding_values_page."#{slug}"_2016_2017.set yr19_20
-              @app.funding_values_page.submit_button.click
+  @app.funding_values_page.send("#{slug}_current_year").set(previous)
+  @app.funding_values_page.send("#{slug}_2015_2016").set(yr1516)
+  @app.funding_values_page.send("#{slug}_2016_2017").set(yr1617)
+  @app.funding_values_page.send("#{slug}_2017_2018").set(yr1718)
+  @app.funding_values_page.send("#{slug}_2018_2019").set(yr1819)
+  @app.funding_values_page.send("#{slug}_2019_2020").set(yr1920)
+  @app.funding_values_page.submit_button.click
 end
+# rubocop: enable Metrics/LineLength, Metrics/ParameterLists
 
 Given(/^I answer if the project could start sooner if grant in aid funding was made available earlier questions$/) do
   @app.proposal_overview_page.add_earliest_start.click
@@ -70,3 +83,29 @@ Given(/^I request Local Levy funding$/) do
     local_levy_funding: true
   )
 end
+
+When(/^I check the proposal overview page$/) do
+  puts "Do nothing"
+end
+
+Then(/^I should see the total estimated spend as "([^"]*)"$/) do |totalspend|
+  expect(@app.proposal_overview_page).to have_text(totalspend)
+end
+
+# rubocop: disable Metrics/LineLength
+Then(/^I should see the funding source contributor "([^"]*)"$/) do |contributor|
+  slug_contributor = {
+    "grant_in_aid" => "Grant in aid",
+    "local_levy" => "Local levy",
+    "public_sector" => "public sector contributions",
+    "private_sector" => "Private sector contributions",
+    "other_sector" => "Contributions from other Environment Agency functions or sources",
+    "growth_funding" => "Growth funding",
+    "internal_drainage_boards" => "Funds recovered from an internal drainage board by the Environment Agency, known as a precept",
+    "not_identified" => "Other funding sources not yet identified"
+  }.freeze
+
+  contributor_source = slug_contributor[contributor]
+  expect(@app.proposal_overview_page).to have_text(contributor_source)
+end
+# rubocop: enable Metrics/LineLength
