@@ -16,7 +16,7 @@ Background:
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file "<ShapeFile>"
+      And I upload the benefit area file "<ShapeFile>"
     When I view the benefit area page
     Then I should see the message "<Message>" on the benefit area page
 
@@ -33,7 +33,7 @@ Background:
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file "<ShapeFile>"
+      And I upload the benefit area file "<ShapeFile>"
     When I view the benefit file page
     Then I should see the message "<Message>" on the benefit file page
 
