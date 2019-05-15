@@ -38,13 +38,6 @@ Given(/^I add a location "([^"]*)"$/) do |location|
   )
 end
 
-Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
-  @app.benefit_area_file_page.submit(
-    file: filename
-  )
-  @app.benefit_area_file_summary_page.submit
-end
-
 Given(/^I select a project type "([^"]*)"$/) do |action|
   @app.project_type_page.submit(
     option: action.to_sym
