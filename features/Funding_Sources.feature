@@ -10,7 +10,7 @@ Feature: Create a new project application for Funding Sources
       And I create a new proposal
       And I enter a project name
 
-  # Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
+  # Single Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
   @regression @fundingsources @RMAUser @fs1
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
@@ -35,7 +35,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|internal_drainage_boards|10|2000|3000|4000|5000|6000|20,010|
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
-  # Contributor: Public, Private and Other Sector
+  # Single Contributor: Public, Private and Other Sector
   @regression @fundingsources @RMAUser @fs2
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
