@@ -109,3 +109,4 @@ Then(/^I should see the funding source contributor "([^"]*)"$/) do |contributor|
   expect(@app.proposal_overview_page).to have_text(contributor_source)
 end
 # rubocop: enable Metrics/LineLength
+
