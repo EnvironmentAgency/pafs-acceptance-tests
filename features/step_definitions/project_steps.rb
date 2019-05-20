@@ -22,6 +22,12 @@ Given(/^I enter a project name$/) do
   )
 end
 
+Given(/^I selected a project area "([^"]*)"$/) do |area_source|
+  @app.project_area_selection_page.submit(
+    areasource: area_source
+  )
+end
+
 Given(/^I select financial year to stop spending$/) do
   current_year = Time.now.year
   next_year = current_year + 1
@@ -35,18 +41,6 @@ Given(/^I add a location "([^"]*)"$/) do |location|
   @app.proposal_overview_page.add_location.click
   @app.location_page.submit(
     location: location.to_sym
-  )
-end
-
-Given(/^I select a project type "([^"]*)"$/) do |action|
-  @app.project_type_page.submit(
-    option: action.to_sym
-  )
-end
-
-Given(/^I selected a project area "([^"]*)"$/) do |area_source|
-  @app.project_area_selection_page.submit(
-    areasource: area_source
   )
 end
 
