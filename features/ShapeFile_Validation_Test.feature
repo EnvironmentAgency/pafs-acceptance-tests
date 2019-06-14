@@ -26,7 +26,6 @@ Background:
     |Valid_ShapeFile2.zip|The uploaded shapefile|
     |Valid_ShapeFile3.zip|The uploaded shapefile|
 
-
   # Invalid ShapeFile Validation 
   @ShapeFileTests @sf2
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
@@ -41,3 +40,30 @@ Background:
     |ShapeFile|Message|
     |ShapeFile.png|This file type is not supported. Upload a .zip shapefile|
     |Invalid_ShapeFile.zip|The selected file must be a zip file containing a shapefile|
+
+  # Virus ShapeFile Validation 
+  @ShapeFileTests @sf3
+  Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
+    Given I select a project type "change_or_new_asset"
+      And I select financial year to stop spending
+      And I add a location "ST 58198 72725"
+      And I upload the benefit area file "<ShapeFile>"
+    When I view the benefit file page
+    Then I should see the message "<Message>" on the benefit file page
+
+    Examples:
+    |ShapeFile|Message|
+    |virus.zip|The file was rejected because it may contain a virus. Check the file and try again|
+
+  @ShapeFileTests @sf3
+  Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
+    Given I select a project type "change_or_new_asset"
+      And I select financial year to stop spending
+      And I add a location "ST 58198 72725"
+      And I upload the benefit area file "<ShapeFile>"
+    When I view the benefit file page
+    Then I should see the message "<Message>" on the benefit file page
+
+    Examples:
+    |ShapeFile|Message|
+    |virus.zip|The file was rejected because it may contain a virus. Check the file and try again|
