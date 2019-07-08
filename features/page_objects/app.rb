@@ -80,20 +80,40 @@ class App
     @last_page = FundingSourcesPage.new
   end
 
+  def new_funding_sources_page
+    @last_page = NewFundingSourcesPage.new
+  end
+
   def funding_values_page
     @last_page = FundingValuesPage.new
+  end
+
+  def new_funding_values_page
+    @last_page = NewFundingValuesPage.new
   end
 
   def funding_public_sector_contributors_page
     @last_page = FundingPublicSectorContributorsPage.new
   end
 
+  def new_funding_public_sector_contributors_page
+    @last_page = NewFundingPublicSectorContributorsPage.new
+  end
+
   def funding_private_sector_contributors_page
     @last_page = FundingPrivateSectorContributorsPage.new
   end
 
+  def new_funding_private_sector_contributors_page
+    @last_page = NewFundingPrivateSectorContributorsPage.new
+  end
+
   def funding_other_sector_contributors_page
     @last_page = FundingOtherSectorContributorsPage.new
+  end
+
+  def new_funding_other_sector_contributors_page
+    @last_page = NewFundingOtherSectorContributorsPage.new
   end
 
   def earliest_start_page

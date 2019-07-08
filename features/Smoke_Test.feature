@@ -20,8 +20,8 @@ Feature: Create a new project application for Smoke Tests
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for grant in aid
-      And I enter my funding values for grant in aid
+      And I enter my new funding sources for "grant_in_aid"
+      And I enter my new funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my project risks
       And I add the standard of protection before project starts as "very_significant_risk"
