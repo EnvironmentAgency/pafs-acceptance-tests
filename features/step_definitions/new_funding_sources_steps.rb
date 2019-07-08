@@ -31,8 +31,11 @@ Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_s
 
   source = slug_map[sector_source]
 
+  # rubocop: disable Metrics/LineLength
   @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor_name)
+  # rubocop: enable Metrics/LineLength
   @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
+
 end
 
 # Funding Values
@@ -61,6 +64,7 @@ Given(/^I enter my new funding values for "([^"]*)" previous year "([^"]*)", 201
 end
 # rubocop: enable Metrics/LineLength, Metrics/ParameterLists
 
+# rubocop: disable Metrics/LineLength
 Given(/^I answer if the new project could start sooner if grant in aid funding was made available earlier questions$/) do
   @app.proposal_overview_page.add_earliest_start.click
   @app.earliest_start_page.submit(
@@ -71,6 +75,7 @@ Given(/^I answer if the new project could start sooner if grant in aid funding w
     year: "2019"
   )
 end
+# rubocop: enable Metrics/LineLength
 
 Given(/^I request new Grant in Aid funding$/) do
   @app.grant_in_aid_funding_page.submit(
