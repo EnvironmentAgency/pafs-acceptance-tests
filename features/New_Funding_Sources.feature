@@ -10,7 +10,7 @@ Feature: Create a new project application for New Funding Sources Pages
       And I enter a project name
 
   # Single Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
-  @regression @newfundingsources @RMAUser @fs3
+  @newfundingsources @RMAUser @fs3
   Scenario Outline: Submit a new proposals with a new funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
@@ -35,7 +35,7 @@ Feature: Create a new project application for New Funding Sources Pages
       |change_or_new_asset|ST 58198 72725|Valid_ShapeFile1.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-  @regression @newfundingsources @RMAUser @fs4
+  @newfundingsources @RMAUser @fs4
   Scenario Outline: Submit a new proposals with a new funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
