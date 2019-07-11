@@ -1,6 +1,5 @@
 @frontoffice
-Feature: Create a new project application for Funding Sources
-  As a council
+Feature: Create a new project application for New Funding Sources Pages
   I want to submit a proposal for flood and coastal erosion risk management project funding
   So that my local area can have improved protection from flooding
 
@@ -11,8 +10,8 @@ Feature: Create a new project application for Funding Sources
       And I enter a project name
 
   # Single Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
-  @oldfundingsources @RMAUser @fs1
-  Scenario Outline: Submit a new proposals with a funding source
+  @regression @newfundingsources @RMAUser @fs3
+  Scenario Outline: Submit a new proposals with a new funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
       And I add a location "<location>"
@@ -21,8 +20,8 @@ Feature: Create a new project application for Funding Sources
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for "<funding_source>"
-      And I enter my funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I enter my new funding sources for "<funding_source>"
+      And I enter my new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<funding_source>"
@@ -36,8 +35,8 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Valid_ShapeFile1.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-  @oldfundingsources @RMAUser @fs2
-  Scenario Outline: Submit a new proposals with a funding source
+  @regression @newfundingsources @RMAUser @fs4
+  Scenario Outline: Submit a new proposals with a new funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
       And I add a location "<location>"
@@ -46,9 +45,9 @@ Feature: Create a new project application for Funding Sources
       And I enter my award contract date
       And I enter my construction start date
       And I enter my ready for service date
-      And I enter my funding sources for "<funding_source>"
-      And I enter a sector contributor of "<funding_source>", "<contributor>"
-      And I enter my funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I enter my new funding sources for "<funding_source>"
+      And I enter a new sector contributor of "<funding_source>", "<contributor>"
+      And I enter my new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<contributor>"
