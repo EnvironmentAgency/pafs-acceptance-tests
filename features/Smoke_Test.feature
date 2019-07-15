@@ -10,7 +10,7 @@ Feature: Create a new project application for Smoke Tests
       And I create a new proposal
       And I enter a project name
 
-  @smoketest @regression @sm1
+  @smoketest @regression @smoke1
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
       Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -33,7 +33,7 @@ Feature: Create a new project application for Smoke Tests
     When I complete my proposal
     Then I should see that my proposal is sent for review
 
-  @smoketest @regression @sm2
+  @smoketest @regression @smoke2
   Scenario: Created proposal is in draft status
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
