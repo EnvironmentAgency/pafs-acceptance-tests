@@ -10,21 +10,21 @@ Feature: Create a new project application for Project Urgency
       And I create a new proposal
       And I enter a project name
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new proposal with not urgent project urgency for rma user
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
     When I select the project urgency as "not_urgent"
     Then I should see the project urgent message of "Your project is not urgent" on the proposal page
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new proposal with business critical statutory need check message box is empty
     Given I select a project type "restore_asset"
       And I select financial year to stop spending
     When I select the project urgency as "stat_need"
     Then  I check the project urgent message box is empty
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new proposal with business critical statutory need for rma user
     Given I select a project type "restore_asset"
       And I select financial year to stop spending
@@ -32,7 +32,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is a business critical statutory need"
     Then I should see the project urgent message of "There is a business critical statutory need" on the proposal page
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new property level protection proposal with business critical legal need for rma user
     Given I select a project type "property_level_protection"
       And I select financial year to stop spending
@@ -40,7 +40,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is a business critical legal need"
     Then I should see the project urgent message of "There is a business critical legal need" on the proposal page
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new strategy proposal with specific aspect of the project that has a time limit project urgency for rma user
     Given I select a project type "strategy"
       And I select financial year to stop spending
@@ -48,7 +48,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is a specific aspect of the project that has a time limit"
     Then I should see the project urgent message of "There is a specific aspect of the project that has a time limit" on the proposal page
  
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new proposal with emergency and change to not urgent project urgency  for rma user
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -56,7 +56,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is an emergency"
     Then I should see the project urgent message of "There is an emergency" on the proposal page      
  
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new benefit hosueholds yes proposal with there is a business critical legal need project urgency for rma user
     Given I select a project type "benefits_households_yes"
       And I select financial year to stop spending
@@ -64,7 +64,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is a business critical legal need"
     Then I should see the project urgent message of "There is a business critical legal need" on the proposal page 
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a new benefit households no proposal with there is an emergency for rma user
     Given I select a project type "benefits_households_no"
       And I select financial year to stop spending
@@ -72,7 +72,7 @@ Feature: Create a new project application for Project Urgency
       And I enter the project urgent message box of "There is an emergency"
     Then I should see the project urgent message of "There is an emergency" on the proposal page   
 
-  @regression @projecturgency @RMAUser
+  @projectUrgencyTests @RMAUser
   Scenario: Submit a full proposal to check project not urgency with rma user
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
