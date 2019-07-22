@@ -1,3 +1,4 @@
+@frontoffice
 Feature: Run regression tests against the soltuiin
   I Want to run regression tests against the soltion 
   So that I can confirm that the solution still functions as expected
