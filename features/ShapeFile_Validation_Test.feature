@@ -11,7 +11,7 @@ Background:
       And I enter a project name
 
   # Valid ShapeFile Validation 
-  @shapeFileTests @sf1
+  @shapefile @sf1
   Scenario Outline: Sumbmit a new proposal with an valid shapefile
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -27,7 +27,7 @@ Background:
     |Valid_ShapeFile3.zip|The uploaded shapefile|
 
   # Invalid ShapeFile Validation 
-  @shapeFileTests @sf2
+  @shapefile @sf2
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -42,7 +42,7 @@ Background:
     |Invalid_ShapeFile.zip|The selected file must be a zip file containing a shapefile|
 
   # Virus ShapeFile Validation 
-  @shapeFileTests @sf3
+  @shapefile @sf3
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -55,7 +55,7 @@ Background:
     |ShapeFile|Message|
     |virus.zip|The file was rejected because it may contain a virus. Check the file and try again|
 
-  @shapeFileTests @sf4
+  @shapefile @sf4
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
     Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
