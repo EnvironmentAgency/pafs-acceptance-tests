@@ -25,6 +25,9 @@ class ProposalOverviewPage < SitePrism::Page
 
   element(:revert_to_draft, "#[href$='Revert to draft']")
 
+  # Based on PM-529 this has been changed fromn complete to submit
+  # This is only on the Training site at the moment
+  element(:complete_proposal_training, "a[href$='submit']")
   element(:complete_proposal, "a[href$='complete']")
 
   def submit(_args = {})

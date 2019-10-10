@@ -2,7 +2,7 @@ class NewFundingPublicSectorContributorsPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:new_public_contributors_names, "#public_contributors_step_name")
+  element(:new_public_contributors_names, "#name_0_current")
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})

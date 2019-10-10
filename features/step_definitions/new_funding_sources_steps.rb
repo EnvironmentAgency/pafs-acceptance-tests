@@ -20,7 +20,7 @@ Given(/^I enter my new funding sources for "([^"]*)"$/) do |funding_source|
 end
 
 # Funding Contributors
-Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_source, contributor_name|
+Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_source, contributor|
   sector_link = sector_source
 
   slug_map = {
@@ -31,9 +31,11 @@ Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_s
 
   source = slug_map[sector_source]
 
-  # rubocop: disable Metrics/LineLength
-  @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor_name)
-  # rubocop: enable Metrics/LineLength
+  @app.approach_page.submit(
+    contributor: "This is the projects approach...."
+  )
+
+  @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor)
   @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
 
 end

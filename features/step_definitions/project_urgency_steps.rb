@@ -28,15 +28,6 @@ When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
   )
 end
 
-When(/^I complete my proposal$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.complete_proposal.click
-end
-
-When(/^I return to the proposal overview page$/) do
-  @app.grant_in_aid_funding_page.user_bar.projects.click
-end
-
 When(/^I enter the project urgent message box of "([^"]*)"$/) do |message|
   @app.urgency_details_page.submit(
     details: message
