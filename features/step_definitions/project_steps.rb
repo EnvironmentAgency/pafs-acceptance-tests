@@ -184,6 +184,11 @@ Then(/^I should see that my proposal is sent for review$/) do
   expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
+Then(/^I should see that my proposal is submitted$/) do
+  expect(@app.confirm_page).to have_project_number
+  expect(@app.proposal_overview_page).to have_text("Proposal submitted")
+end
+
 Then(/^I should see that my proposal is under review$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal under review")
