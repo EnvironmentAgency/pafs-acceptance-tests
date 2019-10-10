@@ -11,11 +11,7 @@ Feature: Create a new project application for Funding Sources
       And I enter a project name
 
   # Single Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
-<<<<<<< HEAD
  @fundingSourceTests @RMAUser @fs1
-=======
- @oldfundingsourceTests @RMAUser @fs1
->>>>>>> 0c3076141bd669c8bfc0e86ff1898c09cd46e41b
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
@@ -40,11 +36,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-<<<<<<< HEAD
   @fundingSourceTests @RMAUser @fs2
-=======
-  @oldfundingsourceTests @RMAUser @fs2
->>>>>>> 0c3076141bd669c8bfc0e86ff1898c09cd46e41b
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
