@@ -35,9 +35,7 @@ Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_s
     contributor: "This is the projects approach...."
   )
 
-  # rubocop: disable Metrics/LineLength
   @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor)
-  # rubocop: enable Metrics/LineLength
   @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
 
 end

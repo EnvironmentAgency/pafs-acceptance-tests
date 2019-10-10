@@ -6,8 +6,6 @@ class NewFundingPublicSectorContributorsPage < SitePrism::Page
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})
-  	binding.pry
-  	time(1000);
     public_contributors_names.set(args[:new_public_contributors_names]) if args.key?(:new_public_contributors_names)
     submit_button.click
   end

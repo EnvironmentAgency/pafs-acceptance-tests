@@ -28,7 +28,6 @@ When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
   )
 end
 
-
 When(/^I enter the project urgent message box of "([^"]*)"$/) do |message|
   @app.urgency_details_page.submit(
     details: message
