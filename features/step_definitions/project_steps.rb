@@ -2,6 +2,7 @@ Given(/^I am an external user$/) do
 
   @app = App.new
   @app.front_office_home_page.load
+  sleep 0.75
 end
 
 Given(/^I have a valid "([^"]*)" username and password$/) do |user_type|

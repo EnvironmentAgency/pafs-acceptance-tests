@@ -42,8 +42,7 @@ Feature: Create a new project application for Smoke Tests
 
     @trainingSmokeTests @trainSmoke1
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding for training
-    Given I select a project type "<project_type>"
-      Given I select a project type "change_or_new_asset"
+    Given I select a project type "property_level_protection"
       And I select financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload my benefit area file "Test_ShapeFile.zip"
@@ -66,8 +65,7 @@ Feature: Create a new project application for Smoke Tests
 
   @trainingSmokeTests @trainSmoke2
   Scenario: Created proposal is in draft status for training
-    Given I select a project type "<project_type>"
-    Given I select a project type "change_or_new_asset"
+    Given I select a project type "benefits_households_yes"
       And I select financial year to stop spending
     When I return to the proposal overview page
     Then its status is draft
