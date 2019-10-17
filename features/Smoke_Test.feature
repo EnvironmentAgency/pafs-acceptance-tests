@@ -10,7 +10,7 @@ Feature: Create a new project application for Smoke Tests
       And I create a new proposal
       And I enter a project name
 
-  @QAsmokeTests @smoke1 @testagain
+  @QAsmokeTests @smoke1
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
       Given I select a project type "change_or_new_asset"
       And I select financial year to stop spending
@@ -40,7 +40,7 @@ Feature: Create a new project application for Smoke Tests
     When I return to the proposal overview page
     Then its status is draft
 
-    @trainingSmokeTests @trainSmoke1 @testagain
+    @trainingSmokeTests @trainSmoke1
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding for training
     Given I select a project type "property_level_protection"
       And I select financial year to stop spending
