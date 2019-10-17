@@ -13,7 +13,7 @@ When(/^I complete my proposal on training$/) do
   @app.proposal_overview_page.complete_proposal_training.click
 end
 
-When(/^I complete my proposal$/) do
+When(/^I complete my proposal$ on QA/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal.click
 end
