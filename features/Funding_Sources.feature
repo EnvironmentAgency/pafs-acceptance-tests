@@ -11,7 +11,7 @@ Feature: Create a new project application for Funding Sources
       And I enter a project name
 
   # Single Funding Source of Grant in Aid, Local Levy, Growth Funding, Internal Drainge Board, Not Yet Identified
- @fundingSourceTests @RMAUser @fs1
+ @QA_FundingSourceTests
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
@@ -36,7 +36,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-  @fundingSourceTests @RMAUser @fs2
+  @QA_FundingSourceTests
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
@@ -59,7 +59,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|private_sector|Private Investment Company|0|2000|3000|4000|5000|6000|20,000|
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|other_sector|Other Contribution Investment Company|5000|5000|5000|5000|5000|5000|30,000|
 
-  @trainingFundSourceTests @RMAUser @nfs1
+  @TRA_FundSourceTests
   Scenario Outline: Submit a new proposals with a new funding source for training
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
@@ -84,7 +84,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-  @trainingFundSourceTests @RMAUser @nfs2
+  @TRA_FundSourceTests
   Scenario Outline: Submit a new proposals with a new funding source for training
     Given I select a project type "<project_type>"
       And I select financial year to stop spending
