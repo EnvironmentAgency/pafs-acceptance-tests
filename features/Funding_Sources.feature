@@ -62,7 +62,6 @@ Feature: Create a new project application for Funding Sources
   @trainingFundSourceTests @RMAUser @nfs1
   Scenario Outline: Submit a new proposals with a new funding source for training
     Given I select a project type "<project_type>"
-    Given I select a project type "<project_type>"
       And I select financial year to stop spending
       And I add a location "<location>"
       And I upload my benefit area file "<shapefile>"
