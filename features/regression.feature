@@ -104,7 +104,7 @@ Feature: Run regression tests against the soltuiin
 
     Examples:
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile1.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
+      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
 
   #Project Urgency
   @TRA_RegressionTests
