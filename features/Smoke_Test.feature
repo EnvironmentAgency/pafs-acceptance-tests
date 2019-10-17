@@ -10,6 +10,10 @@ Feature: Create a new project application for Smoke Tests
       And I create a new proposal
       And I enter a project name
 
+#==================================================================================================================================
+# QA Test Environment
+# ==================================================================================================================================
+
   @QA_SmokeTests
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding
       Given I select a project type "change_or_new_asset"
@@ -30,7 +34,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter environmental outcomes improvements
       And I select the project urgency as "emergency" with a project message of "There is an emergency"
       And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
-    When I complete my proposal
+    When I complete my proposal on QA
     Then I should see that my proposal is sent for review
 
   @QA_SmokeTests
@@ -39,6 +43,10 @@ Feature: Create a new project application for Smoke Tests
       And I select financial year to stop spending
     When I return to the proposal overview page
     Then its status is draft
+
+#==================================================================================================================================
+# Training Test Environment
+# ==================================================================================================================================
 
     @TRA_SmokeTests
     Scenario: Sumbmit a new proposal with Grant in Aid and Levy funding for training
