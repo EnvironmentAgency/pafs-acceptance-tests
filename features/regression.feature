@@ -55,7 +55,7 @@ Feature: Run regression tests against the soltuiin
       And I enter environmental outcomes improvements
       And I select the project urgency as "not_urgent"
       And I upload my project funding calculator file "LIT_9160_97331cOM3TEST.xlsx"
-    When I complete my proposal
+    When I complete my proposal on QA
     Then I should see that my proposal is sent for review
 
   #@Project Type 

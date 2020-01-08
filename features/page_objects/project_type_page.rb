@@ -15,7 +15,6 @@ class ProjectTypePage < SitePrism::Page
   # Essentially in this page we are selecting a checkbox. For us this was best
   # represented by a case statement however this breaks our rubocop rules hence
   # the exception added here.
-  # rubocop:disable Metrics/CyclomaticComplexity
   def submit(args = {})
     case args[:option]
     # Changing the current standard of service....
@@ -27,9 +26,6 @@ class ProjectTypePage < SitePrism::Page
     # Property level protection for properties within the 'very significant' flood band....
     when :property_level_protection
       plp.click
-    # Work done to bridges to enable flood and coastal erosion risk management
-    when :bridges
-      brg.click
     # Strategy for complex flood or coastal erosion risk situations across several interconnected areas
     when :strategy
       str.click
@@ -43,6 +39,5 @@ class ProjectTypePage < SitePrism::Page
 
     submit_button.click
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 
 end
