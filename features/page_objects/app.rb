@@ -136,12 +136,24 @@ class App
     @last_page = FloodProtectionOutcomesPage.new
   end
 
+  def coastal_erosion_protection_outcomes_page
+    @last_page = CoastalErosionProtectionOutcomesPage.new
+  end
+
   def standard_of_protection_page
     @last_page = StandardOfProtectionPage.new
   end
 
   def standard_of_protection_after_page
     @last_page = StandardOfProtectionAfterPage.new
+  end
+
+  def standard_of_protection_coastal_before_page
+    @last_page = StandardOfProtectionCoastalBeforePage.new
+  end
+
+  def standard_of_protection_coastal_after_page
+    @last_page = StandardOfProtectionCoastalAfterPage.new
   end
 
   def approach_page

@@ -81,28 +81,67 @@ Given(/^I enter my ready for service date$/) do
   )
 end
 
-Given(/^I add my project risks$/) do
-  @app.proposal_overview_page.add_risks.click
-  @app.risks_page.submit(
-    risks: %w[tidal_flooding sea_flooding]
-  )
-  # Picks the first risk as the main risk - else picks the last risk
-  @app.main_risk_page.submit(
-    choose_first: true
-  )
-
+Given(/^I add the flood protection outcome as none$/) do
   @app.flood_protection_outcomes_page.submit(
-    a1: "1000",
-    a2: "100",
-    a3: "10",
-    b1: "1000",
-    b2: "100",
-    b3: "10",
-    c1: "1000",
-    c2: "100",
-    c3: "10"
+    outcome: true
   )
 end
+
+Given(/^I add the coastal erosion protection outcome as none$/) do
+  @app.coastal_erosion_protection_outcomes_page.submit(
+    outcome: true
+  )
+end
+
+# rubocop:disable Metrics/LineLength, Metrics/ParameterLists
+Given(/^I add the flood protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
+  @app.flood_protection_outcomes_page.submit(
+    a1: a1.to_sym,
+    a2: a2.to_sym,
+    a3: a3.to_sym,
+    a4: a4.to_sym,
+    a5: a5.to_sym,
+    a6: a6.to_sym,
+    b1: b1.to_sym,
+    b2: b2.to_sym,
+    b3: b3.to_sym,
+    b4: b4.to_sym,
+    b5: b5.to_sym,
+    b6: b6.to_sym,
+    c1: c1.to_sym,
+    c2: c2.to_sym,
+    c3: c3.to_sym,
+    c4: c4.to_sym,
+    c5: c5.to_sym,
+    c6: c6.to_sym
+  )
+end
+# rubocop:enable Metrics/LineLength, Metrics/ParameterLists
+
+# rubocop:disable Metrics/LineLength, Metrics/ParameterLists
+Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
+  @app.flood_protection_outcomes_page.submit(
+    a1: a1.to_sym,
+    a2: a2.to_sym,
+    a3: a3.to_sym,
+    a4: a4.to_sym,
+    a5: a5.to_sym,
+    a6: a6.to_sym,
+    b1: b1.to_sym,
+    b2: b2.to_sym,
+    b3: b3.to_sym,
+    b4: b4.to_sym,
+    b5: b5.to_sym,
+    b6: b6.to_sym,
+    c1: c1.to_sym,
+    c2: c2.to_sym,
+    c3: c3.to_sym,
+    c4: c4.to_sym,
+    c5: c5.to_sym,
+    c6: c6.to_sym
+  )
+end
+# rubocop:enable Metrics/LineLength, Metrics/ParameterLists
 
 Given(/^I return to the overview page$/) do
   @app.proposal_under_review_page.return_to_the_proposal_overview_page.click
@@ -125,10 +164,29 @@ Given(/^I add the standard of protection after project completes as "([^"]*)"$/)
   )
 end
 
-Given(/^I enter the projects goal approach$/) do
+Given(/^I add the standard of protection coastal erosion starts as "([^"]*)"$/) do |before|
+  @app.standard_of_protection_coastal_before_page.submit(
+    option: before.to_sym
+  )
+end
+
+Given(/^I add the standard of protection before coastal erosion starts as "([^"]*)"$/) do |before|
+  @app.proposal_overview_page.add_standard_of_coastal_protection.click
+  @app.standard_of_protection_coastal_before_page.submit(
+    option: before.to_sym
+  )
+end
+
+Given(/^I add the standard of protection after coastal erosion project completes as "([^"]*)"$/) do |after|
+  @app.standard_of_protection_coastal_after_page.submit(
+    option: after.to_sym
+  )
+end
+
+Given(/^I enter the projects goal approach "([^"]*)"$/) do |msg|
   @app.proposal_overview_page.add_goals.click
   @app.approach_page.submit(
-    approach: "This is the projects approach...."
+    approach: msg.to_sym
   )
 end
 
