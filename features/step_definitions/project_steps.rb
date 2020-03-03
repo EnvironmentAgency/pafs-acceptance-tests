@@ -261,8 +261,8 @@ Given(/^I enter no environmental outcomes improvements$/) do
 end
 
 Given(/^I click and continue$/) do
-  @app.click_and_continue.submit()
-end 
+  @app.click_and_continue.submit
+end
 
 # Then Actions
 Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|

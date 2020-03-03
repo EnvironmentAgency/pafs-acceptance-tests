@@ -41,6 +41,7 @@ Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_s
 end
 
 # Funding Contributors
+# rubocop: disable Metrics/LineLength
 Given(/^I enter two new sector contributors "([^"]*)", "([^"]*)", "([^"]*)"$/) do |sector_source, contributor1, contributor2|
   sector_link = sector_source
 
@@ -62,6 +63,7 @@ Given(/^I enter two new sector contributors "([^"]*)", "([^"]*)", "([^"]*)"$/) d
   @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
 
 end
+# rubocop: enable Metrics/LineLength
 
 # Funding Values
 # rubocop: disable Metrics/LineLength, Metrics/ParameterLists
