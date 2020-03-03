@@ -261,7 +261,7 @@ Given(/^I enter no environmental outcomes improvements$/) do
 end
 
 Given(/^I click and continue$/) do
-  @app.click_and_continue.submit
+  @app.click_and_continue.submit_button.click
 end
 
 # Then Actions
