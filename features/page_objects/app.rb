@@ -176,12 +176,20 @@ class App
     @last_page = ImproveHabitatAmountPage.new
   end
 
+  def improve_sssi_page
+    @last_page = ImproveSssiPage.new
+  end
+
   def improve_river_page
     @last_page = ImproveRiverPage.new
   end
 
   def improve_river_amount_page
     @last_page = ImproveRiverAmountPage.new
+  end
+
+  def improve_hbi_page
+    @last_page = ImproveHbiPage.new
   end
 
   def habitat_creation_page
@@ -226,6 +234,14 @@ class App
 
   def confirm_page
     @last_page = ConfirmPage.new
+  end
+
+  def click_and_continue
+    @last_page = ClickAndContinue.new
+  end
+
+  def contributor_add_remove
+    @last_page = ContributorAddRemove.new
   end
 end
 # rubocop:enable Metrics/ClassLength

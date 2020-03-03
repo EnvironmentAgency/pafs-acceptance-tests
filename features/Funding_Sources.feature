@@ -36,7 +36,7 @@ Feature: Create a new project application for Funding Sources
       |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
-  @QA_FundingSourceTests
+  @QA_FundingSourceTests @TEST2W
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
       And I select financial year to stop spending

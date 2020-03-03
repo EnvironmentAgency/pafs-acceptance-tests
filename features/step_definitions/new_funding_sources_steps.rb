@@ -40,6 +40,31 @@ Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_s
 
 end
 
+# Funding Contributors
+# rubocop: disable Metrics/LineLength
+Given(/^I enter two new sector contributors "([^"]*)", "([^"]*)", "([^"]*)"$/) do |sector_source, contributor1, contributor2|
+  sector_link = sector_source
+
+  slug_map = {
+    "public_sector" => "public",
+    "private_sector" => "private",
+    "other_sector" => "other"
+  }.freeze
+
+  source = slug_map[sector_source]
+
+  @app.approach_page.submit(
+    contributor: "This is the projects approach...."
+  )
+
+  @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor1)
+  @app.contributor_add_remove.add_contributor.click
+  @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor2)
+  @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
+
+end
+# rubocop: enable Metrics/LineLength
+
 # Funding Values
 # rubocop: disable Metrics/LineLength, Metrics/ParameterLists
 Given(/^I enter my new funding values for "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)"$/) do |funding, previous, yr1516, yr1617, yr1718, yr1819, yr1920|
@@ -62,6 +87,7 @@ Given(/^I enter my new funding values for "([^"]*)" previous year "([^"]*)", 201
   @app.new_funding_values_page.send("#{slug}_2017_2018").set(yr1718)
   @app.new_funding_values_page.send("#{slug}_2018_2019").set(yr1819)
   @app.new_funding_values_page.send("#{slug}_2019_2020").set(yr1920)
+  @app.new_funding_values_page.submit_button.click
   @app.new_funding_values_page.submit_button.click
 end
 # rubocop: enable Metrics/LineLength, Metrics/ParameterLists
