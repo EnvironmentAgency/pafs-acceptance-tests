@@ -23,6 +23,12 @@ Given(/^I enter a project name$/) do
   )
 end
 
+Given(/^I enter a test project name "([^"]*)"$/) do |project_name|
+  @app.project_name_page.submit(
+    project_name: project_name.to_sym
+  )
+end
+
 Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   @app.project_area_selection_page.submit(
     areasource: area_source
@@ -120,7 +126,7 @@ end
 
 # rubocop:disable Metrics/LineLength, Metrics/ParameterLists
 Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
-  @app.flood_protection_outcomes_page.submit(
+  @app.coastal_erosion_protection_outcomes_page.submit(
     a1: a1.to_sym,
     a2: a2.to_sym,
     a3: a3.to_sym,
@@ -228,6 +234,35 @@ Given(/^I enter environmental outcomes improvements$/) do
   )
 end
 # rubocop:enable Metrics/BlockLength
+
+Given(/^I enter no environmental outcomes improvements$/) do
+  @app.proposal_overview_page.add_environmental_outcomes.click
+  @app.environmental_outcomes_page.submit(
+    improve: false
+  )
+  @app.improve_spa_or_sac_page.submit(
+    improve: false
+  )
+  @app.improve_sssi_page.submit(
+    improve: false
+  )
+  @app.improve_hbi_page.submit(
+    improve: false
+  )
+  @app.habitat_creation_page.submit(
+    create: false
+  )
+  @app.remove_fish_barrier_page.submit(
+    remove: false
+  )
+  @app.remove_eel_barrier_page.submit(
+    remove: false
+  )
+end
+
+Given(/^I click and continue$/) do
+  @app.click_and_continue.submit()
+end 
 
 # Then Actions
 Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|

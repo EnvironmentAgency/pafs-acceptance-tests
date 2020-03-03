@@ -55,6 +55,7 @@ class CoastalErosionProtectionOutcomesPage < SitePrism::Page
       c3.set(args[:c3]) if args.key?(:c3)
       c4.set(args[:c4]) if args.key?(:c4)
       c5.set(args[:c5]) if args.key?(:c5)
+      c6.set(args[:c6]) if args.key?(:c6)
     end
 
     submit_button.click
