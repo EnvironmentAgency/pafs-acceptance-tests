@@ -35,7 +35,7 @@ Given(/^I selected a project area "([^"]*)"$/) do |area_source|
   )
 end
 
-Given(/^I select financial year to stop spending$/) do
+Given(/^I select a financial year to stop spending$/) do
   current_year = Time.now.year
   next_year = current_year + 1
   financial_year = "Year_#{current_year}_#{next_year}"
@@ -51,14 +51,14 @@ Given(/^I add a location "([^"]*)"$/) do |location|
   )
 end
 
-Given(/^I upload my benefit area file "([^"]*)"$/) do |filename|
+Given(/^I upload a benefit area file "([^"]*)"$/) do |filename|
   @app.benefit_area_file_page.submit(
     file: filename
   )
   @app.benefit_area_file_summary_page.submit
 end
 
-Given(/^I enter my business case start date$/) do
+Given(/^I enter a business case start date$/) do
   @app.proposal_overview_page.add_important_dates.click
   @app.start_outline_business_case_date_page.submit(
     month: "01",
@@ -66,21 +66,21 @@ Given(/^I enter my business case start date$/) do
   )
 end
 
-Given(/^I enter my award contract date$/) do
+Given(/^I enter a award contract date$/) do
   @app.award_contract_date_page.submit(
     month: "01",
     year: "2021"
   )
 end
 
-Given(/^I enter my construction start date$/) do
+Given(/^I enter a construction start date$/) do
   @app.start_construction_date_page.submit(
     month: "01",
     year: "2022"
   )
 end
 
-Given(/^I enter my ready for service date$/) do
+Given(/^I enter a ready for service date$/) do
   @app.ready_for_service_date_page.submit(
     month: "01",
     year: "2023"

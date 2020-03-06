@@ -13,19 +13,18 @@ Feature: Run regression tests against the soltuiin
 # QA Test Environment
 # ==================================================================================================================================
 
- #Funding Sources OLD 
  @QA_RegressionTests @R1
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
-      And I select financial year to stop spending
+      And I select a financial year to stop spending
       And I add a location "<location>"
-      And I upload my benefit area file "<shapefile>"
-      And I enter my business case start date
-      And I enter my award contract date
-      And I enter my construction start date
-      And I enter my ready for service date
-      And I enter my funding sources for "<funding_source>"
-      And I enter my funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I upload a benefit area file "<shapefile>"
+      And I enter a business case start date
+      And I enter a award contract date
+      And I enter a construction start date
+      And I enter a ready for service date
+      And I enter a funding source for "<funding_source>"
+      And I enter funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<funding_source>"
@@ -38,20 +37,21 @@ Feature: Run regression tests against the soltuiin
   @QA_RegressionTests @R2
   Scenario: Submit a full proposal to check project not urgency with rma user
     Given I select a project type "change_or_new_asset"
-      And I select financial year to stop spending
+      And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file "Test_ShapeFile.zip"
-      And I enter my business case start date
-      And I enter my award contract date
-      And I enter my construction start date
-      And I enter my ready for service date
-      And I enter my funding sources for "grant_in_aid"
-      And I enter my funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I answer if the project could start sooner if grant in aid funding was made available earlier questions
-      And I add my project risks
+      And I upload a benefit area file "Test_ShapeFile.zip"
+      And I enter a business case start date
+      And I enter a award contract date
+      And I enter a construction start date
+      And I enter a ready for service date
+      And I enter a funding source for "grant_in_aid"
+      And I enter funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I answer YES if the project could start sooner "01", "2020"
+      And I add my main project risk "tidal"
+      And I add the flood protection outcome as none
       And I add the standard of protection before project starts as "very_significant_risk"
       And I add the standard of protection after project completes as "low_risk"
-      And I enter the projects goal approach
+      And I enter the projects goal approach "QA: Full proposal to check project not urgency with rma user"
       And I enter environmental outcomes improvements
       And I select the project urgency as "not_urgent"
       And I upload my project funding calculator file "LIT_9160_97331cOM3TEST.xlsx"
@@ -62,7 +62,7 @@ Feature: Run regression tests against the soltuiin
   @QA_RegressionTests @R3 
   Scenario: Sumbmit a new defence proposal
     Given I select a project type "change_or_new_asset" 
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Create a new flood or coastal erosion risk management asset, or improve the standard of service of an existing one"
 
@@ -70,7 +70,7 @@ Feature: Run regression tests against the soltuiin
   @QA_RegressionTests @R4
   Scenario: Sumbmit a new restore asset proposal
     Given I select a project type "restore_asset"
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Restore the standard of service of a flood or coastal erosion risk management asset by refurbishment or replacement"
 
@@ -78,26 +78,26 @@ Feature: Run regression tests against the soltuiin
   @QA_RegressionTests @R5
   Scenario: Sumbmit a new property level protection proposal
     Given I select a project type "property_level_protection"
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Add property level protection for properties within the 'very significant' flood band where there is a 5% or greater chance of flooding"
 
 # ==================================================================================================================================
-# Training Test Environment
+# Training Test Environment 
 # ==================================================================================================================================
 
- @TRA_RegressionTests
+ @TRA_RegressionTests @TRA_R1
   Scenario Outline: Submit a new proposals with a funding source
     Given I select a project type "<project_type>"
-      And I select financial year to stop spending
+      And I select a financial year to stop spending
       And I add a location "<location>"
-      And I upload my benefit area file "<shapefile>"
-      And I enter my business case start date
-      And I enter my award contract date
-      And I enter my construction start date
-      And I enter my ready for service date
-      And I enter my funding sources for "<funding_source>"
-      And I enter my funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I upload a benefit area file "<shapefile>"
+      And I enter a business case start date
+      And I enter a award contract date
+      And I enter a construction start date
+      And I enter a ready for service date
+      And I enter a new funding source for "<funding_source>"
+      And I enter new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<funding_source>"
@@ -110,20 +110,21 @@ Feature: Run regression tests against the soltuiin
   @TRA_RegressionTests
   Scenario: Submit a full proposal to check project not urgency with rma user
     Given I select a project type "change_or_new_asset"
-      And I select financial year to stop spending
+      And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload my benefit area file "Test_ShapeFile.zip"
-      And I enter my business case start date
-      And I enter my award contract date
-      And I enter my construction start date
-      And I enter my ready for service date
-      And I enter my funding sources for "grant_in_aid"
-      And I enter my funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I answer if the project could start sooner if grant in aid funding was made available earlier questions
-      And I add my project risks
+      And I upload a benefit area file "Test_ShapeFile.zip"
+      And I enter a business case start date
+      And I enter a award contract date
+      And I enter a construction start date
+      And I enter a ready for service date
+      And I enter a new funding source for "grant_in_aid"
+      And I enter new funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I answer YES if the project could start sooner "01", "2020"
+      And I add my main project risk "tidal"
+      And I add the flood protection outcome as none
       And I add the standard of protection before project starts as "very_significant_risk"
       And I add the standard of protection after project completes as "low_risk"
-      And I enter the projects goal approach
+      And I enter the projects goal approach "Training: full proposal to check project not urgency with rma user"
       And I enter environmental outcomes improvements
       And I select the project urgency as "not_urgent"
       And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
@@ -134,7 +135,7 @@ Feature: Run regression tests against the soltuiin
   @TRA_RegressionTests
   Scenario: Sumbmit a new defence proposal
     Given I select a project type "change_or_new_asset" 
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Create a new flood or coastal erosion risk management asset, or improve the standard of service of an existing one"
 
@@ -142,7 +143,7 @@ Feature: Run regression tests against the soltuiin
   @TRA_RegressionTests
   Scenario: Sumbmit a new restore asset proposal
     Given I select a project type "restore_asset"
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Restore the standard of service of a flood or coastal erosion risk management asset by refurbishment or replacement"
 
@@ -150,6 +151,6 @@ Feature: Run regression tests against the soltuiin
   @TRA_RegressionTests
   Scenario: Sumbmit a new property level protection proposal
     Given I select a project type "property_level_protection"
-    And I select financial year to stop spending
+    And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Add property level protection for properties within the 'very significant' flood band where there is a 5% or greater chance of flooding"
