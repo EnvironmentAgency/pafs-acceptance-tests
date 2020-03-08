@@ -290,6 +290,24 @@ Given(/^I click and continue$/) do
   @app.click_and_continue.submit_button.click
 end
 
+Given(/^I answer YES if the project could start sooner "([^"]*)", "([^"]*)"$/) do |month, year|
+  @app.proposal_overview_page.add_earliest_start.click
+  @app.earliest_start_page.submit(
+    earlier_start: true
+  )
+  @app.earliest_date_page.submit(
+    month: month.to_sym,
+    year: year.to_sym
+  )
+end
+
+Given(/^I answer NO if the project could start sooner$/) do
+  @app.proposal_overview_page.add_earliest_start.click
+  @app.earliest_start_page.submit(
+    earlier_start: false
+  )
+end
+
 # Then Actions
 Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click

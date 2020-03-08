@@ -63,7 +63,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a new funding source for "grant_in_aid"
-      And I enter a new funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter new funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a new funding source for "local_levy"
       And I enter new funding values for "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"  
       And I answer YES if the project could start sooner "01", "2020"
