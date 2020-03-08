@@ -33,11 +33,11 @@ Feature: Create a new project application for Funding Sources
 
     Examples:
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|local_levy|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|growth_funding|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|internal_drainage_boards|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|local_levy|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|growth_funding|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|internal_drainage_boards|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
   @QA_FundingSourceTests @Fund_QA2
@@ -59,9 +59,9 @@ Feature: Create a new project application for Funding Sources
 
     Examples:
       |project_type|location|shapefile|funding_source|contributor|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|public_sector|Public Test Council|1000|2000|3000|4000|5000|6000|21,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|private_sector|Private Investment Company|0|2000|3000|4000|5000|6000|20,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|other_sector|Other Contribution Investment Company|5000|5000|5000|5000|5000|5000|30,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|public_sector|Public Test Council|1000|2000|3000|4000|5000|6000|21,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|private_sector|Private Investment Company|0|2000|3000|4000|5000|6000|20,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|other_sector|Other Contribution Investment Company|5000|5000|5000|5000|5000|5000|30,000|
 
 #==================================================================================================================================
 # Training Test Environment
@@ -85,11 +85,11 @@ Feature: Create a new project application for Funding Sources
 
     Examples:
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|local_levy|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|growth_funding|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|internal_drainage_boards|10|2000|3000|4000|5000|6000|20,010|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|local_levy|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|growth_funding|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|internal_drainage_boards|10|2000|3000|4000|5000|6000|20,010|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|not_identified|1000|2000|2000|4000|2000|6000|17,000|      
 
   # Single Contributor: Public, Private and Other Sector
   @TRA_FundingSourceTests @Fund_TRA2
@@ -111,6 +111,6 @@ Feature: Create a new project application for Funding Sources
 
     Examples:
       |project_type|location|shapefile|funding_source|contributor|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|public_sector|Public Test Council|1000|2000|3000|4000|5000|6000|21,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|private_sector|Private Investment Company|0|2000|3000|4000|5000|6000|20,000|
-      |change_or_new_asset|ST 58198 72725|Test_ShapeFile.zip|other_sector|Other Contribution Investment Company|5000|5000|5000|5000|5000|5000|30,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|public_sector|Public Test Council|1000|2000|3000|4000|5000|6000|21,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|private_sector|Private Investment Company|0|2000|3000|4000|5000|6000|20,000|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|other_sector|Other Contribution Investment Company|5000|5000|5000|5000|5000|5000|30,000|
