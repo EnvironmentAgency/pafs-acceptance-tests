@@ -27,7 +27,7 @@ Feature: OM Test 1 run against the soltuiin
       And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
-      And I upload a benefit area file "Test_ShapeFile.zip"
+      And I upload a benefit area file "Valid_ShapeFile.zip"
       And I enter a business case start date
       And I enter a award contract date
       And I enter a construction start date
