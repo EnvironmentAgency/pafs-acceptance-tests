@@ -224,6 +224,10 @@ class App
     @last_page = FundingCalculatorPage.new
   end
 
+  def new_funding_calculator_page
+    @last_page = NewFundingCalculatorPage.new
+  end
+
   def funding_calculator_summary_page
     @last_page = FundingCalculatorSummaryPage.new
   end
@@ -240,8 +244,28 @@ class App
     @last_page = ClickAndContinue.new
   end
 
-  def contributor_add_remove
-    @last_page = ContributorAddRemove.new
+  def contributor_add
+    @last_page = ContributorAdd.new
+  end
+
+  def confidence_secured_partnership_funding_page
+    @last_page = ConfidenceSecuredPartnershipFundingPage.new
+  end
+
+  def confidence_homes_by_gateway_four_page
+    @last_page = ConfidenceHomesByGatewayFourPage.new
+  end
+
+  def confidence_homes_better_protected_page
+    @last_page = ConfidenceHomesBetterProtectedPage.new
+  end
+
+  def carbon_cost_build_page
+    @last_page = CarbonCostBuild.new
+  end
+
+  def carbon_cost_operation_page
+    @last_page = CarbonCostOperationPage.new
   end
 end
 # rubocop:enable Metrics/ClassLength

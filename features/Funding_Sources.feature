@@ -51,8 +51,9 @@ Feature: Create a new project application for Funding Sources
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "<funding_source>"
-      And I enter a sector contributor of "<funding_source>", "<contributor>"
-      And I enter funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I enter a new sector contributor of "<funding_source>", "<contributor>"
+      And I enter new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I click and continue
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<contributor>"
@@ -77,7 +78,7 @@ Feature: Create a new project application for Funding Sources
       And I enter a award contract date
       And I enter a construction start date
       And I enter a ready for service date
-      And I enter a new funding source for "<funding_source>"
+      And I enter a funding source for "<funding_source>"
       And I enter new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
@@ -102,7 +103,7 @@ Feature: Create a new project application for Funding Sources
       And I enter a award contract date
       And I enter a construction start date
       And I enter a ready for service date
-      And I enter a new funding source for "<funding_source>"
+      And I enter a funding source for "<funding_source>"
       And I enter a new sector contributor of "<funding_source>", "<contributor>"
       And I enter new funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page

@@ -37,7 +37,14 @@ Feature: Create a new project application for Smoke Tests
       And I enter the projects goal approach "Smoke Test on QA 1"
       And I enter environmental outcomes improvements
       And I select the project urgency as "emergency" with a project message of "There is an emergency"
-      And I upload my project funding calculator file "LIT_9160_97331cOM4TEST.xlsx"
+      And I upload a project funding calculator file for option "No", "PFCalcVs8.xlsx"
+      And I select the confidence page
+      And I add the confidence in number of homes better protected by this project as "high"
+      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in securing the required Partnership Funding as "not_applicable"
+      And I select the carbon page
+      And I add how much capital carbon will this project produce in tonnes "1"
+      And I add how much carbon will this project’s assets produce in their lifecycle "2"
     When I complete my proposal on QA
     Then I should see that my proposal is sent for review
 
@@ -74,7 +81,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter the projects goal approach "Smoke Test on Training 1"
       And I enter environmental outcomes improvements
       And I select the project urgency as "emergency" with a project message of "There is an emergency"
-      And I upload my project funding calculator file "LIT_9160_97331cOM3TEST.xlsx"
+      And I upload a project funding calculator file "PFCalcVs8.xlsx"
     When I complete my proposal on training
     Then I should see that my proposal is sent for review
 
@@ -103,7 +110,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter the projects goal approach "Submit a new OM1 proposals (test 3: Dual Risk) with a dual  risk source of Rivers & Coastal to households"
       And I enter environmental outcomes improvements
       And I select the project urgency as "not_urgent"
-      And I upload my project funding calculator file "LIT_9160_97331cOM1TEST.xlsx"
+      And I upload a project funding calculator file "PFCalcVs8.xlsx"
     When I complete my proposal on training
     Then I should see that my proposal is sent for review    
 

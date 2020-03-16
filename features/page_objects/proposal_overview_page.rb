@@ -23,6 +23,8 @@ class ProposalOverviewPage < SitePrism::Page
   element(:add_environmental_outcomes, "#project-environmental_outcomes-content a")
   element(:add_project_urgency, "#project-urgency-content a")
   element(:add_funding_calculator, "#project-funding_calculator-content a")
+  element(:add_confidence, "#project-confidence-content a")
+  element(:add_carbon, "#project-carbon-content a")
 
   element(:revert_to_draft, "#[href$='Revert to draft']")
 

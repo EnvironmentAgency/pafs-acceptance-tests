@@ -189,7 +189,7 @@ Given(/^I enter two new sector contributors "([^"]*)", "([^"]*)", "([^"]*)"$/) d
   )
 
   @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor1)
-  @app.contributor_add_remove.add_contributor.click
+  @app.contributor_add.add_contributor.click
   @app.send("new_funding_#{sector_link}_contributors_page").send("new_#{source}_contributors_names").set(contributor2)
   @app.send("new_funding_#{sector_link}_contributors_page").send("submit_button").click
 
