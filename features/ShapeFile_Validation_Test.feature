@@ -29,19 +29,19 @@ Background:
     |Valid_ShapeFile.zip|The uploaded shapefile|
 
   # Invalid ShapeFile Validation 
-#  @QA_ShapeFileTests @QSF2
-#  Scenario Outline: Sumbmit a new proposal with an invalid shapefile
-#    Given I select a project type "change_or_new_asset"
-#      And I select a financial year to stop spending
-#      And I add a location "ST 58198 72725"
-#      And I upload the benefit area file "<ShapeFile>"
-#    When I view the benefit file page
-#    Then I should see the message "<Message>" on the benefit file page
+  @QA_ShapeFileTests @QSF2
+  Scenario Outline: Sumbmit a new proposal with an invalid shapefile
+    Given I select a project type "change_or_new_asset"
+      And I select a financial year to stop spending
+      And I add a location "ST 58198 72725"
+      And I upload the benefit area file "<ShapeFile>"
+    When I view the benefit file page
+    Then I should see the message "<Message>" on the benefit file page
 
-#    Examples:
-#    |ShapeFile|Message|
-#    |ShapeFile.png|This file type is not supported. Upload a .zip shapefile|
-#    |Invalid_ShapeFile.zip|The selected file must be a zip file containing a shapefile|
+    Examples:
+    |ShapeFile|Message|
+    |ShapeFile.png|The selected file must be a zip file, containing the following mandatory files: dbf. shx. shp. prj.|
+    |Invalid_ShapeFile.zip|The selected file must be a zip file, containing the following mandatory files: dbf. shx. shp. prj.|
 
   # Virus ShapeFile Validation 
   @QA_ShapeFileTests @QSF3
@@ -69,7 +69,7 @@ Background:
 
     Examples:
     |Message|
-    |Upload a shapefile or image file that outlines the area the project is likely to benefit|
+    |Upload a shapefile that outlines the area the project is likely to benefit|
 
 #================================================================================================================
 # TRA Test Environment Tests

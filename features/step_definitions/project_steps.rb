@@ -126,31 +126,6 @@ end
 
 # rubocop:disable Metrics/LineLength, Metrics/ParameterLists
 Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
-  @app.flood_protection_outcomes_page.submit(
-    a1: a1.to_sym,
-    a2: a2.to_sym,
-    a3: a3.to_sym,
-    a4: a4.to_sym,
-    a5: a5.to_sym,
-    a6: a6.to_sym,
-    b1: b1.to_sym,
-    b2: b2.to_sym,
-    b3: b3.to_sym,
-    b4: b4.to_sym,
-    b5: b5.to_sym,
-    b6: b6.to_sym,
-    c1: c1.to_sym,
-    c2: c2.to_sym,
-    c3: c3.to_sym,
-    c4: c4.to_sym,
-    c5: c5.to_sym,
-    c6: c6.to_sym
-  )
-end
-# rubocop:enable Metrics/LineLength, Metrics/ParameterLists
-
-# rubocop:disable Metrics/LineLength, Metrics/ParameterLists
-Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
   @app.coastal_erosion_protection_outcomes_page.submit(
     a1: a1.to_sym,
     a2: a2.to_sym,
@@ -172,7 +147,6 @@ Given(/^I add the coastal erosion protection outcome values for column A a1 "([^
     c6: c6.to_sym
   )
 end
-
 # rubocop:enable Metrics/LineLength, Metrics/ParameterLists
 
 Given(/^I return to the overview page$/) do
@@ -308,10 +282,18 @@ Given(/^I answer NO if the project could start sooner$/) do
   )
 end
 
-# Then Actions
-Then(/^I upload my project funding calculator file "([^"]*)"$/) do |filename|
+Given(/^I upload a project funding calculator file ([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit(
+    file: filename
+  )
+  @app.funding_calculator_summary_page.submit
+end
+
+Given(/^I upload a project funding calculator file for option "([^"]*)", "([^"]*)"$/) do |radiotype, filename|
+  @app.proposal_overview_page.add_funding_calculator.click
+  @app.new_funding_calculator_page.submit(
+    option: radiotype.to_sym,
     file: filename
   )
   @app.funding_calculator_summary_page.submit
