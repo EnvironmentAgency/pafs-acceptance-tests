@@ -290,6 +290,14 @@ Given(/^I upload a project funding calculator file ([^"]*)"$/) do |filename|
   @app.funding_calculator_summary_page.submit
 end
 
+Given(/^I upload a PFC calculator file ([^"]*)"$/) do |filename|
+  @app.proposal_overview_page.add_funding_calculator.click
+  @app.funding_calculator_page.submit(
+    file: filename
+  )
+  @app.funding_calculator_summary_page.submit
+end
+
 Given(/^I upload a project funding calculator file for option "([^"]*)", "([^"]*)"$/) do |radiotype, filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.new_funding_calculator_page.submit(
