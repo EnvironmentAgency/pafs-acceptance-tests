@@ -30,7 +30,9 @@ class ProposalOverviewPage < SitePrism::Page
 
   # Based on PM-529 this has been changed fromn complete to submit
   # This is only on the Training site at the moment
+  element(:complete_proposal_QA, "a[href$='submit']")
   element(:complete_proposal_training, "a[href$='submit']")
+  element(:complete_proposal_preprod, "a[href$='complete']")
   element(:complete_proposal, "a[href$='complete']")
 
   def submit(_args = {})

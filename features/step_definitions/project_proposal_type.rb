@@ -8,16 +8,6 @@ When(/^I am returned to the proposal overview page$/) do
   puts "Proposal Overview Page"
 end
 
-When(/^I complete my proposal on training$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.complete_proposal_training.click
-end
-
-When(/^I complete my proposal on QA$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.complete_proposal.click
-end
-
 When(/^I return to the proposal overview page$/) do
   @app.grant_in_aid_funding_page.user_bar.projects.click
 end

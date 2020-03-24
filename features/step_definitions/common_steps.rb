@@ -282,7 +282,7 @@ Given(/^I answer NO if the project could start sooner$/) do
   )
 end
 
-Given(/^I upload a project funding calculator file ([^"]*)"$/) do |filename|
+Given(/^I upload a project funding calculator file "([^"]*)"$/) do |filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.funding_calculator_page.submit(
     file: filename
@@ -290,13 +290,28 @@ Given(/^I upload a project funding calculator file ([^"]*)"$/) do |filename|
   @app.funding_calculator_summary_page.submit
 end
 
-Given(/^I upload a project funding calculator file for option "([^"]*)", "([^"]*)"$/) do |radiotype, filename|
+Given(/^I upload a project funding calculator with file option "([^"]*)", "([^"]*)"$/) do |radiotype, filename|
   @app.proposal_overview_page.add_funding_calculator.click
   @app.new_funding_calculator_page.submit(
     option: radiotype.to_sym,
     file: filename
   )
   @app.funding_calculator_summary_page.submit
+end
+
+When(/^I complete my proposal on QA$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.complete_proposal_QA.click
+end
+
+When(/^I complete my proposal on training$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.complete_proposal_training.click
+end
+
+When(/^I complete my proposal on preprod$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.complete_proposal_preprod.click
 end
 
 Then(/^I should see that my proposal is sent for review$/) do
