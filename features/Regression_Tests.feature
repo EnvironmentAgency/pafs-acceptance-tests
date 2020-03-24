@@ -128,6 +128,34 @@ Feature: Run regression tests against the soltuiin
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
+      And I upload the benefit area file "<ShapeFile>"
+    When I view the benefit file page
+    Then I should see the message "<Message>" on the benefit file page
+
+    Examples:
+    |ShapeFile|Message|
+    |Virus_ShapeFile.zip|The file was rejected because it may contain a virus. Check the file and try again|
+
+  # SHAPEFILE - Blank File 
+  @QA_RegressionTests @QA_R8
+  Scenario Outline: Sumbmit a new proposal with no file
+    Given I select a project type "change_or_new_asset"
+      And I select a financial year to stop spending
+      And I add a location "ST 58198 72725"
+      And I click and continue
+    When I view the benefit file page
+    Then I should see the message "<Message>" on the benefit file page
+
+    Examples:
+    |Message|
+    |Upload a shapefile that outlines the area the project is likely to benefit|
+
+  @QA_RegressionTests @QA_R9
+ Scenario: Submit a new project with new v8 Calc sheet inc. Triple Funding Sources, Flood Protection, V8 PFC Sheet
+    Given I enter a test project name "Pafs_Integration_Test1"
+      And I select a project type "restore_asset"
+      And I select a financial year to stop spending
+      And I add a location "ST 58198 72725"
       And I upload a benefit area file "Valid_ShapeFile.zip"
       And I enter a business case start date
       And I enter a award contract date
@@ -135,6 +163,14 @@ Feature: Run regression tests against the soltuiin
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
       And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter a funding source for "local_levy"
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter a funding source for "growth_funding"
+      And I enter funding values for single contributor "growth_funding" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter a funding source for "internal_drainage_boards"
+      And I enter funding values for single contributor "internal_drainage_boards" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter a funding source for "not_identified"
+      And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a funding source for "local_levy"
       And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a funding source for "growth_funding"
