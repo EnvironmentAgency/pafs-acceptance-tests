@@ -299,9 +299,9 @@ Given(/^I upload a project funding calculator with file option "([^"]*)", "([^"]
   @app.funding_calculator_summary_page.submit
 end
 
-When(/^I complete my proposal on QA$/) do
+When(/^I complete my proposal on qa$/) do
   @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.complete_proposal_QA.click
+  @app.proposal_overview_page.complete_proposal_qa.click
 end
 
 When(/^I complete my proposal on training$/) do

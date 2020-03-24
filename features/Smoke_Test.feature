@@ -32,16 +32,16 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a funding source for "local_levy"
-      And I enter funding values for "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000" 
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000" 
       And I answer YES if the project could start sooner "01", "2020"
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my main project risk "river"
       And I add the flood protection outcome as none
       And I add the standard of protection before project starts as "very_significant_risk"
       And I add the standard of protection after project completes as "low_risk"
-      And I enter the projects goal approach "Smoke Test on QA 1"
+      And I enter the projects goal approach "Smoke Test on QA"
       And I enter environmental outcomes improvements
       And I select the project urgency as "emergency" with a project message of "There is an emergency"
       And I upload a project funding calculator with file option "No", "PFCalcVs8.xlsx"
@@ -77,9 +77,9 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a new funding source for "grant_in_aid"
-      And I enter new funding values for "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a new funding source for "local_levy"
-      And I enter new funding values for "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"  
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"  
       And I answer YES if the project could start sooner "01", "2020"
       And I add my main project risk "river"
       And I add the flood protection outcome as none

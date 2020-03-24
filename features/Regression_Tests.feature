@@ -16,7 +16,8 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @QA_RegressionTests @QA_R1
   Scenario: Sumbmit a new defence proposal
-    Given I select a project type "change_or_new_asset" 
+    Given I enter a project name
+    And I select a project type "change_or_new_asset" 
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Create a new flood or coastal erosion risk management asset, or improve the standard of service of an existing one"
@@ -24,7 +25,8 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @QA_RegressionTests @QA_R2
   Scenario: Sumbmit a new restore asset proposal
-    Given I select a project type "restore_asset"
+    Given I enter a project name
+    And I select a project type "restore_asset"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Restore the standard of service of a flood or coastal erosion risk management asset by refurbishment or replacement"
@@ -32,14 +34,16 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @QA_RegressionTests @QA_R3
   Scenario: Sumbmit a new property level protection proposal
-    Given I select a project type "property_level_protection"
+    Given I enter a project name
+    And I select a project type "property_level_protection"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
   Then I should see the project type is "Add property level protection for properties within the 'very significant' flood band where there is a 5% or greater chance of flooding"
 
  @QA_RegressionTests @QA_R4
   Scenario Outline: Submit a new proposals with a funding source
-    Given I select a project type "<project_type>"
+    Given I enter a project name
+      And I select a project type "<project_type>"
       And I select a financial year to stop spending
       And I add a location "<location>"
       And I upload a benefit area file "<shapefile>"
@@ -48,7 +52,7 @@ Feature: Run regression tests against the soltuiin
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "<funding_source>"
-      And I enter funding values for "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I enter funding values for single contributor "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<funding_source>"
@@ -60,7 +64,8 @@ Feature: Run regression tests against the soltuiin
   # SHAPEFILE - Valid  
   @QA_RegressionTests @QA_R5
   Scenario Outline: Sumbmit a new proposal with an valid shapefile
-    Given I select a project type "change_or_new_asset"
+    Given I enter a project name
+      And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload the benefit area file "<ShapeFile>"
@@ -74,7 +79,8 @@ Feature: Run regression tests against the soltuiin
   # SHAPEFILE - Invalid
   @QA_RegressionTests @QA_R6
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
-    Given I select a project type "change_or_new_asset"
+    Given I enter a project name
+      And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload the benefit area file "<ShapeFile>"
@@ -89,7 +95,8 @@ Feature: Run regression tests against the soltuiin
   # SHAPEFILE - Virus 
   @QA_RegressionTests @QA_R7
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
-    Given I select a project type "change_or_new_asset"
+    Given I enter a project name
+      And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
       And I upload the benefit area file "<ShapeFile>"
@@ -103,7 +110,8 @@ Feature: Run regression tests against the soltuiin
   # SHAPEFILE - Blank File 
   @QA_RegressionTests @QA_R8
   Scenario Outline: Sumbmit a new proposal with no file
-    Given I select a project type "change_or_new_asset"
+    Given I enter a project name
+      And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
       And I click and continue
@@ -127,38 +135,31 @@ Feature: Run regression tests against the soltuiin
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
       And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      # Then I change my funding sources
       And I enter a funding source for "local_levy"
       And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      # Then I change my funding sources
       And I enter a funding source for "growth_funding"
       And I enter funding values for single contributor "growth_funding" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      # Then I change my funding sources
       And I enter a funding source for "internal_drainage_boards"
       And I enter funding values for single contributor "internal_drainage_boards" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      # Then I change my funding sources
       And I enter a funding source for "not_identified"
       And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      # Then I change my funding sources
       And I enter a funding source for "public_sector"
       And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
       And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I click and continue
-      # Then I change my funding sources
       And I enter a funding source for "private_sector"
       And I click and continue
       And I click and continue
       And I enter a new sector contributor of "private_sector", "Rose Rothery"
       And I enter funding values for single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I click and continue
-      # Then I change my funding sources
       And I enter a funding source for "other_sector"
       And I click and continue
       And I click and continue
       And I click and continue
       And I click and continue      
       And I enter a new sector contributor of "other_sector", "Matt HAll"
-      And I enter funding values for single contributor  "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000" 
+      And I enter funding values for single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000" 
       And I click and continue
       And I answer YES if the project could start sooner "01", "2020"
       And I add my main project risk "tidal"
@@ -466,4 +467,3 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator file "PFCalcVs8.xlsx"
     When I complete my proposal on preprod
     Then I should see that my proposal is sent for review
-
