@@ -7,13 +7,17 @@ Feature: Run regression tests against the soltuiin
     Given I am an external user
       And I have a valid "rma" username and password
       And I create a new proposal
-      # And I enter a project name
+
+
+# FIXES
+# I add the coastal erosion protection outcome values for column A a1 Yes and No Radio buttons
+# Funding journey needs to be as manually entered.      
 
 # ==================================================================================================================================
 # QA Test Environment
 # ==================================================================================================================================
 
-  #@Project Type 
+  # Project Type 
   @QA_RegressionTests @QA_R1
   Scenario: Sumbmit a new defence proposal
     Given I enter a project name
@@ -22,7 +26,7 @@ Feature: Run regression tests against the soltuiin
   When I am returned to the proposal overview page
   Then I should see the project type is "Create a new flood or coastal erosion risk management asset, or improve the standard of service of an existing one"
 
-  #@Project Type 
+  # Project Type 
   @QA_RegressionTests @QA_R2
   Scenario: Sumbmit a new restore asset proposal
     Given I enter a project name
@@ -31,7 +35,7 @@ Feature: Run regression tests against the soltuiin
   When I am returned to the proposal overview page
   Then I should see the project type is "Restore the standard of service of a flood or coastal erosion risk management asset by refurbishment or replacement"
 
-  #@Project Type 
+  # Project Type 
   @QA_RegressionTests @QA_R3
   Scenario: Sumbmit a new property level protection proposal
     Given I enter a project name
@@ -40,7 +44,7 @@ Feature: Run regression tests against the soltuiin
   When I am returned to the proposal overview page
   Then I should see the project type is "Add property level protection for properties within the 'very significant' flood band where there is a 5% or greater chance of flooding"
 
- @QA_RegressionTests @QA_R4
+  @QA_RegressionTests @QA_R4
   Scenario Outline: Submit a new proposals with a funding source
     Given I enter a project name
       And I select a project type "<project_type>"
@@ -123,8 +127,8 @@ Feature: Run regression tests against the soltuiin
     |Upload a shapefile that outlines the area the project is likely to benefit|
 
   @QA_RegressionTests @QA_R9
- Scenario: Submit a new project with new v8 Calc sheet inc. Triple Funding Sources, Flood Protection, V8 PFC Sheet
-    Given I enter a test project name "Pafs_Integration_Test1"
+ Scenario Outline: Submit a project with PFC v8 Calc inc Triple Funding Sources
+    Given I enter a project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -137,9 +141,10 @@ Feature: Run regression tests against the soltuiin
     |Virus_ShapeFile.zip|The file was rejected because it may contain a virus. Check the file and try again|
 
   # SHAPEFILE - Blank File 
-  @QA_RegressionTests @QA_R8
+  @QA_RegressionTests @QA_R10
   Scenario Outline: Sumbmit a new proposal with no file
-    Given I select a project type "change_or_new_asset"
+    Given I enter a project name
+      And I select a project type "change_or_new_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
       And I click and continue
@@ -150,8 +155,8 @@ Feature: Run regression tests against the soltuiin
     |Message|
     |Upload a shapefile that outlines the area the project is likely to benefit|
 
-  @QA_RegressionTests @QA_R9
- Scenario: Submit a new project with new v8 Calc sheet inc. Triple Funding Sources, Flood Protection, V8 PFC Sheet
+  @QA_RegressionTests @QA_R11
+ Scenario: Submit a new full project with PFC v8 Calc with Triple Funding Sources
     Given I enter a test project name "Pafs_Integration_Test1"
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
@@ -163,14 +168,6 @@ Feature: Run regression tests against the soltuiin
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
       And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I enter a funding source for "local_levy"
-      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I enter a funding source for "growth_funding"
-      And I enter funding values for single contributor "growth_funding" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I enter a funding source for "internal_drainage_boards"
-      And I enter funding values for single contributor "internal_drainage_boards" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
-      And I enter a funding source for "not_identified"
-      And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a funding source for "local_levy"
       And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
       And I enter a funding source for "growth_funding"
@@ -230,7 +227,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @TRA_RegressionTests @TRA_R1
   Scenario: Sumbmit a new defence proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "change_or_new_asset" 
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -239,7 +236,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @TRA_RegressionTests @TRA_R2
   Scenario: Sumbmit a new restore asset proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "restore_asset"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -248,7 +245,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @TRA_RegressionTests @TRA_R3
   Scenario: Sumbmit a new property level protection proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "property_level_protection"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -256,7 +253,7 @@ Feature: Run regression tests against the soltuiin
 
  @TRA_RegressionTests @TRA_R4
   Scenario Outline: Submit a new proposals with a funding source
-    Given I enter a project name 
+    Given I enter a project name
       And I select a project type "<project_type>"
       And I select a financial year to stop spending
       And I add a location "<location>"
@@ -408,7 +405,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @PreProd_RegressionTests @PP_R1
   Scenario: Sumbmit a new defence proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "change_or_new_asset" 
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -417,7 +414,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @PreProd_RegressionTests @PP_R2
   Scenario: Sumbmit a new restore asset proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "restore_asset"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -426,7 +423,7 @@ Feature: Run regression tests against the soltuiin
   #@Project Type 
   @PreProd_RegressionTests @PP_R3
   Scenario: Sumbmit a new property level protection proposal
-    Given I enter a project name 
+    Given I enter a project name
     And I select a project type "property_level_protection"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -434,7 +431,7 @@ Feature: Run regression tests against the soltuiin
 
   @PreProd_RegressionTests @PP_R4
   Scenario Outline: Submit a new proposals with a funding source
-    Given I enter a project name 
+    Given I enter a project name
       And I select a project type "<project_type>"
       And I select a financial year to stop spending
       And I add a location "<location>"
