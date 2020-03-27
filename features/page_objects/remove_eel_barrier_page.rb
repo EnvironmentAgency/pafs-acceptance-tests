@@ -2,8 +2,8 @@ class RemoveEelBarrierPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:remove_yes, "#remove_eel_barrier_step_remove_eel_barrier_true")
-  element(:remove_no, "#remove_eel_barrier_step_remove_eel_barrier_false")
+  element(:remove_yes, "#remove_eel_barrier_step_remove_eel_barrier_true", visible: false)
+  element(:remove_no, "#remove_eel_barrier_step_remove_eel_barrier_false", visible: false)
 
   element(:submit_button, "input[name='commit']")
 
