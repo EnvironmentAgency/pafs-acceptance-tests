@@ -24,7 +24,7 @@ class FloodProtectionOutcomesPage < SitePrism::Page
   element(:c5, "#flood_protection_outcomes_step_flood_protection_outcomes_attributes_4_households_protected_from_loss_in_20_percent_most_deprived")
   element(:c6, "#flood_protection_outcomes_step_flood_protection_outcomes_attributes_5_households_protected_from_loss_in_20_percent_most_deprived")
 
-  element(:select_none, "#flood_protection_outcomes_step_reduced_risk_of_households_for_floods")
+  element(:select_none, "#flood_protection_outcomes_step_reduced_risk_of_households_for_floods", visible: false)
 
   element(:submit_button, "input[name='commit']")
   # There is no value in attempting to break up this method, it would only make

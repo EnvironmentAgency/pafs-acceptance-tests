@@ -2,7 +2,7 @@ class RisksPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  elements(:sources, "input[type='checkbox']")
+  elements(:sources, "input[type='checkbox']", visible: false)
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})

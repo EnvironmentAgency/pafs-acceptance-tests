@@ -2,13 +2,13 @@ class ProjectTypePage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:defence, "#project_type_step_project_type_def")
-  element(:cm, "#project_type_step_project_type_cm")
-  element(:plp, "#project_type_step_project_type_plp")
-  element(:brg, "#project_type_step_project_type_brg")
-  element(:str, "#project_type_step_project_type_str")
-  element(:households_yes, "#project_type_step_project_type_env_with_households")
-  element(:households_no, "#project_type_step_project_type_env_without_households")
+  element(:defence, "#project_type_step_project_type_def", visible: false)
+  element(:cm, "#project_type_step_project_type_cm", visible: false)
+  element(:plp, "#project_type_step_project_type_plp", visible: false)
+  element(:brg, "#project_type_step_project_type_brg", visible: false)
+  element(:str, "#project_type_step_project_type_str", visible: false)
+  element(:households_yes, "#project_type_step_project_type_env_with_households", visible: false)
+  element(:households_no, "#project_type_step_project_type_env_without_households", visible: false)
 
   element(:submit_button, "input[name='commit']")
 

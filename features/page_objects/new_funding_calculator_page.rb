@@ -2,8 +2,8 @@ class NewFundingCalculatorPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:radio_Yes, "#funding_calculator_step_expected_version_v9")
-  element(:radio_No, "#funding_calculator_step_expected_version_v8")
+  element(:radio_Yes, "#funding_calculator_step_expected_version_v9", visible: false)
+  element(:radio_No, "#funding_calculator_step_expected_version_v8", visible: false)
   element(:choose_file, "#funding_calculator_step_funding_calculator")
   element(:submit_button, "input[name='commit']")
 

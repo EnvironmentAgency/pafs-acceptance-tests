@@ -2,11 +2,11 @@ class ConfidenceHomesByGatewayFourPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:high, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_high")
-  element(:mednium_high, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_medium_high")
-  element(:medium_low, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_medium_low")
-  element(:low, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_low")
-  element(:not_applicable, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_not_applicable")
+  element(:high, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_high", visible: false)
+  element(:mednium_high, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_medium_high", visible: false)
+  element(:medium_low, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_medium_low", visible: false)
+  element(:low, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_low", visible: false)
+  element(:not_applicable, "#confidence_homes_by_gateway_four_step_confidence_homes_by_gateway_four_not_applicable", visible: false)
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})

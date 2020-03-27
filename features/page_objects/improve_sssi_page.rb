@@ -2,8 +2,8 @@ class ImproveSssiPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:improve_yes, "#improve_sssi_step_improve_sssi_true")
-  element(:improve_no, "#improve_sssi_step_improve_sssi_false")
+  element(:improve_yes, "#improve_sssi_step_improve_sssi_true", visible: false)
+  element(:improve_no, "#improve_sssi_step_improve_sssi_false", visible: false)
 
   element(:submit_button, "input[name='commit']")
 
