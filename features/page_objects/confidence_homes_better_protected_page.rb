@@ -1,12 +1,16 @@
+# frozen_string_literal: true
+
 class ConfidenceHomesBetterProtectedPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:high, "#confidence_homes_better_protected_step_confidence_homes_better_protected_high")
-  element(:mednium_high, "#confidence_homes_better_protected_step_confidence_homes_better_protected_medium_high")
-  element(:medium_low, "#confidence_homes_better_protected_step_confidence_homes_better_protected_medium_low")
-  element(:low, "#confidence_homes_better_protected_step_confidence_homes_better_protected_low")
-  element(:not_applicable, "#confidence_homes_better_protected_step_confidence_homes_better_protected_not_applicable")
+  COMMON_SELECTOR = "confidence_homes_better_protected_step_confidence_homes_better_protected"
+
+  element(:high, "##{COMMON_SELECTOR}_high", visible: false)
+  element(:mednium_high, "##{COMMON_SELECTOR}_medium_high", visible: false)
+  element(:medium_low, "##{COMMON_SELECTOR}_medium_low", visible: false)
+  element(:low, "##{COMMON_SELECTOR}_low", visible: false)
+  element(:not_applicable, "##{COMMON_SELECTOR}_not_applicable", visible: false)
   element(:submit_button, "input[name='commit']")
 
   def submit(args = {})

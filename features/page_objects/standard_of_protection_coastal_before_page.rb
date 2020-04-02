@@ -2,10 +2,10 @@ class StandardOfProtectionCoastalBeforePage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:less_that_one_year, "#standard_of_protection_coastal_step_coastal_protection_before_0")
-  element(:one_to_four_years, "#standard_of_protection_coastal_step_coastal_protection_before_1")
-  element(:five_to_nine_years, "#standard_of_protection_coastal_step_coastal_protection_before_2")
-  element(:ten_years_or_more, "#standard_of_protection_coastal_step_coastal_protection_before_3")
+  element(:less_that_one_year, "#standard_of_protection_coastal_step_coastal_protection_before_0", visible: false)
+  element(:one_to_four_years, "#standard_of_protection_coastal_step_coastal_protection_before_1", visible: false)
+  element(:five_to_nine_years, "#standard_of_protection_coastal_step_coastal_protection_before_2", visible: false)
+  element(:ten_years_or_more, "#standard_of_protection_coastal_step_coastal_protection_before_3", visible: false)
 
   element(:submit_button, "input[name='commit']")
 

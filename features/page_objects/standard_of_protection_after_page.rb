@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 class StandardOfProtectionAfterPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:very_significant, "#standard_of_protection_after_step_flood_protection_after_0")
-  element(:significant, "#standard_of_protection_after_step_flood_protection_after_1")
-  element(:moderate, "#standard_of_protection_after_step_flood_protection_after_2")
-  element(:low, "#standard_of_protection_after_step_flood_protection_after_3")
+  COMMON_SELECTOR = "standard_of_protection_after_step_flood_protection_after"
+  element(:very_significant, "##{COMMON_SELECTOR}_0", visible: false)
+  element(:significant, "##{COMMON_SELECTOR}_1", visible: false)
+  element(:moderate, "##{COMMON_SELECTOR}_2", visible: false)
+  element(:low, "##{COMMON_SELECTOR}_3", visible: false)
 
   element(:submit_button, "input[name='commit']")
 

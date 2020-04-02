@@ -2,8 +2,8 @@ class EarliestStartPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:start_sooner_yes, "#earliest_start_step_could_start_early_true")
-  element(:start_sooner_no, "#earliest_start_step_could_start_early_false")
+  element(:start_sooner_yes, "#earliest_start_step_could_start_early_true", visible: false)
+  element(:start_sooner_no, "#earliest_start_step_could_start_early_false", visible: false)
 
   element(:submit_button, "input[name='commit']")
 

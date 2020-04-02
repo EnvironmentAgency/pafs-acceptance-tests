@@ -2,12 +2,12 @@ class UrgencyPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:nu, "#urgency_step_urgency_reason_not_urgent")
-  element(:stat, "#urgency_step_urgency_reason_statutory_need")
-  element(:legal, "#urgency_step_urgency_reason_legal_need")
-  element(:hs, "#urgency_step_urgency_reason_health_and_safety")
-  element(:emer, "#urgency_step_urgency_reason_emergency_works")
-  element(:time, "#urgency_step_urgency_reason_time_limited")
+  element(:nu, "#urgency_step_urgency_reason_not_urgent", visible: false)
+  element(:stat, "#urgency_step_urgency_reason_statutory_need", visible: false)
+  element(:legal, "#urgency_step_urgency_reason_legal_need", visible: false)
+  element(:hs, "#urgency_step_urgency_reason_health_and_safety", visible: false)
+  element(:emer, "#urgency_step_urgency_reason_emergency_works", visible: false)
+  element(:time, "#urgency_step_urgency_reason_time_limited", visible: false)
 
   element(:submit_button, "input[name='commit']")
 

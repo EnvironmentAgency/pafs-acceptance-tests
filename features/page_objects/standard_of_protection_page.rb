@@ -2,10 +2,10 @@ class StandardOfProtectionPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:very_significant, "#standard_of_protection_step_flood_protection_before_0")
-  element(:significant, "#standard_of_protection_step_flood_protection_before_1")
-  element(:moderate, "#standard_of_protection_step_flood_protection_before_2")
-  element(:low, "#standard_of_protection_step_flood_protection_before_3")
+  element(:very_significant, "#standard_of_protection_step_flood_protection_before_0", visible: false)
+  element(:significant, "#standard_of_protection_step_flood_protection_before_1", visible: false)
+  element(:moderate, "#standard_of_protection_step_flood_protection_before_2", visible: false)
+  element(:low, "#standard_of_protection_step_flood_protection_before_3", visible: false)
 
   element(:submit_button, "input[name='commit']")
 
