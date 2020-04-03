@@ -220,6 +220,25 @@ Feature: Run regression tests against the soltuiin
    When I complete my proposal on qa
    Then I should see that my proposal is sent for review
 
+
+  # Issue Script - wheree I cannot get the Public Secure boxes to be ticked 
+ @QA_R12
+ Scenario: Submit a new full project with PFC v8 Calc with Triple Funding Sources
+    Given I enter a test project name "Pafs_Integration_Test1"
+      And I select a project type "restore_asset"
+      And I select a financial year to stop spending
+      And I add a location "ST 58198 72725"
+      And I upload a benefit area file "Valid_ShapeFile.zip"
+      And I enter a business case start date
+      And I enter a award contract date
+      And I enter a construction start date
+      And I enter a ready for service date
+      And I enter a funding source for "public_sector"
+      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
+      And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I select secure funding for "public_secure"
+      And I click and continue
+
 # ==================================================================================================================================
 # Training Test Environment 
 # ==================================================================================================================================

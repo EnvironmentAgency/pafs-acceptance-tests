@@ -70,6 +70,12 @@ Given(/^I enter funding values for single contributor "([^"]*)" previous year "(
   # rubocop: enable Layout/CommentIndentation,, Style/IdenticalConditionalBranches, Lint/MissingCopEnableDirective
 end
 
+Given(/^I select secure funding for "([^"]*)"$/) do |selecton|
+  @app.new_funding_values_page.submit(
+    new_funding: selecton.to_sym
+  )
+end
+
 Given(/^I enter a new sector contributor of "([^"]*)", "([^"]*)"$/) do |sector_source, contributor|
   sector_link = sector_source
 
