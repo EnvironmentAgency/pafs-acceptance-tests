@@ -73,53 +73,53 @@ class NewFundingValuesPage < SitePrism::Page
   element(:notyet_2019_2020, "##{COMMON_SELECTOR}_5_not_yet_identified")
   element(:notyet_2020_2021, "##{COMMON_SELECTOR}_6_not_yet_identified")
 
-  element(:public_secure_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_secured", disible: false)
-  element(:public_secure_2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_secured", disible: false)
-  element(:public_secure_2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_secured", disible: false)
-  element(:public_secure_2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_secured", disible: false)
-  element(:public_secure_2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_secured", disible: false)
-  element(:public_secure_2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_secured", disible: false)
-  element(:public_secure_2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_secured", disible: false)
+  element(:public_secure_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_secured", visible: false)
+  element(:public_secure_2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_secured", visible: false)
+  element(:public_secure_2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_secured", visible: false)
+  element(:public_secure_2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_secured", visible: false)
+  element(:public_secure_2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_secured", visible: false)
+  element(:public_secure_2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_secured", visible: false)
+  element(:public_secure_2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_secured", visible: false)
 
-  element(:public_constrained_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_constrained", disible: false)
-  element(:public_constrained__2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_constrained", disible: false)
-  element(:public_constrained__2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_constrained", disible: false)
-  element(:public_constrained__2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_constrained", disible: false)
-  element(:public_constrained__2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_constrained", disible: false)
-  element(:public_constrained__2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_constrained", disible: false)
-  element(:public_constrained__2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_constrained", disible: false)
+  element(:public_constrained_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_constrained", visible: false)
+  element(:public_constrained_2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_constrained", visible: false)
+  element(:public_constrained_2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_constrained", visible: false)
+  element(:public_constrained_2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_constrained", visible: false)
+  element(:public_constrained_2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_constrained", visible: false)
+  element(:public_constrained_2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_constrained", visible: false)
+  element(:public_constrained_2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_constrained", visible: false)
 
-  element(:private_secure_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_secured_true", disible: false)
-  element(:private_secure_2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_secured_true", disible: false)
-  element(:private_secure_2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_secured_true", disible: false)
-  element(:private_secure_2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_secured_true", disible: false)
-  element(:private_secure_2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_secured_true", disible: false)
-  element(:private_secure_2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_secured_true", disible: false)
-  element(:private_secure_2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_secured_true", disible: false)
+  element(:private_secure_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_secured", visible: false)
+  element(:private_secure_2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_secured", visible: false)
+  element(:private_secure_2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_secured", visible: false)
+  element(:private_secure_2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_secured", visible: false)
+  element(:private_secure_2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_secured", visible: false)
+  element(:private_secure_2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_secured", visible: false)
+  element(:private_secure_2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_secured", visible: false)
 
-  element(:private_constrained_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_constrained_true", disible: false)
-  element(:private_constrained__2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_constrained_true", disible: false)
-  element(:private_constrained__2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_constrained_true", disible: false)
-  element(:private_constrained__2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_constrained_true", disible: false)
-  element(:private_constrained__2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_constrained_true", disible: false)
-  element(:private_constrained__2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_constrained_true", disible: false)
-  element(:private_constrained__2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_constrained_true", disible: false)
+  element(:private_constrained_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_constrained", visible: false)
+  element(:private_constrained_2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_constrained", visible: false)
+  element(:private_constrained_2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_constrained", visible: false)
+  element(:private_constrained_2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_constrained", visible: false)
+  element(:private_constrained_2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_constrained", visible: false)
+  element(:private_constrained_2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_constrained", visible: false)
+  element(:private_constrained_2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_constrained", visible: false)
 
-  element(:other_secure_current_year, "##{COMMON_SELECTOR_OTHER}_0_secured_true", disible: false)
-  element(:other_secure_2015_2016, "##{COMMON_SELECTOR_OTHER}_1_secured_true", disible: false)
-  element(:other_secure_2016_2017, "##{COMMON_SELECTOR_OTHER}_2_secured_true", disible: false)
-  element(:other_secure_2017_2018, "##{COMMON_SELECTOR_OTHER}_3_secured_true", disible: false)
-  element(:other_secure_2018_2019, "##{COMMON_SELECTOR_OTHER}_4_secured_true", disible: false)
-  element(:other_secure_2019_2020, "##{COMMON_SELECTOR_OTHER}_5_secured_true", disible: false)
-  element(:other_secure_2020_2021, "##{COMMON_SELECTOR_OTHER}_6_secured_true", disible: false)
+  element(:ea_secure_current_year, "##{COMMON_SELECTOR_OTHER}_0_secured", visible: false)
+  element(:ea_secure_2015_2016, "##{COMMON_SELECTOR_OTHER}_1_secured", visible: false)
+  element(:ea_secure_2016_2017, "##{COMMON_SELECTOR_OTHER}_2_secured", visible: false)
+  element(:ea_secure_2017_2018, "##{COMMON_SELECTOR_OTHER}_3_secured", visible: false)
+  element(:ea_secure_2018_2019, "##{COMMON_SELECTOR_OTHER}_4_secured", visible: false)
+  element(:ea_secure_2019_2020, "##{COMMON_SELECTOR_OTHER}_5_secured", visible: false)
+  element(:ea_secure_2020_2021, "##{COMMON_SELECTOR_OTHER}_6_secured", visible: false)
 
-  element(:other_constrained_current_year, "##{COMMON_SELECTOR_OTHER}_0_constrained_true", disible: false)
-  element(:other_constrained__2015_2016, "##{COMMON_SELECTOR_OTHER}_1_constrained_true", disible: false)
-  element(:other_constrained__2016_2017, "##{COMMON_SELECTOR_OTHER}_2_constrained_true", disible: false)
-  element(:other_constrained__2018_2019, "##{COMMON_SELECTOR_OTHER}_4_constrained_true", disible: false)
-  element(:other_constrained__2017_2018, "##{COMMON_SELECTOR_OTHER}_3_constrained_true", disible: false)
-  element(:other_constrained__2019_2020, "##{COMMON_SELECTOR_OTHER}_5_constrained_true", disible: false)
-  element(:other_constrained__2020_2021, "##{COMMON_SELECTOR_OTHER}_6_constrained_true", disible: false)
+  element(:ea_constrained_current_year, "##{COMMON_SELECTOR_OTHER}_0_constrained", visible: false)
+  element(:ea_constrained_2015_2016, "##{COMMON_SELECTOR_OTHER}_1_constrained", visible: false)
+  element(:ea_constrained_2016_2017, "##{COMMON_SELECTOR_OTHER}_2_constrained", visible: false)
+  element(:ea_constrained_2018_2019, "##{COMMON_SELECTOR_OTHER}_4_constrained", visible: false)
+  element(:ea_constrained_2017_2018, "##{COMMON_SELECTOR_OTHER}_3_constrained", visible: false)
+  element(:ea_constrained_2019_2020, "##{COMMON_SELECTOR_OTHER}_5_constrained", visible: false)
+  element(:ea_constrained_2020_2021, "##{COMMON_SELECTOR_OTHER}_6_constrained", visible: false)
 
   elements(:sources, "input[type='number']")
 
@@ -131,6 +131,8 @@ class NewFundingValuesPage < SitePrism::Page
     case args[:new_funding]
     when :public_secure
       public_secure_current_year.click
+    when :private_secure
+      private_constrained_current_year.click
       public_secure_2015_2016.click
       public_secure_2017_2017.click
       public_secure_2017_2018.click
@@ -157,5 +159,5 @@ class NewFundingValuesPage < SitePrism::Page
 
     submit_button.click
   end
-  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize
+  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize, Style/MutableConstant
 end
