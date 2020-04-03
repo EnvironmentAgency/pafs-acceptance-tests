@@ -100,7 +100,8 @@ Given(/^I add the coastal erosion protection outcome as none$/) do
 end
 
 # rubocop:disable Metrics/LineLength, Metrics/ParameterLists
-Given(/^I add the flood protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
+
+Given(/^I add the flood protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", a7 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", b7 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)", c7 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, a7, b1, b2, b3, b4, b5, b6, b7, c1, c2, c3, c4, c5, c6, c7|
   @app.flood_protection_outcomes_page.submit(
     a1: a1.to_sym,
     a2: a2.to_sym,
@@ -108,24 +109,27 @@ Given(/^I add the flood protection outcome values for column A a1 "([^"]*)", a2 
     a4: a4.to_sym,
     a5: a5.to_sym,
     a6: a6.to_sym,
+    a7: a7.to_sym,
     b1: b1.to_sym,
     b2: b2.to_sym,
     b3: b3.to_sym,
     b4: b4.to_sym,
     b5: b5.to_sym,
     b6: b6.to_sym,
+    b7: b7.to_sym,
     c1: c1.to_sym,
     c2: c2.to_sym,
     c3: c3.to_sym,
     c4: c4.to_sym,
     c5: c5.to_sym,
-    c6: c6.to_sym
+    c6: c6.to_sym,
+    c7: c7.to_sym
   )
 end
 # rubocop:enable Metrics/LineLength, Metrics/ParameterLists
 
 # rubocop:disable Metrics/LineLength, Metrics/ParameterLists
-Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, c1, c2, c3, c4, c5, c6|
+Given(/^I add the coastal erosion protection outcome values for column A a1 "([^"]*)", a2 "([^"]*)", a3 "([^"]*)", a4 "([^"]*)", a5 "([^"]*)", a6 "([^"]*)", a7 "([^"]*)", column B b1 "([^"]*)", b2 "([^"]*)", b3 "([^"]*)", b4 "([^"]*)", b5 "([^"]*)", b6 "([^"]*)", b7 "([^"]*)", column C c1 "([^"]*)", c2 "([^"]*)", c3 "([^"]*)", c4 "([^"]*)", c5 "([^"]*)", c6 "([^"]*)", c7 "([^"]*)"$/) do |a1, a2, a3, a4, a5, a6, a7, b1, b2, b3, b4, b5, b6, b7, c1, c2, c3, c4, c5, c6, c7|
   @app.coastal_erosion_protection_outcomes_page.submit(
     a1: a1.to_sym,
     a2: a2.to_sym,
@@ -133,18 +137,21 @@ Given(/^I add the coastal erosion protection outcome values for column A a1 "([^
     a4: a4.to_sym,
     a5: a5.to_sym,
     a6: a6.to_sym,
+    a7: a7.to_sym,
     b1: b1.to_sym,
     b2: b2.to_sym,
     b3: b3.to_sym,
     b4: b4.to_sym,
     b5: b5.to_sym,
     b6: b6.to_sym,
+    b7: b7.to_sym,
     c1: c1.to_sym,
     c2: c2.to_sym,
     c3: c3.to_sym,
     c4: c4.to_sym,
     c5: c5.to_sym,
-    c6: c6.to_sym
+    c6: c6.to_sym,
+    c7: c7.to_sym
   )
 end
 # rubocop:enable Metrics/LineLength, Metrics/ParameterLists
