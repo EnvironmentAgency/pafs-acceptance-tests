@@ -220,25 +220,6 @@ Feature: Run regression tests against the soltuiin
    When I complete my proposal on qa
    Then I should see that my proposal is sent for review
 
-
-  # Issue Script - wheree I cannot get the Public Secure boxes to be ticked 
- @QA_R12
- Scenario: Submit a new full project with PFC v8 Calc with Triple Funding Sources
-    Given I enter a test project name "Pafs_Integration_Test1"
-      And I select a project type "restore_asset"
-      And I select a financial year to stop spending
-      And I add a location "ST 58198 72725"
-      And I upload a benefit area file "Valid_ShapeFile.zip"
-      And I enter a business case start date
-      And I enter a award contract date
-      And I enter a construction start date
-      And I enter a ready for service date
-      And I enter a funding source for "public_sector"
-      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
-      And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
-      And I select secure funding for "public_secure"
-      And I click and continue
-
 # ==================================================================================================================================
 # Training Test Environment 
 # ==================================================================================================================================
@@ -460,14 +441,14 @@ Feature: Run regression tests against the soltuiin
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "<funding_source>"
-      And I enter funding values for single contributor "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>"
+      And I enter funding values for single contributor "<funding_source>" previous year "<previous>", 2015-2016 "<2015-2016>", 2016-2017 "<2016-2017>", 2017-2018 "<2017-2018>", 2018-2019 "<2018-2019>", 2019-2020 "<2019-2020>", 2020-2021 "<2020-2021>"
     When I check the proposal overview page
     Then I should see the total estimated spend as "<total_spend>"
       And I should see the funding source contributor "<funding_source>"
 
     Examples:
-      |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|total_spend|
-      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|21,000|
+      |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|2020-2021|total_spend|
+      |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|7000|28,000|
 
   @PreProd_RegressionTests @PP_R5
   Scenario: Submit a new project with new v8 Calc sheet inc. Triple Funding Sources, Flood Protection, V8 PFC Sheet
@@ -481,34 +462,34 @@ Feature: Run regression tests against the soltuiin
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "local_levy"
-      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "growth_funding"
-      And I enter funding values for single contributor "growth_funding" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "growth_funding" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "internal_drainage_boards"
-      And I enter funding values for single contributor "internal_drainage_boards" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "internal_drainage_boards" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "not_identified"
-      And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "public_sector"
       And I enter pp a sector contributor of "public_sector", "Jason Leigh-Griffiths"
-      And I enter pp funding values for a single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter pp funding values for a single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "private_sector"
       And I click and continue
       And I enter pp a sector contributor of "private_sector", "Rose Rothery"
-      And I enter pp funding values for a single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000"
+      And I enter pp funding values for a single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I enter a funding source for "other_sector"
       And I click and continue
       And I click and continue    
       And I enter pp a sector contributor of "other_sector", "Matt Hall"
-      And I enter pp funding values for a single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000" 
+      And I enter pp funding values for a single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I answer YES if the project could start sooner "01", "2020"
       And I add my main project risk "tidal"
-      And I add the flood protection outcome values for column A a1 "3000", a2 "3000", a3 "3000", a4 "3000", a5 "3000", a6 "3000", column B b1 "2000", b2 "2000", b3 "2000", b4 "2000", b5 "2000", b6 "2000", column C c1 "1000", c2 "1000", c3 "1000", c4 "1000", c5 "1000", c6 "1000"
+      And I add the flood protection outcome values for column A a1 "3000", a2 "3000", a3 "3000", a4 "3000", a5 "3000", a6 "3000", a7 "3000", column B b1 "2000", b2 "2000", b3 "2000", b4 "2000", b5 "2000", b6 "2000", b7 "2000", column C c1 "1000", c2 "1000", c3 "1000", c4 "1000", c5 "1000", c6 "1000", c7 "1000"
       And I add a second project risk "coastal"
       And I click and continue
       And I click and continue
-      And I add the coastal erosion protection outcome values for column A a1 "3000", a2 "3000", a3 "3000", a4 "3000", a5 "3000", a6 "3000", column B b1 "2000", b2 "2000", b3 "2000", b4 "2000", b5 "2000", b6 "2000", column C c1 "1000", c2 "1000", c3 "1000", c4 "1000", c5 "1000", c6 "1000"
+      And I add the coastal erosion protection outcome values for column A a1 "3000", a2 "3000", a3 "3000", a4 "3000", a5 "3000", a6 "3000", a7 "3000", column B b1 "2000", b2 "2000", b3 "2000", b4 "2000", b5 "2000", b6 "2000", b7 "2000", column C c1 "1000", c2 "1000", c3 "1000", c4 "1000", c5 "1000", c6 "1000", c7 "1000"
       And I add the standard of protection before project starts as "very_significant_risk"
       And I add the standard of protection after project completes as "low_risk"
       And I add the standard of protection coastal erosion starts as "one_to_four_years"
