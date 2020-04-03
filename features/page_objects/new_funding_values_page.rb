@@ -1,83 +1,161 @@
+# rubocop: disable Metrics/ClassLength
 class NewFundingValuesPage < SitePrism::Page
 
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
-  element(:gia_current_year, "#funding_values_step_funding_values_attributes_0_fcerm_gia")
-  element(:gia_2015_2016, "#funding_values_step_funding_values_attributes_1_fcerm_gia")
-  element(:gia_2016_2017, "#funding_values_step_funding_values_attributes_2_fcerm_gia")
-  element(:gia_2017_2018, "#funding_values_step_funding_values_attributes_3_fcerm_gia")
-  element(:gia_2018_2019, "#funding_values_step_funding_values_attributes_4_fcerm_gia")
-  element(:gia_2019_2020, "#funding_values_step_funding_values_attributes_5_fcerm_gia")
+  # rubocop:disable Style/MutableConstant
+  COMMON_SELECTOR = "funding_values_step_funding_values_attributes"
+  COMMON_SELECTOR_PUBLIC = "public_contributor_values_step_funding_contributors_attributes"
+  COMMON_SELECTOR_PRIVATE = "private_contributor_values_step_funding_contributors_attributes"
+  COMMON_SELECTOR_OTHER = "other_ea_contributor_values_step_funding_contributors_attributes"
 
-  element(:levy_current_year, "#funding_values_step_funding_values_attributes_0_local_levy")
-  element(:levy_2015_2016, "#funding_values_step_funding_values_attributes_1_local_levy")
-  element(:levy_2016_2017, "#funding_values_step_funding_values_attributes_2_local_levy")
-  element(:levy_2017_2018, "#funding_values_step_funding_values_attributes_3_local_levy")
-  element(:levy_2018_2019, "#funding_values_step_funding_values_attributes_4_local_levy")
-  element(:levy_2019_2020, "#funding_values_step_funding_values_attributes_5_local_levy")
+  element(:gia_current_year, "##{COMMON_SELECTOR}_0_fcerm_gia")
+  element(:gia_2015_2016, "##{COMMON_SELECTOR}_1_fcerm_gia")
+  element(:gia_2016_2017, "##{COMMON_SELECTOR}_2_fcerm_gia")
+  element(:gia_2017_2018, "##{COMMON_SELECTOR}_3_fcerm_gia")
+  element(:gia_2018_2019, "##{COMMON_SELECTOR}_4_fcerm_gia")
+  element(:gia_2019_2020, "##{COMMON_SELECTOR}_5_fcerm_gia")
+  element(:gia_2020_2021, "##{COMMON_SELECTOR}_6_fcerm_gia")
 
-  element(:public_current_year, "#public_contributor_values_step_funding_contributors_attributes_0_amount")
-  element(:public_2015_2016, "#public_contributor_values_step_funding_contributors_attributes_1_amount")
-  element(:public_2016_2017, "#public_contributor_values_step_funding_contributors_attributes_2_amount")
-  element(:public_2017_2018, "#public_contributor_values_step_funding_contributors_attributes_3_amount")
-  element(:public_2018_2019, "#public_contributor_values_step_funding_contributors_attributes_4_amount")
-  element(:public_2019_2020, "#public_contributor_values_step_funding_contributors_attributes_5_amount")
+  element(:levy_current_year, "##{COMMON_SELECTOR}_0_local_levy")
+  element(:levy_2015_2016, "##{COMMON_SELECTOR}_1_local_levy")
+  element(:levy_2016_2017, "##{COMMON_SELECTOR}_2_local_levy")
+  element(:levy_2017_2018, "##{COMMON_SELECTOR}_3_local_levy")
+  element(:levy_2018_2019, "##{COMMON_SELECTOR}_4_local_levy")
+  element(:levy_2019_2020, "##{COMMON_SELECTOR}_5_local_levy")
+  element(:levy_2020_2021, "##{COMMON_SELECTOR}_6_local_levy")
 
-  element(:private_current_year, "#private_contributor_values_step_funding_contributors_attributes_0_amount")
-  element(:private_2015_2016, "#private_contributor_values_step_funding_contributors_attributes_1_amount")
-  element(:private_2016_2017, "#private_contributor_values_step_funding_contributors_attributes_2_amount")
-  element(:private_2017_2018, "#private_contributor_values_step_funding_contributors_attributes_3_amount")
-  element(:private_2018_2019, "#private_contributor_values_step_funding_contributors_attributes_4_amount")
-  element(:private_2019_2020, "#private_contributor_values_step_funding_contributors_attributes_5_amount")
+  element(:public_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_amount")
+  element(:public_2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_amount")
+  element(:public_2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_amount")
+  element(:public_2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_amount")
+  element(:public_2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_amount")
+  element(:public_2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_amount")
+  element(:public_2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_amount")
 
-  element(:ea_current_year, "#other_ea_contributor_values_step_funding_contributors_attributes_0_amount")
-  element(:ea_2015_2016, "#other_ea_contributor_values_step_funding_contributors_attributes_1_amount")
-  element(:ea_2016_2017, "#other_ea_contributor_values_step_funding_contributors_attributes_2_amount")
-  element(:ea_2017_2018, "#other_ea_contributor_values_step_funding_contributors_attributes_3_amount")
-  element(:ea_2018_2019, "#other_ea_contributor_values_step_funding_contributors_attributes_4_amount")
-  element(:ea_2019_2020, "#other_ea_contributor_values_step_funding_contributors_attributes_5_amount")
+  element(:private_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_amount")
+  element(:private_2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_amount")
+  element(:private_2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_amount")
+  element(:private_2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_amount")
+  element(:private_2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_amount")
+  element(:private_2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_amount")
+  element(:private_2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_amount")
 
-  element(:growth_current_year, "#funding_values_step_funding_values_attributes_0_growth_funding")
-  element(:growth_2015_2016, "#funding_values_step_funding_values_attributes_1_growth_funding")
-  element(:growth_2016_2017, "#funding_values_step_funding_values_attributes_2_growth_funding")
-  element(:growth_2017_2018, "#funding_values_step_funding_values_attributes_3_growth_funding")
-  element(:growth_2018_2019, "#funding_values_step_funding_values_attributes_4_growth_funding")
-  element(:growth_2019_2020, "#funding_values_step_funding_values_attributes_5_growth_funding")
+  element(:ea_current_year, "##{COMMON_SELECTOR_OTHER}_0_amount")
+  element(:ea_2015_2016, "##{COMMON_SELECTOR_OTHER}_1_amount")
+  element(:ea_2016_2017, "##{COMMON_SELECTOR_OTHER}_2_amount")
+  element(:ea_2017_2018, "##{COMMON_SELECTOR_OTHER}_3_amount")
+  element(:ea_2018_2019, "##{COMMON_SELECTOR_OTHER}_4_amount")
+  element(:ea_2019_2020, "##{COMMON_SELECTOR_OTHER}_5_amount")
+  element(:ea_2020_2021, "##{COMMON_SELECTOR_OTHER}_6_amount")
 
-  element(:drain_current_year, "#funding_values_step_funding_values_attributes_0_internal_drainage_boards")
-  element(:drain_2015_2016, "#funding_values_step_funding_values_attributes_1_internal_drainage_boards")
-  element(:drain_2016_2017, "#funding_values_step_funding_values_attributes_2_internal_drainage_boards")
-  element(:drain_2017_2018, "#funding_values_step_funding_values_attributes_3_internal_drainage_boards")
-  element(:drain_2018_2019, "#funding_values_step_funding_values_attributes_4_internal_drainage_boards")
-  element(:drain_2019_2020, "#funding_values_step_funding_values_attributes_5_internal_drainage_boards")
+  element(:growth_current_year, "##{COMMON_SELECTOR}_0_growth_funding")
+  element(:growth_2015_2016, "##{COMMON_SELECTOR}_1_growth_funding")
+  element(:growth_2016_2017, "##{COMMON_SELECTOR}_2_growth_funding")
+  element(:growth_2017_2018, "##{COMMON_SELECTOR}_3_growth_funding")
+  element(:growth_2018_2019, "##{COMMON_SELECTOR}_4_growth_funding")
+  element(:growth_2019_2020, "##{COMMON_SELECTOR}_5_growth_funding")
+  element(:growth_2020_2021, "##{COMMON_SELECTOR}_6_growth_funding")
 
-  element(:notyet_current_year, "#funding_values_step_funding_values_attributes_0_not_yet_identified")
-  element(:notyet_2015_2016, "#funding_values_step_funding_values_attributes_1_not_yet_identified")
-  element(:notyet_2016_2017, "#funding_values_step_funding_values_attributes_2_not_yet_identified")
-  element(:notyet_2017_2018, "#funding_values_step_funding_values_attributes_3_not_yet_identified")
-  element(:notyet_2018_2019, "#funding_values_step_funding_values_attributes_4_not_yet_identified")
-  element(:notyet_2019_2020, "#funding_values_step_funding_values_attributes_5_not_yet_identified")
+  element(:drain_current_year, "##{COMMON_SELECTOR}_0_internal_drainage_boards")
+  element(:drain_2015_2016, "##{COMMON_SELECTOR}_1_internal_drainage_boards")
+  element(:drain_2016_2017, "##{COMMON_SELECTOR}_2_internal_drainage_boards")
+  element(:drain_2017_2018, "##{COMMON_SELECTOR}_3_internal_drainage_boards")
+  element(:drain_2018_2019, "##{COMMON_SELECTOR}_4_internal_drainage_boards")
+  element(:drain_2019_2020, "##{COMMON_SELECTOR}_5_internal_drainage_boards")
+  element(:drain_2020_2021, "##{COMMON_SELECTOR}_6_internal_drainage_boards")
+
+  element(:notyet_current_year, "##{COMMON_SELECTOR}_0_not_yet_identified")
+  element(:notyet_2015_2016, "##{COMMON_SELECTOR}_1_not_yet_identified")
+  element(:notyet_2016_2017, "##{COMMON_SELECTOR}_2_not_yet_identified")
+  element(:notyet_2017_2018, "##{COMMON_SELECTOR}_3_not_yet_identified")
+  element(:notyet_2018_2019, "##{COMMON_SELECTOR}_4_not_yet_identified")
+  element(:notyet_2019_2020, "##{COMMON_SELECTOR}_5_not_yet_identified")
+  element(:notyet_2020_2021, "##{COMMON_SELECTOR}_6_not_yet_identified")
+
+  element(:public_secure_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_secured", disible: false)
+  element(:public_secure_2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_secured", disible: false)
+  element(:public_secure_2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_secured", disible: false)
+  element(:public_secure_2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_secured", disible: false)
+  element(:public_secure_2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_secured", disible: false)
+  element(:public_secure_2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_secured", disible: false)
+  element(:public_secure_2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_secured", disible: false)
+
+  element(:public_constrained_current_year, "##{COMMON_SELECTOR_PUBLIC}_0_constrained", disible: false)
+  element(:public_constrained__2015_2016, "##{COMMON_SELECTOR_PUBLIC}_1_constrained", disible: false)
+  element(:public_constrained__2016_2017, "##{COMMON_SELECTOR_PUBLIC}_2_constrained", disible: false)
+  element(:public_constrained__2017_2018, "##{COMMON_SELECTOR_PUBLIC}_3_constrained", disible: false)
+  element(:public_constrained__2018_2019, "##{COMMON_SELECTOR_PUBLIC}_4_constrained", disible: false)
+  element(:public_constrained__2019_2020, "##{COMMON_SELECTOR_PUBLIC}_5_constrained", disible: false)
+  element(:public_constrained__2020_2021, "##{COMMON_SELECTOR_PUBLIC}_6_constrained", disible: false)
+
+  element(:private_secure_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_secured_true", disible: false)
+  element(:private_secure_2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_secured_true", disible: false)
+  element(:private_secure_2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_secured_true", disible: false)
+  element(:private_secure_2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_secured_true", disible: false)
+  element(:private_secure_2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_secured_true", disible: false)
+  element(:private_secure_2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_secured_true", disible: false)
+  element(:private_secure_2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_secured_true", disible: false)
+
+  element(:private_constrained_current_year, "##{COMMON_SELECTOR_PRIVATE}_0_constrained_true", disible: false)
+  element(:private_constrained__2015_2016, "##{COMMON_SELECTOR_PRIVATE}_1_constrained_true", disible: false)
+  element(:private_constrained__2016_2017, "##{COMMON_SELECTOR_PRIVATE}_2_constrained_true", disible: false)
+  element(:private_constrained__2017_2018, "##{COMMON_SELECTOR_PRIVATE}_3_constrained_true", disible: false)
+  element(:private_constrained__2018_2019, "##{COMMON_SELECTOR_PRIVATE}_4_constrained_true", disible: false)
+  element(:private_constrained__2019_2020, "##{COMMON_SELECTOR_PRIVATE}_5_constrained_true", disible: false)
+  element(:private_constrained__2020_2021, "##{COMMON_SELECTOR_PRIVATE}_6_constrained_true", disible: false)
+
+  element(:other_secure_current_year, "##{COMMON_SELECTOR_OTHER}_0_secured_true", disible: false)
+  element(:other_secure_2015_2016, "##{COMMON_SELECTOR_OTHER}_1_secured_true", disible: false)
+  element(:other_secure_2016_2017, "##{COMMON_SELECTOR_OTHER}_2_secured_true", disible: false)
+  element(:other_secure_2017_2018, "##{COMMON_SELECTOR_OTHER}_3_secured_true", disible: false)
+  element(:other_secure_2018_2019, "##{COMMON_SELECTOR_OTHER}_4_secured_true", disible: false)
+  element(:other_secure_2019_2020, "##{COMMON_SELECTOR_OTHER}_5_secured_true", disible: false)
+  element(:other_secure_2020_2021, "##{COMMON_SELECTOR_OTHER}_6_secured_true", disible: false)
+
+  element(:other_constrained_current_year, "##{COMMON_SELECTOR_OTHER}_0_constrained_true", disible: false)
+  element(:other_constrained__2015_2016, "##{COMMON_SELECTOR_OTHER}_1_constrained_true", disible: false)
+  element(:other_constrained__2016_2017, "##{COMMON_SELECTOR_OTHER}_2_constrained_true", disible: false)
+  element(:other_constrained__2018_2019, "##{COMMON_SELECTOR_OTHER}_4_constrained_true", disible: false)
+  element(:other_constrained__2017_2018, "##{COMMON_SELECTOR_OTHER}_3_constrained_true", disible: false)
+  element(:other_constrained__2019_2020, "##{COMMON_SELECTOR_OTHER}_5_constrained_true", disible: false)
+  element(:other_constrained__2020_2021, "##{COMMON_SELECTOR_OTHER}_6_constrained_true", disible: false)
 
   elements(:sources, "input[type='number']")
 
   element(:submit_button, "input[name='commit']")
+  # rubocop:enable Style/MutableConstant
 
+  # rubocop:disable Metrics/AbcSize
   def submit(args = {})
-    if args.key?(:funding_values)
-      args[:funding_values].each do |source|
-
-        search_val_one = "funding_values_step_funding_values_attributes_0_#{source}"
-        sources.find { |chk| chk["id"] == search_val_one }.set "1000"
-
-        search_val_two = "funding_values_step_funding_values_attributes_1_#{source}"
-        sources.find { |chk| chk["id"] == search_val_two }.set "1000"
-
-        search_val_three = "funding_values_step_funding_values_attributes_2_#{source}"
-        sources.find { |chk| chk["id"] == search_val_three }.set "1000"
-      end
+    case args[:new_funding]
+    when :public_secure
+      public_secure_current_year.click
+      public_secure_2015_2016.click
+      public_secure_2017_2017.click
+      public_secure_2017_2018.click
+      public_secure_2018_2019.click
+      public_secure_2019_2020.click
+      public_secure_2010_2021.click
+    when :private_secure
+      private_secure_current_year true
+      private_secure_2015_2016.click
+      private_secure_2017_2017.click
+      private_secure_2017_2018.click
+      private_secure_2018_2019.click
+      private_secure_2019_2020.click
+      private_secure_2010_2021.click
+    when :other_secure
+      other_secure_current_year.click
+      other_secure_2015_2016.click
+      other_secure_2017_2017.click
+      other_secure_2017_2018.click
+      other_secure_2018_2019.click
+      other_secure_2019_2020.click
+      other_secure_2010_2021.click
     end
 
     submit_button.click
   end
-
+  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize
 end
