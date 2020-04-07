@@ -130,8 +130,6 @@ class NewFundingValuesPage < SitePrism::Page
   def submit(args = {})
     case args[:new_funding]
     when :public_secure
-      public_secure_current_year.click
-    when :private_secure
       private_constrained_current_year.click
       public_secure_2015_2016.click
       public_secure_2017_2017.click
@@ -159,5 +157,5 @@ class NewFundingValuesPage < SitePrism::Page
 
     submit_button.click
   end
-  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize, Style/MutableConstant
+  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize
 end
