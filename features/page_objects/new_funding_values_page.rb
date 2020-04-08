@@ -157,5 +157,5 @@ class NewFundingValuesPage < SitePrism::Page
 
     submit_button.click
   end
-  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize, Style/MutableConstant
+  # rubocop: enable Metrics/ClassLength, Metrics/AbcSize
 end
