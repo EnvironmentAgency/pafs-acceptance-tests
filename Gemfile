@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "quke", github: 'DEFRA/quke'
+gem "quke", github: "DEFRA/quke"
 
 # We use rubocop in all our Ruby based projects to try and ensure consistency
 # in the code we write across all our projects.
