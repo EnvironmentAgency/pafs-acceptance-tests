@@ -4,6 +4,9 @@ require "rubocop/rake_task"
 
 RuboCop::RakeTask.new
 
+require "quke"
+load "quke/Rakefile"
+
 task default: :run
 
 # Remember to create an environment variable in Travis (can be set to anything)!
