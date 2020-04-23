@@ -5,6 +5,27 @@ Given(/^I am an external user$/) do
   sleep 0.75
 end
 
+Given(/^I change the url page for pso on qa$/) do
+
+  @app = App.new
+  @app.change_url_qa_page.load
+  sleep 0.75
+end
+
+Given(/^I change the url page for pso on training$/) do
+
+  @app = App.new
+  @app.change_url_train_page.load
+  sleep 0.75
+end
+
+Given(/^I change the url page for pso on preprod$/) do
+
+  @app = App.new
+  @app.change_url_preprod_page.load
+  sleep 0.75
+end
+
 Given(/^I have a valid "([^"]*)" username and password$/) do |user_type|
   @app.login_page.submit(
     email: Quke::Quke.config.custom["user_accounts"][user_type]["username"],
@@ -14,6 +35,10 @@ end
 
 Given(/^I create a new proposal$/) do
   @app.projects_page.create_proposal.click
+end
+
+Given(/^I select an existing proposal$/) do
+  @app.proposal_overview_page.first_project.click
 end
 
 Given(/^I enter a project name$/) do
@@ -306,6 +331,20 @@ Given(/^I upload a project funding calculator with file option "([^"]*)", "([^"]
   @app.funding_calculator_summary_page.submit
 end
 
+Given(/^I sign out of the proposal$/) do
+  @app.projects_page.user_bar.sign_out_link.click
+end
+
+Given(/^I search for an existing proposal$/) do
+  expect(@app.proposal_overview_page).to have_text(@project_number)
+  @app.proposal_overview_page.find_project_link(@project_number)
+end
+
+Given(/^I click on the return to your proposal overview button$/) do
+  link_name = "Return to your proposal overview"
+  @app.proposal_overview_page.return_to_proposal_overview(link_name)
+end
+
 When(/^I complete my proposal on qa$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal_qa.click
@@ -321,8 +360,13 @@ When(/^I complete my proposal on preprod$/) do
   @app.proposal_overview_page.complete_proposal_preprod.click
 end
 
+When(/^I submit the proposal to PoL as a PSO$/) do
+  @app.proposal_overview_page.pso_complete_proposal.click
+end
+
 Then(/^I should see that my proposal is sent for review$/) do
   expect(@app.confirm_page).to have_project_number
+  @project_number = @app.confirm_page.project_number.text
   expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
@@ -332,7 +376,6 @@ Then(/^I should see that my proposal is submitted$/) do
 end
 
 Then(/^I should see that my proposal is under review$/) do
-  expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal under review")
 end
 

@@ -267,5 +267,18 @@ class App
   def carbon_cost_operation_page
     @last_page = CarbonCostOperationPage.new
   end
+
+  def change_url_qa_page
+    @last_page = PSOQHomePage.new
+  end
+
+  def change_url_train_page
+    @last_page = PSOTrainHomePage.new
+  end
+
+  def change_url_preprod_page
+    @last_page = PSOPreProdHomePage.new
+  end
+
 end
 # rubocop:enable Metrics/ClassLength
