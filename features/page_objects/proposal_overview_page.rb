@@ -28,15 +28,19 @@ class ProposalOverviewPage < SitePrism::Page
 
   element(:revert_to_draft, "#[href$='Revert to draft']")
 
-  # Based on PM-529 this has been changed fromn complete to submit
-  # This is only on the Training site at the moment
   element(:complete_proposal_qa, "a[href$='complete']")
-  element(:complete_proposal_training, "a[href$='submit']")
+  element(:complete_proposal_training, "a[href$='complete']")
   element(:complete_proposal_preprod, "a[href$='complete']")
   element(:complete_proposal, "a[href$='complete']")
 
-  def submit(_args = {})
-    search_button.click
+  element(:pso_complete_proposal, "a[href$='submit']")
+
+  def find_project_link(page_source)
+    click_link(page_source)
+  end
+
+  def return_to_proposal_overview(link_name)
+    click_link(link_name)
   end
 
 end
