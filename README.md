@@ -91,16 +91,19 @@ Feature: Validations within the digital service
 ```
 
 ```gherkin
-@frontoffice @happypath
+@frontoffice @TRA_SmokeTests @QA_RegressionTests
 Scenario: Registration by an individual
 ```
 
 When applied you then have the ability to filter which tests will be used during any given run
 
 ```bash
-bundle exec quke --tags @frontoffice # Run only things tagged with this
-bundle exec quke --tags @frontoffice,@happypath # Run all things with these tags
+bundle exec quke --tags@QA_SmokeTests # Run only things tagged with this
+bundle exec quke --tags @frontoffice,@TRA_SmokeTests # Run all things with these tags
 bundle exec quke --tags ~@functional # Don't run anything with this tag (run everything else)
+
+To run tests against a specific create a yml file and add it to your run line
+QUKE_CONFIG=remoteTrain.config.yml bundle exec quke --tag @TRA_SmokeTests
 ```
 
 ### In this project
@@ -110,13 +113,11 @@ To have consistency across the project the following tags are defined and should
 |Tag|Description|
 |---|---|
 |@frontoffice|Any feature or scenario expected to be run against the front office application|
-|@backoffice|Any feature or scenario expected to be run against the back office application|
-|@happypath|A scenario which details a complete registration with no errors|
-|@functional|Any feature or scenario which is testing just a specific function of the service e.g. validation errors|
+|@QA_SmokeTests, @TRA_SmokeTests or @PreProd_SmokeTest|Any feature or scenario expected to be run against the application baseed on the test enviroment i.e. QA, Training, PreProd|
+|@QA_RegressionTests, @TRA_RegressionTests or @PreProd_RegressionTests|Any feature or scenario expected to be run against the application baseed on the test enviroment i.e. QA, Training, PreProd|
 |@fix|A feature or scenario that highlights an error or issue with the service that needs to be fixed|
-|@ci|A feature that is intended to be run only on our continuous integration service (you should never need to use this tag).|
 
-It's also common practice to use a custom tag whilst working on a new feature or scenario e.g. `@focus` or `@wip`. That is perfectly acceptable but please ensure they are removed before your change is merged.
+It's also common practice to use a custom tag whilst working on a new feature or scenario e.g. `@QA_R1` or `@wip` etc. That is perfectly acceptable but please ensure they are removed before your change is merged.
 
 ## Tips
 
