@@ -1,5 +1,5 @@
   # SHAPEFILE - Virus 
-  @QA_Security @QA_R7 
+  @QA_SecurityTests @QA_R7 
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
   Given I am an external user
     And I have a valid "rma" username and password
@@ -17,7 +17,7 @@
     |ShapeFile|Message|
     |Virus_ShapeFile.zip|The file was rejected because it may contain a virus. Check the file and try again|
 
- @TRA_Security @TRA_R5
+ @TRA_SecurityTests @TRA_R5
   Scenario Outline: Sumbmit a new proposal with an valid shapefile
   Given I am an external user
     And I have a valid "rma" username and password
