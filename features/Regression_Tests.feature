@@ -113,25 +113,6 @@ Feature: Run regression tests against the soltuiin
     |ShapeFile.png|The selected file must be a zip file, containing the following mandatory files: dbf. shx. shp. prj.|
     |Invalid_ShapeFile.zip|The selected file must be a zip file, containing the following mandatory files: dbf. shx. shp. prj.|
 
-  # SHAPEFILE - Virus 
-  @QA_RegressionTests @QA_R7
-  Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
-  Given I am an external user
-    And I have a valid "rma" username and password
-    And I select "yes" for Pafs to store cookies on my device
-    And I create a new proposal
-    And I enter a project name
-    And I select a project type "change_or_new_asset"
-    And I select a financial year to stop spending
-    And I add a location "ST 58198 72725"
-    And I upload the benefit area file "<ShapeFile>"
-  When I view the benefit file page
-  Then I should see the message "<Message>" on the benefit file page
-
-    Examples:
-    |ShapeFile|Message|
-    |Virus_ShapeFile.zip|The file was rejected because it may contain a virus. Check the file and try again|
-
   # SHAPEFILE - Blank File 
   @QA_RegressionTests @QA_R8
   Scenario Outline: Sumbmit a new proposal with no file
@@ -325,25 +306,6 @@ Feature: Run regression tests against the soltuiin
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|2020-2021|total_spend|
       |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|7000|28,000|
 
- # SHAPEFILE - Valid
- @TRA_RegressionTests @TRA_R5
-  Scenario Outline: Sumbmit a new proposal with an valid shapefile
-  Given I am an external user
-    And I have a valid "rma" username and password
-    And I select "yes" for Pafs to store cookies on my device
-    And I create a new proposal
-    And I enter a project name 
-    And I select a project type "change_or_new_asset"
-    And I select a financial year to stop spending
-    And I add a location "ST 58198 72725"
-    And I upload the benefit area file "<ShapeFile>"
-  When I view the benefit area page
-  Then I should see the message "<Message>" on the benefit area page
-
-    Examples:
-    |ShapeFile|Message|
-    |Valid_ShapeFile.zip|The uploaded shapefile|
-
   # SHAPEFILE - Invalid 
   @TRA_RegressionTests @TRA_R6
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
@@ -470,8 +432,9 @@ Feature: Run regression tests against the soltuiin
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
     When I submit my proposal on training
     Then I should see that my proposal is sent for review
+      
+      #PSO Approve Project Request - changes 26-08-2020
       #And I click on the return to your proposal overview button
-
       #And I should see that my proposal is sent for review
       #And I sign out of the proposal
       #And I have a valid "pso" username and password
@@ -547,15 +510,16 @@ Feature: Run regression tests against the soltuiin
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
     When I submit my proposal on training
     Then I should see that my proposal is sent for review
-      #And I click on the return to your proposal overview button
 
-     #And I complete my proposal on training
+      #PSO Approve Project Request - changes 26-08-2020
+      #And I click on the return to your proposal overview button
+      #And I complete my proposal on training
       #And I should see that my proposal is sent for review
       #And I sign out of the proposal
-     #And I have a valid "pso" username and password
-     # And I search for an existing proposal
-    #When I submit my proposal on training
-   # Then I should see that my proposal is under review
+      #And I have a valid "pso" username and password
+      #And I search for an existing proposal
+      #When I submit my proposal on training
+      #Then I should see that my proposal is under review
 
   @TRA_RegressionTests @TRA_R11
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs8 Calc
@@ -625,14 +589,13 @@ Feature: Run regression tests against the soltuiin
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
     When I submit my proposal on training
     Then I should see that my proposal is under review
-      #And I click on the return to your proposal overview button
-
-
-
-      #And I complete my proposal on training
-      #And I click on the return to your proposal overview button
-    #When I submit the proposal to PoL as a PSO
-    #Then I should see that my proposal is under review
+     
+     #PSO Approve Project Request - changes 26-08-2020
+     #And I click on the return to your proposal overview button
+     #And I complete my proposal on training
+     #And I click on the return to your proposal overview button
+     #When I submit the proposal to PoL as a PSO
+     #Then I should see that my proposal is under review
 
   @TRA_RegressionTests @TRA_R12
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs2020 Calc
@@ -703,10 +666,11 @@ Feature: Run regression tests against the soltuiin
     When I submit my proposal on training
     Then I should see that my proposal is under review
 
-      #And I complete my proposal on training
-      #And I click on the return to your proposal overview button
-    #When I submit the proposal to PoL as a PSO
-    #Then I should see that my proposal is under review
+     #PSO Approve Project Request - changes 26-08-2020
+     #And I complete my proposal on training
+     #And I click on the return to your proposal overview button
+     #When I submit the proposal to PoL as a PSO
+     #Then I should see that my proposal is under review
 
 # ==================================================================================================================================
 # Pre-Prod Test Environment 

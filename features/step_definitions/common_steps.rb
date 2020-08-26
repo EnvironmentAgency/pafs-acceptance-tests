@@ -26,6 +26,14 @@ Given(/^I change the url page for pso on preprod$/) do
   sleep 0.75
 end
 
+Given(/^I select "([^"]*)" for Pafs to store cookies on my device$/) do |option|
+  page_text = "Can we store analytics cookies on your device?"
+  capitalize_option = option.capitalize
+  expect(@app.proposal_overview_page).to have_text(page_text)
+  expect(@app.proposal_overview_page).to have_button(capitalize_option)
+  @app.proposal_overview_page.find_project_button(capitalize_option)
+end
+
 Given(/^I have a valid "([^"]*)" username and password$/) do |user_type|
   @app.login_page.submit(
     email: Quke::Quke.config.custom["user_accounts"][user_type]["username"],
