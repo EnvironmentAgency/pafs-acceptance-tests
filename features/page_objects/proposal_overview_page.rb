@@ -33,10 +33,18 @@ class ProposalOverviewPage < SitePrism::Page
   element(:complete_proposal_preprod, "a[href$='complete']")
   element(:complete_proposal, "a[href$='complete']")
 
+  element(:submit_proposal_qa, "a[href$='submit']")
+  element(:submit_proposal_training, "a[href$='submit']")
+  element(:submit_proposal_preprod, "a[href$='submit']")
+
   element(:pso_complete_proposal, "a[href$='submit']")
 
   def find_project_link(page_source)
     click_link(page_source)
+  end
+
+  def find_project_button(page_source)
+    click_button(page_source)
   end
 
   def return_to_proposal_overview(link_name)

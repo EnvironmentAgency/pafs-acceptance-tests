@@ -7,6 +7,7 @@ Feature: Create a new project application for Smoke Tests
   Background:
     Given I am an external user
       And I have a valid "rma" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
       And I enter a project name
 
@@ -47,7 +48,7 @@ Feature: Create a new project application for Smoke Tests
       And I upload a project funding calculator with file option "No", "PFCalcVs8.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
@@ -91,12 +92,12 @@ Feature: Create a new project application for Smoke Tests
       And I upload a project funding calculator with file option "No", "PFCalcVs8.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-    When I complete my proposal on training
+    When I submit my proposal on training
     Then I should see that my proposal is sent for review
 
   @TRA_SmokeTests @OM_SM3
@@ -127,12 +128,12 @@ Feature: Create a new project application for Smoke Tests
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-    When I complete my proposal on training
+    When I submit my proposal on training
     Then I should see that my proposal is sent for review    
 
 # ==================================================================================================================================
@@ -171,7 +172,7 @@ Feature: Create a new project application for Smoke Tests
       And I upload a project funding calculator with file option "No", "PFCalcVs8LA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
