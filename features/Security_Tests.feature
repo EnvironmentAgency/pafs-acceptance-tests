@@ -1,4 +1,9 @@
-  # SHAPEFILE - Virus 
+@frontoffice
+Feature: Create a new project application for Smoke Tests
+  As a council
+  I want to submit a proposal for flood and coastal erosion risk management project funding
+  So that my local area can have improved protection from flooding
+
   @QA_SecurityTests @QA_R7 
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
   Given I am an external user
