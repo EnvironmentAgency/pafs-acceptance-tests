@@ -280,5 +280,9 @@ class App
     @last_page = PSOPreProdHomePage.new
   end
 
+  def cookies_page
+    @last_page = CookiesPage.new
+  end
+
 end
 # rubocop:enable Metrics/ClassLength

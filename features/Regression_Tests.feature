@@ -1,3 +1,6 @@
+# This automation soltution was created bu Jason Leigh-Griffiths during 2019 - 2020
+# The Pafs team was Rose Rothery BA, Matt Hall Developer
+
 @frontoffice
 Feature: Run regression tests against the soltuiin
   I Want to run regression tests against the soltion 
@@ -12,6 +15,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new defence proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "no" for Pafs to store cookies on my device
     And I create a new proposal  
     And I enter a project name
     And I select a project type "change_or_new_asset" 
@@ -24,6 +28,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new restore asset proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "restore_asset"
@@ -36,6 +41,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new property level protection proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "property_level_protection"
@@ -47,6 +53,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Submit a new proposals with a funding source
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "<project_type>"
@@ -72,6 +79,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an valid shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -90,6 +98,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -109,6 +118,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -127,6 +137,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with no file
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -144,6 +155,7 @@ Feature: Run regression tests against the soltuiin
  Scenario Outline: Submit a project with PFC v8 Calc inc Triple Funding Sources
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "restore_asset"
@@ -162,6 +174,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with no file
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -179,6 +192,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Submit a new full project with PFC v8 Calc with Triple Funding Sources
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a test project name "Pafs_Integration_Test1"
     And I select a project type "restore_asset"
@@ -235,7 +249,7 @@ Feature: Run regression tests against the soltuiin
     And I upload a project funding calculator with file option "No", "PFCalcVs8.xlsx"
     And I select the confidence page
     And I add the confidence in number of homes better protected by this project as "high"
-    And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+    And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
     And I add the confidence in securing the required Partnership Funding as "not_applicable"
     And I select the carbon page
     And I add how much capital carbon will this project produce in tonnes "1"
@@ -252,6 +266,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new defence proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "no" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset" 
@@ -264,6 +279,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new restore asset proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "restore_asset"
@@ -276,6 +292,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new property level protection proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "property_level_protection"
@@ -287,6 +304,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Submit a new proposals with a funding source
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "<project_type>"
@@ -312,6 +330,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an valid shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name 
     And I select a project type "change_or_new_asset"
@@ -330,6 +349,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an invalid shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name 
     And I select a project type "change_or_new_asset"
@@ -349,6 +369,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with an pseudo-virus shapefile
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset"
@@ -367,6 +388,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Sumbmit a new proposal with no file
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name 
     And I select a project type "change_or_new_asset"
@@ -384,6 +406,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Submit a new RMA project with multi funding sources and PFC Vs8 Calc
     Given I am an external user
       And I have a valid "rma" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
       And I enter a project name
       And I select a project type "restore_asset"
@@ -405,13 +428,13 @@ Feature: Run regression tests against the soltuiin
       And I enter a funding source for "not_identified"
       And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I enter a funding source for "public_sector"
-      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
+      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths Test"
       And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "private_sector"
       And I click and continue
       And I click and continue
-      And I enter a new sector contributor of "private_sector", "Rose Rothery"
+      And I enter a new sector contributor of "private_sector", "Rose Rothery BA "
       And I enter funding values for single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "other_sector"
@@ -419,7 +442,7 @@ Feature: Run regression tests against the soltuiin
       And I click and continue
       And I click and continue
       And I click and continue      
-      And I enter a new sector contributor of "other_sector", "Matt HAll"
+      And I enter a new sector contributor of "other_sector", "Matt Hall Developer"
       And I enter funding values for single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I click and continue
       And I answer YES if the project could start sooner "01", "2020"
@@ -440,23 +463,27 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "No", "PFCalcVs8LA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-      And I complete my proposal on training
-      And I should see that my proposal is sent for review
-      And I sign out of the proposal
-      And I have a valid "pso" username and password
-      And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
-    Then I should see that my proposal is under review
+    When I submit my proposal on training
+    Then I should see that my proposal is sent for review
+      #And I click on the return to your proposal overview button
+
+      #And I should see that my proposal is sent for review
+      #And I sign out of the proposal
+      #And I have a valid "pso" username and password
+      #And I search for an existing proposal
+    #When I submit the proposal to PoL as a PSO
+    #Then I should see that my proposal is under review
 
    @TRA_RegressionTests @TRA_R10
    Scenario: Submit a new RMA project with multi funding sources and PFC Vs2020 Calc
     Given I am an external user
       And I have a valid "rma" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
       And I enter a project name
       And I select a project type "restore_asset"
@@ -478,13 +505,13 @@ Feature: Run regression tests against the soltuiin
       And I enter a funding source for "not_identified"
       And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I enter a funding source for "public_sector"
-      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
+      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths Tester"
       And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "private_sector"
       And I click and continue
       And I click and continue
-      And I enter a new sector contributor of "private_sector", "Rose Rothery"
+      And I enter a new sector contributor of "private_sector", "Rose Rothery BA"
       And I enter funding values for single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "other_sector"
@@ -492,7 +519,7 @@ Feature: Run regression tests against the soltuiin
       And I click and continue
       And I click and continue
       And I click and continue      
-      And I enter a new sector contributor of "other_sector", "Matt HAll"
+      And I enter a new sector contributor of "other_sector", "Matt Hall Developer"
       And I enter funding values for single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I click and continue
       And I answer YES if the project could start sooner "01", "2020"
@@ -513,23 +540,28 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020LA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-      And I complete my proposal on training
-      And I should see that my proposal is sent for review
-      And I sign out of the proposal
-      And I have a valid "pso" username and password
-      And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
-    Then I should see that my proposal is under review
+    When I submit my proposal on training
+    Then I should see that my proposal is sent for review
+      #And I click on the return to your proposal overview button
+
+     #And I complete my proposal on training
+      #And I should see that my proposal is sent for review
+      #And I sign out of the proposal
+     #And I have a valid "pso" username and password
+     # And I search for an existing proposal
+    #When I submit my proposal on training
+   # Then I should see that my proposal is under review
 
   @TRA_RegressionTests @TRA_R11
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs8 Calc
     Given I am an external user
       And I have a valid "pso" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on training
       And I enter a project name
       And I select a project type "restore_asset"
@@ -551,13 +583,13 @@ Feature: Run regression tests against the soltuiin
       And I enter a funding source for "not_identified"
       And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I enter a funding source for "public_sector"
-      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
+      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths Tester"
       And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "private_sector"
       And I click and continue
       And I click and continue
-      And I enter a new sector contributor of "private_sector", "Rose Rothery"
+      And I enter a new sector contributor of "private_sector", "Rose Rothery BA"
       And I enter funding values for single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "other_sector"
@@ -565,7 +597,7 @@ Feature: Run regression tests against the soltuiin
       And I click and continue
       And I click and continue
       And I click and continue      
-      And I enter a new sector contributor of "other_sector", "Matt Hall"
+      And I enter a new sector contributor of "other_sector", "Matt Hall Developer"
       And I enter funding values for single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I click and continue
       And I answer YES if the project could start sooner "01", "2020"
@@ -586,20 +618,27 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "No", "PFCalcVs8EA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-      And I complete my proposal on training
-      And I click on the return to your proposal overview button
-    When I submit the proposal to PoL as a PSO
+    When I submit my proposal on training
     Then I should see that my proposal is under review
+      #And I click on the return to your proposal overview button
+
+
+
+      #And I complete my proposal on training
+      #And I click on the return to your proposal overview button
+    #When I submit the proposal to PoL as a PSO
+    #Then I should see that my proposal is under review
 
   @TRA_RegressionTests @TRA_R12
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs2020 Calc
     Given I am an external user
       And I have a valid "pso" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on training
       And I enter a project name
       And I select a project type "restore_asset"
@@ -621,13 +660,13 @@ Feature: Run regression tests against the soltuiin
       And I enter a funding source for "not_identified"
       And I enter funding values for single contributor "not_identified" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I enter a funding source for "public_sector"
-      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths"
+      And I enter a new sector contributor of "public_sector", "Jason Leigh-Griffiths Tester"
       And I enter funding values for single contributor "public_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "private_sector"
       And I click and continue
       And I click and continue
-      And I enter a new sector contributor of "private_sector", "Rose Rothery"
+      And I enter a new sector contributor of "private_sector", "Rose Rothery BA"
       And I enter funding values for single contributor "private_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
       And I click and continue
       And I enter a funding source for "other_sector"
@@ -635,7 +674,7 @@ Feature: Run regression tests against the soltuiin
       And I click and continue
       And I click and continue
       And I click and continue      
-      And I enter a new sector contributor of "other_sector", "Matt Hall"
+      And I enter a new sector contributor of "other_sector", "Matt Hall Developer"
       And I enter funding values for single contributor "other_sector" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000" 
       And I click and continue
       And I answer YES if the project could start sooner "01", "2020"
@@ -656,15 +695,18 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020IDB.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-      And I complete my proposal on training
-      And I click on the return to your proposal overview button
-    When I submit the proposal to PoL as a PSO
+    When I submit my proposal on training
     Then I should see that my proposal is under review
+
+      #And I complete my proposal on training
+      #And I click on the return to your proposal overview button
+    #When I submit the proposal to PoL as a PSO
+    #Then I should see that my proposal is under review
 
 # ==================================================================================================================================
 # Pre-Prod Test Environment 
@@ -675,6 +717,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new defence proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "change_or_new_asset" 
@@ -687,6 +730,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new restore asset proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "restore_asset"
@@ -699,6 +743,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Sumbmit a new property level protection proposal
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "property_level_protection"
@@ -710,6 +755,7 @@ Feature: Run regression tests against the soltuiin
   Scenario Outline: Submit a new proposals with a funding source
   Given I am an external user
     And I have a valid "rma" username and password
+    And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
     And I enter a project name
     And I select a project type "<project_type>"
@@ -734,6 +780,7 @@ Feature: Run regression tests against the soltuiin
   Scenario: Submit a new RMA project with multi funding sources and PFC Vs8 Calc
     Given I am an external user
       And I have a valid "rma" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
       And I enter a project name
       And I select a project type "restore_asset"
@@ -790,7 +837,7 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "No", "PFCalcVs8LA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
@@ -800,13 +847,14 @@ Feature: Run regression tests against the soltuiin
       And I sign out of the proposal
       And I have a valid "pso" username and password
       And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
+    When I submit my proposal on training
     Then I should see that my proposal is under review
 
    @PreProd_RegressionTests @PP_R6
    Scenario: Submit a new RMA project with multi funding sources and PFC Vs2020 Calc
     Given I am an external user
       And I have a valid "rma" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
       And I enter a project name
       And I select a project type "restore_asset"
@@ -863,7 +911,7 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020LA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
@@ -873,13 +921,14 @@ Feature: Run regression tests against the soltuiin
       And I sign out of the proposal
       And I have a valid "pso" username and password
       And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
+    When I submit my proposal on training
     Then I should see that my proposal is under review
 
   @PreProd_RegressionTests @PP_R7
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs8 Calc
     Given I am an external user
       And I have a valid "pso" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on preprod
       And I enter a project name
       And I select a project type "restore_asset"
@@ -936,20 +985,21 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "No", "PFCalcVs8EA.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "medium_low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
       And I complete my proposal on preprod
       And I click on the return to your proposal overview button
-    When I submit the proposal to PoL as a PSO
+    When I submit my proposal on training
     Then I should see that my proposal is under review
 
   @PreProd_RegressionTests @PP_R8
   Scenario: Submit a new PSO project with multi funding sources and PFC Vs2020 Calc
     Given I am an external user
       And I have a valid "pso" username and password
+      And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on preprod
       And I enter a project name
       And I select a project type "restore_asset"
@@ -1006,7 +1056,7 @@ Feature: Run regression tests against the soltuiin
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020IDB.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
-      And I add the confidence in homes being delivered by the projects Gateway 4 Readiness for Service date as "medium_low"
+      And I add the confidence in homes being delivered by the projects Gateway 4 date as "low"
       And I add the confidence in securing the required Partnership Funding as "not_applicable"
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"

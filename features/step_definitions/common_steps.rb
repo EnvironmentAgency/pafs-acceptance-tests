@@ -360,6 +360,21 @@ When(/^I complete my proposal on preprod$/) do
   @app.proposal_overview_page.complete_proposal_preprod.click
 end
 
+When(/^I submit my proposal on qa$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_qa.click
+end
+
+When(/^I submit my proposal on training$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_training.click
+end
+
+When(/^I submit my proposal on preprod$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_preprod.click
+end
+
 When(/^I submit the proposal to PoL as a PSO$/) do
   @app.proposal_overview_page.pso_complete_proposal.click
 end

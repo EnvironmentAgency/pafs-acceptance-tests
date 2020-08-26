@@ -17,7 +17,7 @@ class ConfidenceHomesByGatewayFourPage < SitePrism::Page
     when :high
       high.click
     when :mednium_high
-      mednium_high.click
+      medium_high.click
     when :medium_low
       medium_low.click
     when :low

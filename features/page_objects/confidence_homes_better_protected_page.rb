@@ -5,7 +5,6 @@ class ConfidenceHomesBetterProtectedPage < SitePrism::Page
   section(:user_bar, AdminUserBarSection, AdminUserBarSection::SELECTOR)
 
   COMMON_SELECTOR = "confidence_homes_better_protected_step_confidence_homes_better_protected"
-
   element(:high, "##{COMMON_SELECTOR}_high", visible: false)
   element(:mednium_high, "##{COMMON_SELECTOR}_medium_high", visible: false)
   element(:medium_low, "##{COMMON_SELECTOR}_medium_low", visible: false)
