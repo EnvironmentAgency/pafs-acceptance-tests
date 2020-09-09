@@ -49,6 +49,13 @@ Given(/^I select an existing proposal$/) do
   @app.proposal_overview_page.first_project.click
 end
 
+Given(/^I enter a new project name$/) do
+  newname = "Functional_Test_Project_Name_#{Time.now.to_i}"
+  @app.project_name_page.submit(
+    project_name: newname.to_sym
+  )
+end
+
 Given(/^I enter a auto project name$/) do
   newname = "Project_Name_#{Time.now.to_i}"
   @app.project_name_page.submit(

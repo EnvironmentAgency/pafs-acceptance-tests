@@ -10,7 +10,7 @@ Feature: Create a new project application for Smoke Tests
     And I select "yes" for Pafs to store cookies on my device
     And I have a valid "rma" username and password
     And I create a new proposal
-    And I enter a project name on QA
+    And I enter a new project name
     And I select a project type "change_or_new_asset"
     And I select a financial year to stop spending
     And I add a location "ST 58198 72725"
