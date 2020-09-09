@@ -140,11 +140,10 @@ Feature: Run regression tests against the soltuiin
   When I check the proposal overview page
   Then I should see the total estimated spend as "<total_spend>"
      And I should see the funding source contributor "<funding_source>"
-
+     
     Examples:
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|2020-2021|total_spend|
       |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|7000|28,000|
-
 
 @QA_RegressionTests @TRA_RegressionTests @PreProd_RegressionTests @RG_A9
   Scenario Outline: Submit a new proposals with a funding source
