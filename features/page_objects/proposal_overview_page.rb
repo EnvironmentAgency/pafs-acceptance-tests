@@ -38,6 +38,7 @@ class ProposalOverviewPage < SitePrism::Page
   element(:submit_proposal_preprod, "a[href$='submit']")
 
   element(:pso_complete_proposal, "a[href$='submit']")
+  element(:pso_unlock_proposal, "a[href$='unlock']")
 
   def find_project_link(page_source)
     click_link(page_source)
