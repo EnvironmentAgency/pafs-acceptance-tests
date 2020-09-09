@@ -16,7 +16,7 @@ Feature: Run regression tests against the soltuiin
     And I select "no" for Pafs to store cookies on my device
     And I have a valid "rma" username and password
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "change_or_new_asset" 
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -28,7 +28,7 @@ Feature: Run regression tests against the soltuiin
     And I select "yes" for Pafs to store cookies on my device  
     And I have a valid "rma" username and password
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "restore_asset"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -40,7 +40,7 @@ Feature: Run regression tests against the soltuiin
     And I select "yes" for Pafs to store cookies on my device  
     And I have a valid "rma" username and password
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "property_level_protection"
     And I select a financial year to stop spending
   When I am returned to the proposal overview page
@@ -52,7 +52,7 @@ Feature: Run regression tests against the soltuiin
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a project name on QA
+    And I enter a new project name
     And I select a project type "change_or_new_asset"
     And I select a financial year to stop spending
     And I add a location "ST 58198 72725"
@@ -70,7 +70,7 @@ Feature: Run regression tests against the soltuiin
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "change_or_new_asset"
     And I select a financial year to stop spending
     And I add a location "ST 58198 72725"
@@ -89,7 +89,7 @@ Feature: Run regression tests against the soltuiin
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "change_or_new_asset"
     And I select a financial year to stop spending
     And I add a location "ST 58198 72725"
@@ -107,7 +107,7 @@ Feature: Run regression tests against the soltuiin
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a project name on QA
+    And I enter a new project name
     And I select a project type "change_or_new_asset"
     And I select a financial year to stop spending
     And I add a location "ST 58198 72725"
@@ -126,7 +126,7 @@ Feature: Run regression tests against the soltuiin
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a project name on PreProd
+    And I enter a new project name
     And I select a project type "<project_type>"
     And I select a financial year to stop spending
     And I add a location "<location>"
@@ -152,7 +152,7 @@ Feature: Run regression tests against the soltuiin
     And I select "yes" for Pafs to store cookies on my device   
     And I have a valid "rma" username and password
     And I create a new proposal
-    And I enter a auto project name
+    And I enter a new project name
     And I select a project type "<project_type>"
     And I select a financial year to stop spending
     And I add a location "<location>"
@@ -177,7 +177,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "rma" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
-      And I enter a project name on Training
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -240,18 +240,13 @@ Feature: Run regression tests against the soltuiin
   When I complete my proposal on qa
   Then I should see that my proposal is sent for review
 
-
-# ---- 
-
-
-
    @TRA_RegressionTests @TRA_R10
    Scenario: Submit a new RMA project with multi funding sources and PFC Vs2020 Calc
     Given I am an external user
       And I have a valid "rma" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
-      And I enter a project name on Training
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -331,7 +326,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "pso" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on training
-      And I enter a project name on Training
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -403,7 +398,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "pso" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on training
-      And I enter a project name on Training
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -475,7 +470,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "pso" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on training
-      And I enter a project name on Training
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -551,17 +546,13 @@ Feature: Run regression tests against the soltuiin
 # Pre-Prod Test Environment 
 # ==================================================================================================================================
 
-
-
-
-
   @PreProd_RegressionTests @PP_R4
   Scenario Outline: Submit a new proposals with a funding source
   Given I am an external user
     And I have a valid "rma" username and password
     And I select "yes" for Pafs to store cookies on my device
     And I create a new proposal
-    And I enter a project name on PreProd
+    And I enter a new project name
     And I select a project type "<project_type>"
     And I select a financial year to stop spending
     And I add a location "<location>"
@@ -586,7 +577,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "rma" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
-      And I enter a project name on PreProd
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -660,7 +651,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "rma" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I create a new proposal
-      And I enter a project name on PreProd
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -734,7 +725,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "pso" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on preprod
-      And I enter a project name on PreProd
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"
@@ -805,7 +796,7 @@ Feature: Run regression tests against the soltuiin
       And I have a valid "pso" username and password
       And I select "yes" for Pafs to store cookies on my device
       And I change the url page for pso on preprod
-      And I enter a project name on PreProd
+      And I enter a new project name
       And I select a project type "restore_asset"
       And I select a financial year to stop spending
       And I add a location "ST 58198 72725"

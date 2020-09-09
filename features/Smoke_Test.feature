@@ -9,7 +9,7 @@ Feature: Create a new project application for Smoke Tests
       And I select "yes" for Pafs to store cookies on my device
       And I have a valid "rma" username and password
       And I create a new proposal
-      And I enter a auto project name
+      And I enter a new project name
 
 # ==================================================================================================================================
 # QA Test Environment - PSO Review not in solution
