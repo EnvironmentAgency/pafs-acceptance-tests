@@ -49,14 +49,35 @@ Given(/^I select an existing proposal$/) do
   @app.proposal_overview_page.first_project.click
 end
 
-Given(/^I enter a project name$/) do
+Given(/^I enter a auto project name$/) do
   newname = "Project_Name_#{Time.now.to_i}"
   @app.project_name_page.submit(
     project_name: newname.to_sym
   )
 end
 
-Given(/^I enter a test project name "([^"]*)"$/) do |project_name|
+Given(/^I enter a project name on QA$/) do
+  newname = "QA_Project_Name_#{Time.now.to_i}"
+  @app.project_name_page.submit(
+    project_name: newname.to_sym
+  )
+end
+
+Given(/^I enter a project name on Training$/) do
+  newname = "Training_Project_Name_#{Time.now.to_i}"
+  @app.project_name_page.submit(
+    project_name: newname.to_sym
+  )
+end
+
+Given(/^I enter a project name on PreProd$/) do
+  newname = "PreProd_Project_Name_#{Time.now.to_i}"
+  @app.project_name_page.submit(
+    project_name: newname.to_sym
+  )
+end
+
+Given(/^I enter a project name "([^"]*)"$/) do |project_name|
   @app.project_name_page.submit(
     project_name: project_name.to_sym
   )
@@ -349,18 +370,44 @@ Given(/^I search for an existing proposal$/) do
 end
 
 Given(/^I click on the return to your proposal overview button$/) do
+  link_name = "Return to proposal overview"
+  @app.proposal_overview_page.return_to_proposal_overview(link_name)
+end
+
+Given(/^I click on the return to your proposal overview button as a PSO$/) do
   link_name = "Return to your proposal overview"
   @app.proposal_overview_page.return_to_proposal_overview(link_name)
 end
 
-When(/^I complete my proposal on qa$/) do
+# Use Given when solution needs PSO appoval
+Given(/^I complete my proposal on qa$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal_qa.click
 end
 
-When(/^I complete my proposal on training$/) do
+Given(/^I submit my proposal on qa$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_qa.click
+end
+
+Given(/^I complete my proposal on training$/) do
   @project_number = @app.proposal_overview_page.project_number.text
   @app.proposal_overview_page.complete_proposal_training.click
+end
+
+Given(/^I submit my proposal on training$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_training.click
+end
+
+Given(/^I revert my proposal to draft on training$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.pso_unlock_proposal.click
+end
+
+Given(/^I submit my proposal on preprod$/) do
+  @project_number = @app.proposal_overview_page.project_number.text
+  @app.proposal_overview_page.submit_proposal_preprod.click
 end
 
 When(/^I complete my proposal on preprod$/) do
@@ -368,41 +415,83 @@ When(/^I complete my proposal on preprod$/) do
   @app.proposal_overview_page.complete_proposal_preprod.click
 end
 
-When(/^I submit my proposal on qa$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.submit_proposal_qa.click
-end
-
-When(/^I submit my proposal on training$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.submit_proposal_training.click
-end
-
-When(/^I submit my proposal on preprod$/) do
-  @project_number = @app.proposal_overview_page.project_number.text
-  @app.proposal_overview_page.submit_proposal_preprod.click
-end
-
-When(/^I submit the proposal to PoL as a PSO$/) do
-  @app.proposal_overview_page.pso_complete_proposal.click
-end
-
-Then(/^I should see that my proposal is sent for review$/) do
+# Use When - when the solution does not need PAFs PSO approal
+Given(/^I should see that my proposal is sent for review$/) do
   expect(@app.confirm_page).to have_project_number
   @project_number = @app.confirm_page.project_number.text
   expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
-Then(/^I should see that my proposal is submitted$/) do
+Given(/^I should see that my proposal is under review$/) do
+  expect(@app.confirm_page).to have_project_number
+  @project_number = @app.confirm_page.project_number.text
+  expect(@app.proposal_overview_page).to have_text("Proposal under review")
+end
+
+Given(/^I should see that my proposal status is draft$/) do
+  expect(@app.proposal_overview_page).to have_text("Draft")
+  # @status = @app.proposal_overview_page.first_project.text
+  # expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
+end
+
+Given(/^I should see that my proposal is submitted$/) do
   expect(@app.confirm_page).to have_project_number
   expect(@app.proposal_overview_page).to have_text("Proposal submitted")
 end
 
-Then(/^I should see that my proposal is under review$/) do
-  expect(@app.proposal_overview_page).to have_text("Proposal under review")
-end
-
-Then(/^its status is draft$/) do
+Given(/^its status is draft$/) do
   @status = @app.proposal_overview_page.first_project.text
   expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
+end
+
+# Use When - when the solution does not need PAFs PSO approal
+
+# When(/^I complete my proposal on qa$/) do
+#  @project_number = @app.proposal_overview_page.project_number.text
+#  @app.proposal_overview_page.complete_proposal_qa.click
+# end
+
+# When(/^I submit my proposal on qa$/) do
+#  @project_number = @app.proposal_overview_page.project_number.text
+#  @app.proposal_overview_page.submit_proposal_qa.click
+# end
+
+# When(/^I complete my proposal on training$/) do
+#  @project_number = @app.proposal_overview_page.project_number.text
+#  @app.proposal_overview_page.complete_proposal_training.click
+# end
+
+# When(/^I submit my proposal on training$/) do
+#  @project_number = @app.proposal_overview_page.project_number.text
+#  @app.proposal_overview_page.submit_proposal_training.click
+# end
+
+# When(/^I submit my proposal on preprod$/) do
+#  @project_number = @app.proposal_overview_page.project_number.text
+#  @app.proposal_overview_page.submit_proposal_preprod.click
+# end
+
+When(/^I submit the proposal to PoL as a PSO$/) do
+  @app.proposal_overview_page.pso_complete_proposal.click
+end
+
+# Use Given when solution needs PSO appoval other
+# Then(/^I should see that my proposal is sent for review$/) do
+#  expect(@app.confirm_page).to have_project_number
+#  @project_number = @app.confirm_page.project_number.text
+#  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
+# end
+
+# Then(/^I should see that my proposal is submitted$/) do
+#  expect(@app.confirm_page).to have_project_number
+#  expect(@app.proposal_overview_page).to have_text("Proposal submitted")
+# end
+
+# Then(/^its status is draft$/) do
+#  @status = @app.proposal_overview_page.first_project.text
+#  expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
+# end
+
+Then(/^I should see that my proposal is under review as a PSO$/) do
+  expect(@app.proposal_overview_page).to have_text("Proposal under review")
 end
