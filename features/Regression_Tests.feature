@@ -145,7 +145,6 @@ Feature: Run regression tests against the soltuiin
       |project_type|location|shapefile|funding_source|previous|2015-2016|2016-2017|2017-2018|2018-2019|2019-2020|2020-2021|total_spend|
       |change_or_new_asset|ST 58198 72725|Valid_ShapeFile.zip|grant_in_aid|1000|2000|3000|4000|5000|6000|7000|28,000|
 
-
 @QA_RegressionTests @TRA_RegressionTests @PreProd_RegressionTests @RG_A9
   Scenario Outline: Submit a new proposals with a funding source
   Given I am an external user
@@ -239,11 +238,6 @@ Feature: Run regression tests against the soltuiin
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
   When I complete my proposal on qa
   Then I should see that my proposal is sent for review
-
-
-# ---- 
-
-
 
    @TRA_RegressionTests @TRA_R10
    Scenario: Submit a new RMA project with multi funding sources and PFC Vs2020 Calc
@@ -550,10 +544,6 @@ Feature: Run regression tests against the soltuiin
 # ==================================================================================================================================
 # Pre-Prod Test Environment 
 # ==================================================================================================================================
-
-
-
-
 
   @PreProd_RegressionTests @PP_R4
   Scenario Outline: Submit a new proposals with a funding source
