@@ -443,7 +443,7 @@ end
 
 Given(/^I should see that my proposal is submitted$/) do
   expect(@app.confirm_page).to have_project_number
-  expect(@app.proposal_overview_page).to have_text("Proposal submitted")
+  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
 end
 
 Given(/^its status is draft$/) do
@@ -491,13 +491,17 @@ end
 
 # Then(/^I should see that my proposal is submitted$/) do
 #  expect(@app.confirm_page).to have_project_number
-#  expect(@app.proposal_overview_page).to have_text("Proposal submitted")
+#  expect(@app.proposal_overview_page).to have_text("Submitted")
 # end
 
 # Then(/^its status is draft$/) do
 #  @status = @app.proposal_overview_page.first_project.text
 #  expect(@app.proposal_overview_page.first_project.text).to eq "Draft"
 # end
+
+Then(/^I should see the proposal sent for review$/) do
+  expect(@app.proposal_overview_page).to have_text("Proposal sent for review")
+end
 
 Then(/^I should see that my proposal is under review as a PSO$/) do
   expect(@app.proposal_overview_page).to have_text("Proposal under review")

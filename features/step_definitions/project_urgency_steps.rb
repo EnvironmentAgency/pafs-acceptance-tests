@@ -21,7 +21,7 @@ When(/^I enter the project urgency with a message of "([^"]*)"$/) do |message|
   )
 end
 
-When(/^I select the project urgency as "([^"]*)"$/) do |urgency|
+When(/^I select the project urgency type as "([^"]*)"$/) do |urgency|
   @app.proposal_overview_page.add_project_urgency.click
   @app.urgency_page.submit(
     option: urgency.to_sym

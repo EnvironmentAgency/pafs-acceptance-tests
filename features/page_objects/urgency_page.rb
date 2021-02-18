@@ -9,7 +9,7 @@ class UrgencyPage < SitePrism::Page
   element(:emer, "#urgency_step_urgency_reason_emergency_works", visible: false)
   element(:time, "#urgency_step_urgency_reason_time_limited", visible: false)
 
-  element(:submit_button, "input[name='commit']")
+  element(:submit_button, "input[name='commit']", visible: false)
 
   def submit(args = {})
     case args[:option]

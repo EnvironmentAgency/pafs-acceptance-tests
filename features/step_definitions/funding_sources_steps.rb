@@ -19,7 +19,7 @@ Given(/^I enter a funding source for "([^"]*)"$/) do |funding_source|
 end
 
 # rubocop: disable Metrics/LineLength, Metrics/ParameterLists, Metrics/BlockLength
-Given(/^I enter funding values for single contributor "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)", 2020-2021 "([^"]*)"$/) do |funding, previous, yr1516, yr1617, yr1718, yr1819, yr1920, yr2021|
+Given(/^I enter funding values for single contributor "([^"]*)" previous year "([^"]*)", 2015-2016 "([^"]*)", 2016-2017 "([^"]*)", 2017-2018 "([^"]*)", 2018-2019 "([^"]*)", 2019-2020 "([^"]*)", 2020-2021 "([^"]*)", 2021-2022 "([^"]*)"$/) do |funding, previous, yr1516, yr1617, yr1718, yr1819, yr1920, yr2021|
   slug_map = {
     "grant_in_aid" => "gia",
     "local_levy" => "levy",
@@ -56,6 +56,8 @@ Given(/^I enter funding values for single contributor "([^"]*)" previous year "(
     @app.new_funding_values_page.send("#{slug}_2020_2021").set(yr2021)
     @app.new_funding_values_page.send("#{slug}_secure_2020_2021").click
     @app.new_funding_values_page.send("#{slug}_constrained_2020_2021").click
+    @app.new_funding_values_page.send("#{slug}_secure_2021_2022").click
+    @app.new_funding_values_page.send("#{slug}_constrained_2021_2022").click
     @app.new_funding_values_page.submit_button.click
   else
     @app.new_funding_values_page.send("#{slug}_current_year").set(previous)
@@ -65,6 +67,7 @@ Given(/^I enter funding values for single contributor "([^"]*)" previous year "(
     @app.new_funding_values_page.send("#{slug}_2018_2019").set(yr1819)
     @app.new_funding_values_page.send("#{slug}_2019_2020").set(yr1920)
     @app.new_funding_values_page.send("#{slug}_2020_2021").set(yr2021)
+    @app.new_funding_values_page.send("#{slug}_2021_2022").set(yr2022)
     @app.new_funding_values_page.submit_button.click
   end
   # rubocop: enable Layout/CommentIndentation,, Style/IdenticalConditionalBranches, Lint/MissingCopEnableDirective
@@ -139,6 +142,7 @@ Given(/^I enter new funding values for two contributors "([^"]*)" previous year 
   @app.new_funding_values_page.send("cont1_#{slug}_2018_2019").set(yr1819)
   @app.new_funding_values_page.send("cont1_#{slug}_2019_2020").set(yr1920)
   @app.new_funding_values_page.send("cont1_#{slug}_2020_2021").set(yr2021)
+  @app.new_funding_values_page.send("cont1_#{slug}_2021_2022").set(yr2022)
   @app.new_funding_values_page.send("cont2_#{slug}_current_year").set(previous)
   @app.new_funding_values_page.send("cont2_#{slug}_2015_2016").set(yr1516)
   @app.new_funding_values_page.send("cont2_#{slug}_2016_2017").set(yr1617)
@@ -146,6 +150,7 @@ Given(/^I enter new funding values for two contributors "([^"]*)" previous year 
   @app.new_funding_values_page.send("cont2_#{slug}_2018_2019").set(yr1819)
   @app.new_funding_values_page.send("cont2_#{slug}_2019_2020").set(yr1920)
   @app.new_funding_values_page.send("cont2_#{slug}_2020_2021").set(yr2021)
+  @app.new_funding_values_page.send("cont2_#{slug}_2021_2022").set(yr2022)
   @app.new_funding_values_page.submit_button.click
   @app.new_funding_values_page.submit_button.click
 end
