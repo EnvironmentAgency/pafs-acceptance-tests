@@ -33,9 +33,9 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I enter a funding source for "local_levy"
-      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I answer YES if the project could start sooner "01", "2020"
       And I answer if the project could start sooner if grant in aid funding was made available earlier questions
       And I add my main project risk "river"
@@ -68,7 +68,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I answer YES if the project could start sooner "03", "2020"
       And I add my main project risk "tidal"
       And I add the flood protection outcome as none
@@ -81,7 +81,7 @@ Feature: Create a new project application for Smoke Tests
       And I add the standard of protection after coastal erosion project completes as "less_that_ten_years"
       And I enter the projects goal approach "A new smoke test training proposals with one funding source and PFC-Vs2020 Calc"
       And I enter environmental outcomes improvements
-      And I select the project urgency as "not_urgent"
+      And I enter the project urgency as "not_urgent"
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
@@ -116,9 +116,9 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I enter a funding source for "local_levy"
-      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "local_levy" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I answer YES if the project could start sooner "01", "2020"
       And I add my main project risk "river"
       And I add the flood protection outcome as none
@@ -135,19 +135,8 @@ Feature: Create a new project application for Smoke Tests
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-       #(When I submit my proposal on training) Used when Project is sent straight to PoL
-      #(When I complete my proposal on training) Used when project is sent to PAFS PSO for Review
-      And I complete my proposal on training
-      And I should see that my proposal is sent for review
-      #PSO Approve Project Request - changes 26-08-2020
-      And I should see that my proposal is sent for review
-      And I click on the return to your proposal overview button
-      #And I should see that my proposal is sent for review
-      And I sign out of the proposal
-      And I have a valid "pso" username and password
-      And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
-    Then I should see that my proposal is under review
+    When I submit my proposal on training
+    Then I should see the proposal sent for review
 
   @Train_SmokeTests @PreProd_SmokeTests @ST_A3
   Scenario: Submit a new smoke test proposal with one funding source and PFC-Vs2020 Calc 
@@ -160,7 +149,7 @@ Feature: Create a new project application for Smoke Tests
       And I enter a construction start date
       And I enter a ready for service date
       And I enter a funding source for "grant_in_aid"
-      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000"
+      And I enter funding values for single contributor "grant_in_aid" previous year "1000", 2015-2016 "2000", 2016-2017 "3000", 2017-2018 "4000", 2018-2019 "5000", 2019-2020 "6000", 2020-2021 "7000", 2021-2022 "8000"
       And I answer YES if the project could start sooner "03", "2020"
       And I add my main project risk "tidal"
       And I add the flood protection outcome as none
@@ -173,7 +162,7 @@ Feature: Create a new project application for Smoke Tests
       And I add the standard of protection after coastal erosion project completes as "less_that_ten_years"
       And I enter the projects goal approach "A new smoke test training proposals with one funding source and PFC-Vs2020 Calc"
       And I enter environmental outcomes improvements
-      And I select the project urgency as "not_urgent"
+      And I enter the project urgency as "not_urgent"
       And I upload a project funding calculator with file option "Yes", "PFCalcVs2020.xlsx"
       And I select the confidence page
       And I add the confidence in number of homes better protected by this project as "high"
@@ -182,16 +171,18 @@ Feature: Create a new project application for Smoke Tests
       And I select the carbon page
       And I add how much capital carbon will this project produce in tonnes "1"
       And I add how much carbon will this project’s assets produce in their lifecycle "2"
-       #(When I submit my proposal on training) Used when Project is sent straight to PoL
-      #(When I complete my proposal on training) Used when project is sent to PAFS PSO for Review
-      And I complete my proposal on training
-      And I should see that my proposal is sent for review
-      #PSO Approve Project Request - changes 26-08-2020
-      And I should see that my proposal is sent for review
-      And I click on the return to your proposal overview button
-      #And I should see that my proposal is sent for review
-      And I sign out of the proposal
-      And I have a valid "pso" username and password
-      And I search for an existing proposal
-    When I submit the proposal to PoL as a PSO
-    Then I should see that my proposal is under review
+    When I submit my proposal on training
+    Then I should see the proposal sent for review
+
+    # Old PSO Journey changes 2021 - Need to create tests that starts in RMA and then changes to PSO to complete and Post 
+    #  And I add how much capital carbon will this project produce in tonnes "1"
+    #  And I add how much carbon will this project’s assets produce in their lifecycle "2"
+    #  And I complete my proposal on training
+    #  And I should see that my proposal is sent for review
+    #  And I should see that my proposal is sent for review
+    #  And I click on the return to your proposal overview button
+    #  And I sign out of the proposal
+    #  And I have a valid "pso" username and password
+    #  And I search for an existing proposal
+    # When I submit the proposal to PoL as a PSO
+    # Then I should see that my proposal is under review
